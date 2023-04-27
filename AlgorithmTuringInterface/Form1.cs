@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace AlgorithmTuringInterface
 {
@@ -14,10 +15,39 @@ namespace AlgorithmTuringInterface
     {
         Dictionary<int, string> tape = new Dictionary<int, string>();
         int shift = 0;
+        TextBox[] textBoxes = new TextBox[22];
+        int chosenIndex = 0;
 
         public Form1()
         {
+            InitializeTextBoxes();
             InitializeComponent();
+        }
+
+        private void InitializeTextBoxes()
+        {
+            textBoxes[0] = textBox1;
+            textBoxes[1] = textBox2;
+            textBoxes[2] = textBox3;
+            textBoxes[3] = textBox4;
+            textBoxes[4] = textBox5;
+            textBoxes[5] = textBox6;
+            textBoxes[6] = textBox7;
+            textBoxes[7] = textBox8;
+            textBoxes[8] = textBox9;
+            textBoxes[9] = textBox10;
+            textBoxes[10] = textBox11;
+            textBoxes[11] = textBox12;
+            textBoxes[12] = textBox13;
+            textBoxes[13] = textBox14;
+            textBoxes[14] = textBox15;
+            textBoxes[15] = textBox16;
+            textBoxes[16] = textBox17;
+            textBoxes[17] = textBox18;
+            textBoxes[18] = textBox19;
+            textBoxes[19] = textBox20;
+            textBoxes[20] = textBox21;
+            textBoxes[21] = textBox22;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,28 +77,36 @@ namespace AlgorithmTuringInterface
 
         private void InitializeTape()
         {
-            this.textBox1.Text = (-4 + shift).ToString();
-            this.textBox2.Text = (-3 + shift).ToString();
-            this.textBox3.Text = (-2 + shift).ToString();
-            this.textBox4.Text = (-1 + shift).ToString();
-            this.textBox5.Text = (0 + shift).ToString();
-            this.textBox6.Text = (1 + shift).ToString();
-            this.textBox7.Text = (2 + shift).ToString();
-            this.textBox8.Text = (3 + shift).ToString();
-            this.textBox9.Text = (4 + shift).ToString();
-            this.textBox10.Text = (5 + shift).ToString();
-            try { this.textBox11.Text = tape[-4 + shift]; } catch { this.textBox11.Text = ""; }
-            try { this.textBox12.Text = tape[-3 + shift]; } catch { this.textBox12.Text = ""; }
-            try { this.textBox13.Text = tape[-2 + shift]; } catch { this.textBox13.Text = ""; }
-            try { this.textBox14.Text = tape[-1 + shift]; } catch { this.textBox14.Text = ""; }
-            try { this.textBox15.Text = tape[0 + shift]; } catch { this.textBox15.Text = ""; }
-            try { this.textBox16.Text = tape[1 + shift]; } catch { this.textBox16.Text = ""; }
-            try { this.textBox17.Text = tape[2 + shift]; } catch { this.textBox17.Text = ""; }
-            try { this.textBox18.Text = tape[3 + shift]; } catch { this.textBox18.Text = ""; }
-            try { this.textBox19.Text = tape[4 + shift]; } catch { this.textBox19.Text = ""; }
-            try { this.textBox20.Text = tape[5 + shift]; } catch { this.textBox20.Text = ""; }
+            InitializeTextBoxes();
+            foreach(TextBox textbox in textBoxes)
+            {
+                if (textbox.TabIndex <= 11)
+                    PrintIndex(textbox, shift);
+                else
+                    PrintTapeElement(textbox, shift);
+            }
         }
 
-        
+        private void PrintIndex(TextBox box, int shift)
+        {
+            box.Text = (box.TabIndex - 6 + shift).ToString();
+        }
+
+        private void PrintTapeElement(TextBox box, int shift, string gap = "")
+        {
+            int index = box.TabIndex - 17 + shift;
+            try
+            {
+                box.Text = tape[index];
+                if (chosenIndex == index)
+                    box.BackColor = Color.LightYellow;
+                else
+                    box.BackColor = Color.FromArgb(255, 240, 240, 240);
+            }
+            catch
+            {
+                box.Text = gap;
+            }
+        }
     }
 }
