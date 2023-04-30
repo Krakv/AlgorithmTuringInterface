@@ -52,6 +52,7 @@ namespace AlgorithmTuringInterface
 
         private void button1_Click(object sender, EventArgs e)
         {
+            shift = chosenIndex;
             InitializeTape();
         }
 
@@ -94,6 +95,7 @@ namespace AlgorithmTuringInterface
 
         private void PrintTapeElement(TextBox box, int shift, string gap = "")
         {
+            Color deafaultColor = Color.FromArgb(255, 240, 240, 240);
             int index = box.TabIndex - 17 + shift;
             try
             {
@@ -101,12 +103,18 @@ namespace AlgorithmTuringInterface
                 if (chosenIndex == index)
                     box.BackColor = Color.LightYellow;
                 else
-                    box.BackColor = Color.FromArgb(255, 240, 240, 240);
+                    box.BackColor = deafaultColor;
             }
             catch
             {
                 box.Text = gap;
+                box.BackColor = deafaultColor;
             }
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

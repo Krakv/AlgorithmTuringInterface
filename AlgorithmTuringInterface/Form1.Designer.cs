@@ -33,6 +33,7 @@ namespace AlgorithmTuringInterface
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.Tape = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@ namespace AlgorithmTuringInterface
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.NextElement = new System.Windows.Forms.Button();
             this.PreviousElement = new System.Windows.Forms.Button();
-            this.textBox12 = new System.Windows.Forms.TextBox();
             this.Tape.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +94,12 @@ namespace AlgorithmTuringInterface
             this.Tape.Controls.Add(this.textBox8, 0, 0);
             this.Tape.Name = "Tape";
             this.Tape.Paint += new System.Windows.Forms.PaintEventHandler(this.Tape_Paint);
+            // 
+            // textBox12
+            // 
+            resources.ApplyResources(this.textBox12, "textBox12");
+            this.textBox12.Name = "textBox12";
+            this.textBox12.ReadOnly = true;
             // 
             // textBox16
             // 
@@ -208,6 +214,7 @@ namespace AlgorithmTuringInterface
             resources.ApplyResources(this.textBox9, "textBox9");
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // textBox7
             // 
@@ -234,12 +241,6 @@ namespace AlgorithmTuringInterface
             this.PreviousElement.Name = "PreviousElement";
             this.PreviousElement.UseVisualStyleBackColor = true;
             this.PreviousElement.Click += new System.EventHandler(this.PreviousElement_Click);
-            // 
-            // textBox12
-            // 
-            resources.ApplyResources(this.textBox12, "textBox12");
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
             // 
             // Form1
             // 
