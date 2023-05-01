@@ -57,13 +57,20 @@ namespace AlgorithmTuringInterface
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.NextElement = new System.Windows.Forms.Button();
             this.PreviousElement = new System.Windows.Forms.Button();
-            this.TapeWay = new System.Windows.Forms.TextBox();
-            this.FindWay = new System.Windows.Forms.Button();
-            this.Read = new System.Windows.Forms.Button();
             this.TapeLabel = new System.Windows.Forms.Label();
             this.QuantityLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.QuantityStates = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.FileComboBox = new System.Windows.Forms.ToolStripMenuItem();
+            this.открытьФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.создатьФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.множествоСостоянийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.открытьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.создатьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.редактироватьФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редактироватьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.Tape.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -248,25 +255,6 @@ namespace AlgorithmTuringInterface
             this.PreviousElement.UseVisualStyleBackColor = true;
             this.PreviousElement.Click += new System.EventHandler(this.PreviousElement_Click);
             // 
-            // TapeWay
-            // 
-            resources.ApplyResources(this.TapeWay, "TapeWay");
-            this.TapeWay.Name = "TapeWay";
-            // 
-            // FindWay
-            // 
-            resources.ApplyResources(this.FindWay, "FindWay");
-            this.FindWay.Name = "FindWay";
-            this.FindWay.UseVisualStyleBackColor = true;
-            this.FindWay.Click += new System.EventHandler(this.FindWay_Click);
-            // 
-            // Read
-            // 
-            resources.ApplyResources(this.Read, "Read");
-            this.Read.Name = "Read";
-            this.Read.UseVisualStyleBackColor = true;
-            this.Read.Click += new System.EventHandler(this.Read_Click);
-            // 
             // TapeLabel
             // 
             resources.ApplyResources(this.TapeLabel, "TapeLabel");
@@ -278,10 +266,70 @@ namespace AlgorithmTuringInterface
             this.QuantityLabel.Name = "QuantityLabel";
             this.QuantityLabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // panel1
+            // QuantityStates
             // 
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
+            resources.ApplyResources(this.QuantityStates, "QuantityStates");
+            this.QuantityStates.Name = "QuantityStates";
+            this.QuantityStates.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FileComboBox,
+            this.множествоСостоянийToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Name = "menuStrip1";
+            // 
+            // FileComboBox
+            // 
+            this.FileComboBox.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.открытьФайлToolStripMenuItem,
+            this.создатьФайлToolStripMenuItem,
+            this.редактироватьФайлToolStripMenuItem});
+            this.FileComboBox.Name = "FileComboBox";
+            resources.ApplyResources(this.FileComboBox, "FileComboBox");
+            this.FileComboBox.Click += new System.EventHandler(this.FileComboBox_Click);
+            // 
+            // открытьФайлToolStripMenuItem
+            // 
+            this.открытьФайлToolStripMenuItem.Name = "открытьФайлToolStripMenuItem";
+            resources.ApplyResources(this.открытьФайлToolStripMenuItem, "открытьФайлToolStripMenuItem");
+            this.открытьФайлToolStripMenuItem.Click += new System.EventHandler(this.открытьФайлToolStripMenuItem_Click);
+            // 
+            // создатьФайлToolStripMenuItem
+            // 
+            this.создатьФайлToolStripMenuItem.Name = "создатьФайлToolStripMenuItem";
+            resources.ApplyResources(this.создатьФайлToolStripMenuItem, "создатьФайлToolStripMenuItem");
+            // 
+            // множествоСостоянийToolStripMenuItem
+            // 
+            this.множествоСостоянийToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.открытьФайлToolStripMenuItem1,
+            this.создатьФайлToolStripMenuItem1,
+            this.редактироватьФайлToolStripMenuItem1});
+            this.множествоСостоянийToolStripMenuItem.Name = "множествоСостоянийToolStripMenuItem";
+            resources.ApplyResources(this.множествоСостоянийToolStripMenuItem, "множествоСостоянийToolStripMenuItem");
+            // 
+            // открытьФайлToolStripMenuItem1
+            // 
+            this.открытьФайлToolStripMenuItem1.Name = "открытьФайлToolStripMenuItem1";
+            resources.ApplyResources(this.открытьФайлToolStripMenuItem1, "открытьФайлToolStripMenuItem1");
+            // 
+            // создатьФайлToolStripMenuItem1
+            // 
+            this.создатьФайлToolStripMenuItem1.Name = "создатьФайлToolStripMenuItem1";
+            resources.ApplyResources(this.создатьФайлToolStripMenuItem1, "создатьФайлToolStripMenuItem1");
+            // 
+            // редактироватьФайлToolStripMenuItem
+            // 
+            this.редактироватьФайлToolStripMenuItem.Name = "редактироватьФайлToolStripMenuItem";
+            resources.ApplyResources(this.редактироватьФайлToolStripMenuItem, "редактироватьФайлToolStripMenuItem");
+            // 
+            // редактироватьФайлToolStripMenuItem1
+            // 
+            this.редактироватьФайлToolStripMenuItem1.Name = "редактироватьФайлToolStripMenuItem1";
+            resources.ApplyResources(this.редактироватьФайлToolStripMenuItem1, "редактироватьФайлToolStripMenuItem1");
             // 
             // MachineTuring
             // 
@@ -289,23 +337,23 @@ namespace AlgorithmTuringInterface
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.QuantityStates);
             this.Controls.Add(this.QuantityLabel);
             this.Controls.Add(this.TapeLabel);
-            this.Controls.Add(this.Read);
-            this.Controls.Add(this.FindWay);
-            this.Controls.Add(this.TapeWay);
             this.Controls.Add(this.PreviousElement);
             this.Controls.Add(this.NextElement);
             this.Controls.Add(this.Tape);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "MachineTuring";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Tape.ResumeLayout(false);
             this.Tape.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,12 +387,18 @@ namespace AlgorithmTuringInterface
         private Button PreviousElement;
         private TextBox textBox16;
         private TextBox textBox12;
-        private TextBox TapeWay;
-        private Button FindWay;
-        private Button Read;
         private Label TapeLabel;
         private Label QuantityLabel;
-        private Panel panel1;
+        private Panel QuantityStates;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem FileComboBox;
+        private ToolStripMenuItem открытьФайлToolStripMenuItem;
+        private ToolStripMenuItem создатьФайлToolStripMenuItem;
+        private ToolStripMenuItem множествоСостоянийToolStripMenuItem;
+        private ToolStripMenuItem открытьФайлToolStripMenuItem1;
+        private ToolStripMenuItem создатьФайлToolStripMenuItem1;
+        private ToolStripMenuItem редактироватьФайлToolStripMenuItem;
+        private ToolStripMenuItem редактироватьФайлToolStripMenuItem1;
     }
 }
 

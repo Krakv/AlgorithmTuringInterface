@@ -55,6 +55,8 @@ namespace AlgorithmTuringInterface
         {
             shift = chosenIndex;
             InitializeTape();
+            QuantityStatesForm frm = new QuantityStatesForm() { TopLevel = false, Dock = DockStyle.Fill, TopMost = true };
+            this.QuantityStates.Controls.Add(frm);
         }
 
         private void PreviousElement_Click(object sender, EventArgs e)
@@ -96,7 +98,7 @@ namespace AlgorithmTuringInterface
 
         private void PrintTapeElement(TextBox box, int shift, string gap = "")
         {
-            Color deafaultColor = Color.FromArgb(255, 240, 240, 240);
+            Color defaultColor = Color.FromArgb(255, 240, 240, 240);
             int index = box.TabIndex - 17 + shift;
             try
             {
@@ -104,12 +106,12 @@ namespace AlgorithmTuringInterface
                 if (chosenIndex == index)
                     box.BackColor = Color.LightYellow;
                 else
-                    box.BackColor = deafaultColor;
+                    box.BackColor = defaultColor;
             }
             catch
             {
                 box.Text = gap;
-                box.BackColor = deafaultColor;
+                box.BackColor = defaultColor;
             }
         }
 
@@ -118,43 +120,112 @@ namespace AlgorithmTuringInterface
 
         }
 
-        private void FindWay_Click(object sender, EventArgs e)
+        //private void FindWay_Click(object sender, EventArgs e)
+        //{
+        //    var fileContent = string.Empty;
+        //    var filePath = string.Empty;
+
+        //    using (OpenFileDialog openFileDialog = new OpenFileDialog())
+        //    {
+        //        openFileDialog.InitialDirectory = "c:\\";
+        //        openFileDialog.Filter = "csv files (*.csv)|*.csv";
+        //        openFileDialog.FilterIndex = 2;
+        //        openFileDialog.RestoreDirectory = true;
+
+        //        if (openFileDialog.ShowDialog() == DialogResult.OK)
+        //        {
+        //            //Get the path of specified file
+        //            filePath = openFileDialog.FileName;
+
+        //            //Read the contents of the file into a stream
+        //            var fileStream = openFileDialog.OpenFile();
+
+        //            using (StreamReader reader = new StreamReader(fileStream))
+        //            {
+        //                fileContent = reader.ReadToEnd();
+        //            }
+        //        }
+        //        if (filePath != string.Empty)
+        //        {
+        //            this.TapeWay.Text = filePath;
+        //        }
+        //    }
+        //}
+
+        //private void Read_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //       string path = File.ReadAllText(TapeWay.Text);
+        //    }
+        //    catch
+        //    {
+        //        // Initializes the variables to pass to the MessageBox.Show method.
+        //        string message = "Не удалось считать файл из выбранного пути.";
+        //        string caption = "Error Detected in Input";
+        //        MessageBoxButtons buttons = MessageBoxButtons.OK;
+
+        //        // Displays the MessageBox.
+        //        MessageBox.Show(message, caption, buttons);
+        //    }
+        //}
+
+        private void Form1_Load(object sender, EventArgs e)
         {
-            var fileContent = string.Empty;
-            var filePath = string.Empty;
 
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "csv files (*.csv)|*.csv";
-                openFileDialog.FilterIndex = 2;
-                openFileDialog.RestoreDirectory = true;
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    //Get the path of specified file
-                    filePath = openFileDialog.FileName;
-
-                    //Read the contents of the file into a stream
-                    var fileStream = openFileDialog.OpenFile();
-
-                    using (StreamReader reader = new StreamReader(fileStream))
-                    {
-                        fileContent = reader.ReadToEnd();
-                    }
-                }
-                if (filePath != string.Empty)
-                {
-                    this.TapeWay.Text = filePath;
-                }
-            }
         }
 
-        private void Read_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            QuantityStatesForm frm = new QuantityStatesForm() { BackColor = Color.White, TopLevel = false, Dock = DockStyle.Fill, TopMost = true};
+            this.QuantityStates.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void FileComboBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void открытьФайлToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string tapePath = string.Empty;
             try
             {
-               string path = File.ReadAllText(TapeWay.Text);
+                var fileContent = string.Empty;
+                var filePath = string.Empty;
+
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.InitialDirectory = "c:\\";
+                    openFileDialog.Filter = "csv files (*.csv)|*.csv";
+                    openFileDialog.FilterIndex = 2;
+                    openFileDialog.RestoreDirectory = true;
+
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        //Get the path of specified file
+                        filePath = openFileDialog.FileName;
+
+                        //Read the contents of the file into a stream
+                        var fileStream = openFileDialog.OpenFile();
+
+                        using (StreamReader reader = new StreamReader(fileStream))
+                        {
+                            fileContent = reader.ReadToEnd();
+                        }
+                    }
+                    if (filePath != string.Empty)
+                    {
+                        tapePath = filePath;
+                    }
+                }
+                string path = File.ReadAllText(tapePath);
             }
             catch
             {
@@ -166,16 +237,6 @@ namespace AlgorithmTuringInterface
                 // Displays the MessageBox.
                 MessageBox.Show(message, caption, buttons);
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
