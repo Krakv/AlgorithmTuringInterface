@@ -12,14 +12,14 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace AlgorithmTuringInterface
 {
-    public partial class Form1 : Form
+    public partial class MachineTuring : Form
     {
         Dictionary<int, string> tape = new Dictionary<int, string>();
         int shift = 0;
         TextBox[] textBoxes = new TextBox[22];
         int chosenIndex = 0;
 
-        public Form1()
+        public MachineTuring()
         {
             InitializeTextBoxes();
             InitializeComponent();

@@ -2,7 +2,7 @@
 
 namespace AlgorithmTuringInterface
 {
-    partial class Form1
+    partial class MachineTuring
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -30,7 +30,7 @@ namespace AlgorithmTuringInterface
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MachineTuring));
             this.button1 = new System.Windows.Forms.Button();
             this.Tape = new System.Windows.Forms.TableLayoutPanel();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -62,6 +62,7 @@ namespace AlgorithmTuringInterface
             this.Read = new System.Windows.Forms.Button();
             this.TapeLabel = new System.Windows.Forms.Label();
             this.QuantityLabel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Tape.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -277,11 +278,18 @@ namespace AlgorithmTuringInterface
             this.QuantityLabel.Name = "QuantityLabel";
             this.QuantityLabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Form1
+            // panel1
+            // 
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // MachineTuring
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.QuantityLabel);
             this.Controls.Add(this.TapeLabel);
             this.Controls.Add(this.Read);
@@ -292,7 +300,9 @@ namespace AlgorithmTuringInterface
             this.Controls.Add(this.Tape);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Form1";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "MachineTuring";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Tape.ResumeLayout(false);
             this.Tape.PerformLayout();
@@ -334,6 +344,7 @@ namespace AlgorithmTuringInterface
         private Button Read;
         private Label TapeLabel;
         private Label QuantityLabel;
+        private Panel panel1;
     }
 }
 
