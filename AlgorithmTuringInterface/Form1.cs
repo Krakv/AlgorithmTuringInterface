@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -113,6 +114,66 @@ namespace AlgorithmTuringInterface
         }
 
         private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FindWay_Click(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "csv files (*.csv)|*.csv";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+
+                    //Read the contents of the file into a stream
+                    var fileStream = openFileDialog.OpenFile();
+
+                    using (StreamReader reader = new StreamReader(fileStream))
+                    {
+                        fileContent = reader.ReadToEnd();
+                    }
+                }
+                if (filePath != string.Empty)
+                {
+                    this.TapeWay.Text = filePath;
+                }
+            }
+        }
+
+        private void Read_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               string path = File.ReadAllText(TapeWay.Text);
+            }
+            catch
+            {
+                // Initializes the variables to pass to the MessageBox.Show method.
+                string message = "Не удалось считать файл из выбранного пути.";
+                string caption = "Error Detected in Input";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+
+                // Displays the MessageBox.
+                MessageBox.Show(message, caption, buttons);
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

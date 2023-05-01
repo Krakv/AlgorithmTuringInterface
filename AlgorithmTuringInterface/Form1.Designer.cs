@@ -57,6 +57,11 @@ namespace AlgorithmTuringInterface
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.NextElement = new System.Windows.Forms.Button();
             this.PreviousElement = new System.Windows.Forms.Button();
+            this.TapeWay = new System.Windows.Forms.TextBox();
+            this.FindWay = new System.Windows.Forms.Button();
+            this.Read = new System.Windows.Forms.Button();
+            this.TapeLabel = new System.Windows.Forms.Label();
+            this.QuantityLabel = new System.Windows.Forms.Label();
             this.Tape.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -242,20 +247,57 @@ namespace AlgorithmTuringInterface
             this.PreviousElement.UseVisualStyleBackColor = true;
             this.PreviousElement.Click += new System.EventHandler(this.PreviousElement_Click);
             // 
+            // TapeWay
+            // 
+            resources.ApplyResources(this.TapeWay, "TapeWay");
+            this.TapeWay.Name = "TapeWay";
+            // 
+            // FindWay
+            // 
+            resources.ApplyResources(this.FindWay, "FindWay");
+            this.FindWay.Name = "FindWay";
+            this.FindWay.UseVisualStyleBackColor = true;
+            this.FindWay.Click += new System.EventHandler(this.FindWay_Click);
+            // 
+            // Read
+            // 
+            resources.ApplyResources(this.Read, "Read");
+            this.Read.Name = "Read";
+            this.Read.UseVisualStyleBackColor = true;
+            this.Read.Click += new System.EventHandler(this.Read_Click);
+            // 
+            // TapeLabel
+            // 
+            resources.ApplyResources(this.TapeLabel, "TapeLabel");
+            this.TapeLabel.Name = "TapeLabel";
+            // 
+            // QuantityLabel
+            // 
+            resources.ApplyResources(this.QuantityLabel, "QuantityLabel");
+            this.QuantityLabel.Name = "QuantityLabel";
+            this.QuantityLabel.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.QuantityLabel);
+            this.Controls.Add(this.TapeLabel);
+            this.Controls.Add(this.Read);
+            this.Controls.Add(this.FindWay);
+            this.Controls.Add(this.TapeWay);
             this.Controls.Add(this.PreviousElement);
             this.Controls.Add(this.NextElement);
             this.Controls.Add(this.Tape);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Tape.ResumeLayout(false);
             this.Tape.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -287,6 +329,11 @@ namespace AlgorithmTuringInterface
         private Button PreviousElement;
         private TextBox textBox16;
         private TextBox textBox12;
+        private TextBox TapeWay;
+        private Button FindWay;
+        private Button Read;
+        private Label TapeLabel;
+        private Label QuantityLabel;
     }
 }
 
