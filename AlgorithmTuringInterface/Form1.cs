@@ -81,7 +81,8 @@ namespace AlgorithmTuringInterface
 
         private void InitializeTape()
         {
-            InitializeTextBoxes();
+            if (textBoxes[0] == null)
+                InitializeTextBoxes();
             foreach(TextBox textbox in textBoxes)
             {
                 if (textbox.TabIndex <= 11)
@@ -103,16 +104,15 @@ namespace AlgorithmTuringInterface
             try
             {
                 box.Text = tape[index];
-                if (chosenIndex == index)
-                    box.BackColor = Color.LightYellow;
-                else
-                    box.BackColor = defaultColor;
             }
             catch
             {
                 box.Text = gap;
-                box.BackColor = defaultColor;
             }
+            if (chosenIndex == index)
+                box.BackColor = Color.LightYellow;
+            else
+                box.BackColor = defaultColor;
         }
 
         private void textBox9_TextChanged(object sender, EventArgs e)
@@ -237,6 +237,59 @@ namespace AlgorithmTuringInterface
                 // Displays the MessageBox.
                 MessageBox.Show(message, caption, buttons);
             }
+        }
+
+        private void StartBtn_Click(object sender, EventArgs e)
+        {
+            NextStepBtn.Enabled = true;
+            PreviousStepBtn.Enabled = true;
+            FinishBtn.Enabled = true;
+            StartBtn.Enabled = false;
+            ChooseElementIndexTextBox.Enabled = false;
+            ChooseElementIndexTextBox.Text = chosenIndex.ToString();
+            BtnComplete.Enabled = false;
+        }
+
+        private void FinishBtn_Click(object sender, EventArgs e)
+        {
+            NextStepBtn.Enabled = false;
+            PreviousStepBtn.Enabled = false;
+            FinishBtn.Enabled = false;
+            StartBtn.Enabled = true;
+            ChooseElementIndexTextBox.Enabled = true;
+            BtnComplete.Enabled = true;
+        }
+
+        private void ChooseElementIndexTextBox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void BtnComplete_Click(object sender, EventArgs e)
+        {
+            bool isSuccess = Int32.TryParse(ChooseElementIndexTextBox.Text, out int index);
+            if (isSuccess)
+            {
+                chosenIndex = index;
+                InitializeTape();
+                StartBtn.Enabled = true;
+            }
+            else
+            {
+                StartBtn.Enabled = false;
+                // Initializes the variables to pass to the MessageBox.Show method.
+                string message = "Введенный индекс не является целым числом.";
+                string caption = "Error Detected in Input";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+
+                // Displays the MessageBox.
+                MessageBox.Show(message, caption, buttons);
+            }
+        }
+
+        private void ChooseElementIndexLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

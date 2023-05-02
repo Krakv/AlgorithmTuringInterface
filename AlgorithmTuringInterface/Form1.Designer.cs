@@ -30,6 +30,7 @@ namespace AlgorithmTuringInterface
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MachineTuring));
             this.button1 = new System.Windows.Forms.Button();
             this.Tape = new System.Windows.Forms.TableLayoutPanel();
@@ -64,13 +65,23 @@ namespace AlgorithmTuringInterface
             this.FileComboBox = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редактироватьФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.множествоСостоянийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.редактироватьФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.StartBtn = new System.Windows.Forms.Button();
+            this.NextStepBtn = new System.Windows.Forms.Button();
+            this.PreviousStepBtn = new System.Windows.Forms.Button();
+            this.StartNFinishBtn = new System.Windows.Forms.Button();
+            this.FinishBtn = new System.Windows.Forms.Button();
+            this.ChooseElementIndexLabel = new System.Windows.Forms.Label();
+            this.ChooseElementIndexTextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.BtnComplete = new System.Windows.Forms.Button();
             this.Tape.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -302,6 +313,11 @@ namespace AlgorithmTuringInterface
             this.создатьФайлToolStripMenuItem.Name = "создатьФайлToolStripMenuItem";
             resources.ApplyResources(this.создатьФайлToolStripMenuItem, "создатьФайлToolStripMenuItem");
             // 
+            // редактироватьФайлToolStripMenuItem
+            // 
+            this.редактироватьФайлToolStripMenuItem.Name = "редактироватьФайлToolStripMenuItem";
+            resources.ApplyResources(this.редактироватьФайлToolStripMenuItem, "редактироватьФайлToolStripMenuItem");
+            // 
             // множествоСостоянийToolStripMenuItem
             // 
             this.множествоСостоянийToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -321,15 +337,63 @@ namespace AlgorithmTuringInterface
             this.создатьФайлToolStripMenuItem1.Name = "создатьФайлToolStripMenuItem1";
             resources.ApplyResources(this.создатьФайлToolStripMenuItem1, "создатьФайлToolStripMenuItem1");
             // 
-            // редактироватьФайлToolStripMenuItem
-            // 
-            this.редактироватьФайлToolStripMenuItem.Name = "редактироватьФайлToolStripMenuItem";
-            resources.ApplyResources(this.редактироватьФайлToolStripMenuItem, "редактироватьФайлToolStripMenuItem");
-            // 
             // редактироватьФайлToolStripMenuItem1
             // 
             this.редактироватьФайлToolStripMenuItem1.Name = "редактироватьФайлToolStripMenuItem1";
             resources.ApplyResources(this.редактироватьФайлToolStripMenuItem1, "редактироватьФайлToolStripMenuItem1");
+            // 
+            // StartBtn
+            // 
+            resources.ApplyResources(this.StartBtn, "StartBtn");
+            this.StartBtn.Name = "StartBtn";
+            this.StartBtn.UseVisualStyleBackColor = true;
+            this.StartBtn.Click += new System.EventHandler(this.StartBtn_Click);
+            // 
+            // NextStepBtn
+            // 
+            resources.ApplyResources(this.NextStepBtn, "NextStepBtn");
+            this.NextStepBtn.Name = "NextStepBtn";
+            this.NextStepBtn.UseVisualStyleBackColor = true;
+            // 
+            // PreviousStepBtn
+            // 
+            resources.ApplyResources(this.PreviousStepBtn, "PreviousStepBtn");
+            this.PreviousStepBtn.Name = "PreviousStepBtn";
+            this.PreviousStepBtn.UseVisualStyleBackColor = true;
+            // 
+            // StartNFinishBtn
+            // 
+            resources.ApplyResources(this.StartNFinishBtn, "StartNFinishBtn");
+            this.StartNFinishBtn.Name = "StartNFinishBtn";
+            this.StartNFinishBtn.UseVisualStyleBackColor = true;
+            // 
+            // FinishBtn
+            // 
+            resources.ApplyResources(this.FinishBtn, "FinishBtn");
+            this.FinishBtn.Name = "FinishBtn";
+            this.FinishBtn.UseVisualStyleBackColor = true;
+            this.FinishBtn.Click += new System.EventHandler(this.FinishBtn_Click);
+            // 
+            // ChooseElementIndexLabel
+            // 
+            resources.ApplyResources(this.ChooseElementIndexLabel, "ChooseElementIndexLabel");
+            this.ChooseElementIndexLabel.Name = "ChooseElementIndexLabel";
+            // 
+            // ChooseElementIndexTextBox
+            // 
+            resources.ApplyResources(this.ChooseElementIndexTextBox, "ChooseElementIndexTextBox");
+            this.ChooseElementIndexTextBox.Name = "ChooseElementIndexTextBox";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // BtnComplete
+            // 
+            resources.ApplyResources(this.BtnComplete, "BtnComplete");
+            this.BtnComplete.Name = "BtnComplete";
+            this.BtnComplete.UseVisualStyleBackColor = true;
+            this.BtnComplete.Click += new System.EventHandler(this.BtnComplete_Click);
             // 
             // MachineTuring
             // 
@@ -337,6 +401,14 @@ namespace AlgorithmTuringInterface
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.BtnComplete);
+            this.Controls.Add(this.ChooseElementIndexTextBox);
+            this.Controls.Add(this.ChooseElementIndexLabel);
+            this.Controls.Add(this.FinishBtn);
+            this.Controls.Add(this.StartNFinishBtn);
+            this.Controls.Add(this.PreviousStepBtn);
+            this.Controls.Add(this.NextStepBtn);
+            this.Controls.Add(this.StartBtn);
             this.Controls.Add(this.QuantityStates);
             this.Controls.Add(this.QuantityLabel);
             this.Controls.Add(this.TapeLabel);
@@ -354,6 +426,7 @@ namespace AlgorithmTuringInterface
             this.Tape.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,6 +472,15 @@ namespace AlgorithmTuringInterface
         private ToolStripMenuItem создатьФайлToolStripMenuItem1;
         private ToolStripMenuItem редактироватьФайлToolStripMenuItem;
         private ToolStripMenuItem редактироватьФайлToolStripMenuItem1;
+        private Button StartBtn;
+        private Button NextStepBtn;
+        private Button PreviousStepBtn;
+        private Button StartNFinishBtn;
+        private Button FinishBtn;
+        private Label ChooseElementIndexLabel;
+        private TextBox ChooseElementIndexTextBox;
+        private ErrorProvider errorProvider1;
+        private Button BtnComplete;
     }
 }
 
