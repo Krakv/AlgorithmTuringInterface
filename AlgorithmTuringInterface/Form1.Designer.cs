@@ -32,7 +32,6 @@ namespace AlgorithmTuringInterface
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MachineTuring));
-            this.button1 = new System.Windows.Forms.Button();
             this.Tape = new System.Windows.Forms.TableLayoutPanel();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
@@ -56,8 +55,6 @@ namespace AlgorithmTuringInterface
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.NextElement = new System.Windows.Forms.Button();
-            this.PreviousElement = new System.Windows.Forms.Button();
             this.TapeLabel = new System.Windows.Forms.Label();
             this.QuantityLabel = new System.Windows.Forms.Label();
             this.QuantityStates = new System.Windows.Forms.Panel();
@@ -79,17 +76,13 @@ namespace AlgorithmTuringInterface
             this.ChooseElementIndexTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.BtnComplete = new System.Windows.Forms.Button();
+            this.PreviousElement = new System.Windows.Forms.Button();
+            this.NextElement = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.Tape.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Tape
             // 
@@ -252,20 +245,6 @@ namespace AlgorithmTuringInterface
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
             // 
-            // NextElement
-            // 
-            resources.ApplyResources(this.NextElement, "NextElement");
-            this.NextElement.Name = "NextElement";
-            this.NextElement.UseVisualStyleBackColor = true;
-            this.NextElement.Click += new System.EventHandler(this.NextElement_Click);
-            // 
-            // PreviousElement
-            // 
-            resources.ApplyResources(this.PreviousElement, "PreviousElement");
-            this.PreviousElement.Name = "PreviousElement";
-            this.PreviousElement.UseVisualStyleBackColor = true;
-            this.PreviousElement.Click += new System.EventHandler(this.PreviousElement_Click);
-            // 
             // TapeLabel
             // 
             resources.ApplyResources(this.TapeLabel, "TapeLabel");
@@ -395,12 +374,40 @@ namespace AlgorithmTuringInterface
             this.BtnComplete.UseVisualStyleBackColor = true;
             this.BtnComplete.Click += new System.EventHandler(this.BtnComplete_Click);
             // 
+            // PreviousElement
+            // 
+            this.PreviousElement.BackgroundImage = global::AlgorithmTuringInterface.Properties.Resources.w512h5121390846436left512;
+            resources.ApplyResources(this.PreviousElement, "PreviousElement");
+            this.PreviousElement.Name = "PreviousElement";
+            this.PreviousElement.UseVisualStyleBackColor = true;
+            this.PreviousElement.Click += new System.EventHandler(this.PreviousElement_Click);
+            this.PreviousElement.Paint += new System.Windows.Forms.PaintEventHandler(this.PreviousElement_Paint);
+            // 
+            // NextElement
+            // 
+            this.NextElement.BackgroundImage = global::AlgorithmTuringInterface.Properties.Resources.w512h5121390846449right512;
+            resources.ApplyResources(this.NextElement, "NextElement");
+            this.NextElement.Name = "NextElement";
+            this.NextElement.UseVisualStyleBackColor = true;
+            this.NextElement.Click += new System.EventHandler(this.NextElement_Click);
+            this.NextElement.Paint += new System.Windows.Forms.PaintEventHandler(this.NextElement_Paint);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::AlgorithmTuringInterface.Properties.Resources._109164;
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Paint += new System.Windows.Forms.PaintEventHandler(this.button1_Paint);
+            // 
             // MachineTuring
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnComplete);
             this.Controls.Add(this.ChooseElementIndexTextBox);
             this.Controls.Add(this.ChooseElementIndexLabel);
@@ -415,7 +422,6 @@ namespace AlgorithmTuringInterface
             this.Controls.Add(this.PreviousElement);
             this.Controls.Add(this.NextElement);
             this.Controls.Add(this.Tape);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
