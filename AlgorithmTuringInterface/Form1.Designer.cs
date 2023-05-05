@@ -231,7 +231,6 @@ namespace AlgorithmTuringInterface
             resources.ApplyResources(this.textBox9, "textBox9");
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
-            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // textBox7
             // 
@@ -254,7 +253,6 @@ namespace AlgorithmTuringInterface
             // 
             resources.ApplyResources(this.QuantityLabel, "QuantityLabel");
             this.QuantityLabel.Name = "QuantityLabel";
-            this.QuantityLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // QuantityStates
             // 
@@ -279,7 +277,6 @@ namespace AlgorithmTuringInterface
             this.редактироватьФайлToolStripMenuItem});
             this.FileComboBox.Name = "FileComboBox";
             resources.ApplyResources(this.FileComboBox, "FileComboBox");
-            this.FileComboBox.Click += new System.EventHandler(this.FileComboBox_Click);
             // 
             // открытьФайлToolStripMenuItem
             // 
@@ -296,6 +293,7 @@ namespace AlgorithmTuringInterface
             // 
             this.редактироватьФайлToolStripMenuItem.Name = "редактироватьФайлToolStripMenuItem";
             resources.ApplyResources(this.редактироватьФайлToolStripMenuItem, "редактироватьФайлToolStripMenuItem");
+            this.редактироватьФайлToolStripMenuItem.Click += new System.EventHandler(this.редактироватьФайлToolStripMenuItem_Click);
             // 
             // множествоСостоянийToolStripMenuItem
             // 
@@ -320,6 +318,7 @@ namespace AlgorithmTuringInterface
             // 
             this.редактироватьФайлToolStripMenuItem1.Name = "редактироватьФайлToolStripMenuItem1";
             resources.ApplyResources(this.редактироватьФайлToolStripMenuItem1, "редактироватьФайлToolStripMenuItem1");
+            this.редактироватьФайлToolStripMenuItem1.Click += new System.EventHandler(this.редактироватьФайлToolStripMenuItem1_Click);
             // 
             // StartBtn
             // 
@@ -427,7 +426,6 @@ namespace AlgorithmTuringInterface
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "MachineTuring";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.Tape.ResumeLayout(false);
             this.Tape.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

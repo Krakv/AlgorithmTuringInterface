@@ -82,6 +82,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditQuantities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditQuantities.Designer.cs">
+      <DependentUpon>EditQuantities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,8 +100,20 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditTape.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTape.Designer.cs">
+      <DependentUpon>EditTape.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EditQuantities.resx">
+      <DependentUpon>EditQuantities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditTape.resx">
+      <DependentUpon>EditTape.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

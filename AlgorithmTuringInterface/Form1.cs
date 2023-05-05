@@ -8,16 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace AlgorithmTuringInterface
 {
     public partial class MachineTuring : Form
     {
-        Dictionary<int, string> tape = new Dictionary<int, string>();
-        int shift = 0;
+        Dictionary<long, string> tape = new Dictionary<long, string>();
+        long shift = 0;
         TextBox[] textBoxes = new TextBox[22];
-        int chosenIndex = 0;
+        long chosenIndex = 0;
+        string[] quantities = { "Q1", "Q2", "Q3", "Q4", "Q5"};
+        Dictionary<string, List<string>> actions = new Dictionary<string, List<string>>();
 
         public MachineTuring()
         {
@@ -55,8 +56,6 @@ namespace AlgorithmTuringInterface
         {
             shift = chosenIndex;
             InitializeTape();
-            QuantityStatesForm frm = new QuantityStatesForm() { TopLevel = false, Dock = DockStyle.Fill, TopMost = true };
-            this.QuantityStates.Controls.Add(frm);
         }
 
         private void PreviousElement_Click(object sender, EventArgs e)
@@ -92,15 +91,15 @@ namespace AlgorithmTuringInterface
             }
         }
 
-        private void PrintIndex(TextBox box, int shift)
+        private void PrintIndex(TextBox box, long shift)
         {
             box.Text = (box.TabIndex - 6 + shift).ToString();
         }
 
-        private void PrintTapeElement(TextBox box, int shift, string gap = "")
+        private void PrintTapeElement(TextBox box, long shift, string gap = "")
         {
             Color defaultColor = Color.FromArgb(255, 240, 240, 240);
-            int index = box.TabIndex - 17 + shift;
+            long index = box.TabIndex - 17 + shift;
             try
             {
                 box.Text = tape[index];
@@ -113,13 +112,8 @@ namespace AlgorithmTuringInterface
                 box.BackColor = Color.LightYellow;
             else
                 box.BackColor = defaultColor;
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
 
         }
-
         //private void FindWay_Click(object sender, EventArgs e)
         //{
         //    var fileContent = string.Empty;
@@ -170,26 +164,11 @@ namespace AlgorithmTuringInterface
         //    }
         //}
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            QuantityStatesForm frm = new QuantityStatesForm() { BackColor = Color.White, TopLevel = false, Dock = DockStyle.Fill, TopMost = true};
+            QuantityStatesForm frm = new QuantityStatesForm(quantities, actions) { BackColor = Color.White, TopLevel = false, Dock = DockStyle.Fill, TopMost = true};
             this.QuantityStates.Controls.Add(frm);
             frm.Show();
-        }
-
-        private void FileComboBox_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void открытьФайлToolStripMenuItem_Click(object sender, EventArgs e)
@@ -231,7 +210,7 @@ namespace AlgorithmTuringInterface
             {
                 // Initializes the variables to pass to the MessageBox.Show method.
                 string message = "Не удалось считать файл из выбранного пути.";
-                string caption = "Error Detected in Input";
+                string caption = "Ошибка ввода";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
 
                 // Displays the MessageBox.
@@ -260,11 +239,6 @@ namespace AlgorithmTuringInterface
             BtnComplete.Enabled = true;
         }
 
-        private void ChooseElementIndexTextBox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void BtnComplete_Click(object sender, EventArgs e)
         {
             bool isSuccess = Int32.TryParse(ChooseElementIndexTextBox.Text, out int index);
@@ -279,12 +253,13 @@ namespace AlgorithmTuringInterface
                 StartBtn.Enabled = false;
                 // Initializes the variables to pass to the MessageBox.Show method.
                 string message = "Введенный индекс не является целым числом.";
-                string caption = "Error Detected in Input";
+                string caption = "Ошибка ввода";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
 
                 // Displays the MessageBox.
                 MessageBox.Show(message, caption, buttons);
             }
+            ChooseElementIndexTextBox.Focus();
         }
 
         private void NextElement_Paint(object sender, PaintEventArgs e)
@@ -366,6 +341,18 @@ namespace AlgorithmTuringInterface
             // Set the button's Region property to the newly created 
             // circle region.
             button1.Region = new System.Drawing.Region(buttonPath);
+        }
+
+        private void редактироватьФайлToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditTape editTape = new EditTape(tape);
+            editTape.Show();
+        }
+
+        private void редактироватьФайлToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            EditQuantities editQuantities = new EditQuantities(quantities, actions);
+            editQuantities.Show();
         }
     }
 }

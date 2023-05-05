@@ -13,11 +13,13 @@ namespace AlgorithmTuringInterface
 {
     public partial class QuantityStatesForm : Form
     {
-        string[] quantities = { "Q1", "Q2", "Q3", "Q4", "Q5", "Q2", "Q3", "Q4", "Q5", "Q2", "Q3", "Q4", "Q5", "Q2", "Q3", "Q4", "Q5" };
-        Dictionary<string, List<string>> actions = new Dictionary<string, List<string>>();
+        string[] quantities;
+        Dictionary<string, List<string>> actions;
 
-        public QuantityStatesForm()
+        public QuantityStatesForm(string[] quantities, Dictionary<string, List<string>> actions)
         {
+            this.quantities = quantities;
+            this.actions = actions;
             InitializeActions();
             InitializeComponent();
             QuantitiesTable_Paint();
