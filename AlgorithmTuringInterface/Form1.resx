@@ -1057,13 +1057,13 @@
     <value>10</value>
   </data>
   <data name="QuantityStates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 262</value>
+    <value>12, 262</value>
   </data>
   <data name="QuantityStates.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="QuantityStates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>781, 237</value>
+    <value>772, 237</value>
   </data>
   <data name="QuantityStates.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1083,54 +1083,6 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="открытьФайлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 22</value>
-  </data>
-  <data name="открытьФайлToolStripMenuItem.Text" xml:space="preserve">
-    <value>Открыть файл</value>
-  </data>
-  <data name="создатьФайлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 22</value>
-  </data>
-  <data name="создатьФайлToolStripMenuItem.Text" xml:space="preserve">
-    <value>Создать файл</value>
-  </data>
-  <data name="редактироватьФайлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 22</value>
-  </data>
-  <data name="редактироватьФайлToolStripMenuItem.Text" xml:space="preserve">
-    <value>Редактировать файл</value>
-  </data>
-  <data name="FileComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 20</value>
-  </data>
-  <data name="FileComboBox.Text" xml:space="preserve">
-    <value>Лента</value>
-  </data>
-  <data name="открытьФайлToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 22</value>
-  </data>
-  <data name="открытьФайлToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Открыть Файл</value>
-  </data>
-  <data name="создатьФайлToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 22</value>
-  </data>
-  <data name="создатьФайлToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Создать файл</value>
-  </data>
-  <data name="редактироватьФайлToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 22</value>
-  </data>
-  <data name="редактироватьФайлToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Редактировать файл</value>
-  </data>
-  <data name="множествоСостоянийToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 20</value>
-  </data>
-  <data name="множествоСостоянийToolStripMenuItem.Text" xml:space="preserve">
-    <value>Множество состояний</value>
-  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -1157,6 +1109,54 @@
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>15</value>
+  </data>
+  <data name="FileComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 20</value>
+  </data>
+  <data name="FileComboBox.Text" xml:space="preserve">
+    <value>Лента</value>
+  </data>
+  <data name="открытьФайлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 22</value>
+  </data>
+  <data name="открытьФайлToolStripMenuItem.Text" xml:space="preserve">
+    <value>Открыть файл</value>
+  </data>
+  <data name="создатьФайлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 22</value>
+  </data>
+  <data name="создатьФайлToolStripMenuItem.Text" xml:space="preserve">
+    <value>Создать файл</value>
+  </data>
+  <data name="редактироватьФайлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 22</value>
+  </data>
+  <data name="редактироватьФайлToolStripMenuItem.Text" xml:space="preserve">
+    <value>Редактировать файл</value>
+  </data>
+  <data name="множествоСостоянийToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 20</value>
+  </data>
+  <data name="множествоСостоянийToolStripMenuItem.Text" xml:space="preserve">
+    <value>Множество состояний</value>
+  </data>
+  <data name="открытьФайлToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 22</value>
+  </data>
+  <data name="открытьФайлToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Открыть Файл</value>
+  </data>
+  <data name="создатьФайлToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 22</value>
+  </data>
+  <data name="создатьФайлToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Создать файл</value>
+  </data>
+  <data name="редактироватьФайлToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 22</value>
+  </data>
+  <data name="редактироватьФайлToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Редактировать файл</value>
   </data>
   <data name="StartBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>

@@ -28,21 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.QuantitiesTable = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
+            // 
+            // QuantitiesTable
+            // 
+            this.QuantitiesTable.AutoSize = true;
+            this.QuantitiesTable.BackColor = System.Drawing.SystemColors.Window;
+            this.QuantitiesTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.QuantitiesTable.ColumnCount = 1;
+            this.QuantitiesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.QuantitiesTable.Location = new System.Drawing.Point(0, 0);
+            this.QuantitiesTable.Name = "QuantitiesTable";
+            this.QuantitiesTable.RowCount = 1;
+            this.QuantitiesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.QuantitiesTable.Size = new System.Drawing.Size(200, 100);
+            this.QuantitiesTable.TabIndex = 0;
             // 
             // QuantityStatesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.QuantitiesTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "QuantityStatesForm";
             this.Text = "Form2";
+            this.Deactivate += new System.EventHandler(this.QuantityStatesForm_Deactivate);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TableLayoutPanel QuantitiesTable;
     }
 }

@@ -28,8 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.table = new System.Windows.Forms.DataGridView();
+            this.AddRowBtn = new System.Windows.Forms.Button();
+            this.RowNameLbl = new System.Windows.Forms.Label();
+            this.RowNameTxtBx = new System.Windows.Forms.TextBox();
+            this.DelRowBtn = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // table
@@ -44,22 +51,82 @@
             this.table.Size = new System.Drawing.Size(1097, 515);
             this.table.TabIndex = 0;
             // 
+            // AddRowBtn
+            // 
+            this.AddRowBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AddRowBtn.Location = new System.Drawing.Point(381, 532);
+            this.AddRowBtn.Name = "AddRowBtn";
+            this.AddRowBtn.Size = new System.Drawing.Size(175, 31);
+            this.AddRowBtn.TabIndex = 1;
+            this.AddRowBtn.Text = "Добавить";
+            this.AddRowBtn.UseVisualStyleBackColor = true;
+            this.AddRowBtn.Click += new System.EventHandler(this.AddRowBtn_Click);
+            // 
+            // RowNameLbl
+            // 
+            this.RowNameLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.RowNameLbl.AutoSize = true;
+            this.RowNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RowNameLbl.Location = new System.Drawing.Point(12, 535);
+            this.RowNameLbl.Name = "RowNameLbl";
+            this.RowNameLbl.Size = new System.Drawing.Size(284, 25);
+            this.RowNameLbl.TabIndex = 2;
+            this.RowNameLbl.Text = "Введите символ алфавита:";
+            // 
+            // RowNameTxtBx
+            // 
+            this.RowNameTxtBx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.RowNameTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RowNameTxtBx.Location = new System.Drawing.Point(292, 532);
+            this.RowNameTxtBx.Name = "RowNameTxtBx";
+            this.RowNameTxtBx.Size = new System.Drawing.Size(83, 31);
+            this.RowNameTxtBx.TabIndex = 3;
+            this.RowNameTxtBx.TextChanged += new System.EventHandler(this.RowNameTxtBx_TextChanged);
+            this.RowNameTxtBx.Validating += new System.ComponentModel.CancelEventHandler(this.RowNameTxtBx_Validating);
+            // 
+            // DelRowBtn
+            // 
+            this.DelRowBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.DelRowBtn.Location = new System.Drawing.Point(562, 532);
+            this.DelRowBtn.Name = "DelRowBtn";
+            this.DelRowBtn.Size = new System.Drawing.Size(175, 31);
+            this.DelRowBtn.TabIndex = 4;
+            this.DelRowBtn.Text = "Удалить";
+            this.DelRowBtn.UseVisualStyleBackColor = true;
+            this.DelRowBtn.Click += new System.EventHandler(this.DelRowBtn_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // EditQuantities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1121, 608);
+            this.Controls.Add(this.DelRowBtn);
+            this.Controls.Add(this.RowNameTxtBx);
+            this.Controls.Add(this.RowNameLbl);
+            this.Controls.Add(this.AddRowBtn);
             this.Controls.Add(this.table);
             this.Name = "EditQuantities";
             this.Text = "EditQuantities";
             this.Activated += new System.EventHandler(this.EditQuantities_Activated);
+            this.Deactivate += new System.EventHandler(this.EditQuantities_Deactivate);
             ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView table;
+        private System.Windows.Forms.Button AddRowBtn;
+        private System.Windows.Forms.Label RowNameLbl;
+        private System.Windows.Forms.TextBox RowNameTxtBx;
+        private System.Windows.Forms.Button DelRowBtn;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

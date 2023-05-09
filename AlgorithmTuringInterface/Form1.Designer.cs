@@ -426,6 +426,8 @@ namespace AlgorithmTuringInterface
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "MachineTuring";
+            this.Activated += new System.EventHandler(this.MachineTuring_Activated);
+            this.Enter += new System.EventHandler(this.MachineTuring_Enter);
             this.Tape.ResumeLayout(false);
             this.Tape.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

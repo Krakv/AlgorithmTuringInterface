@@ -17,13 +17,33 @@ namespace AlgorithmTuringInterface
         long shift = 0;
         TextBox[] textBoxes = new TextBox[22];
         long chosenIndex = 0;
-        string[] quantities = { "Q1", "Q2", "Q3", "Q4", "Q5"};
-        Dictionary<string, List<string>> actions = new Dictionary<string, List<string>>();
 
         public MachineTuring()
         {
+            InitializeActions();
             InitializeTextBoxes();
             InitializeComponent();
+        }
+
+        private void InitializeActions()
+        {
+            try
+            {
+                Data.actions.Add("0", new List<string> { "0>Q5", "0>Q5", "0>Q5", "0>Q5", "0>Q5" });
+                Data.actions.Add("1", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.actions.Add("2", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.actions.Add("3", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.actions.Add("4", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.actions.Add("5", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.actions.Add("6", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.actions.Add("7", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.actions.Add("8", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.actions.Add("9", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+            }
+            catch
+            {
+                //nothing
+            }
         }
 
         private void InitializeTextBoxes()
@@ -114,61 +134,18 @@ namespace AlgorithmTuringInterface
                 box.BackColor = defaultColor;
 
         }
-        //private void FindWay_Click(object sender, EventArgs e)
-        //{
-        //    var fileContent = string.Empty;
-        //    var filePath = string.Empty;
 
-        //    using (OpenFileDialog openFileDialog = new OpenFileDialog())
-        //    {
-        //        openFileDialog.InitialDirectory = "c:\\";
-        //        openFileDialog.Filter = "csv files (*.csv)|*.csv";
-        //        openFileDialog.FilterIndex = 2;
-        //        openFileDialog.RestoreDirectory = true;
-
-        //        if (openFileDialog.ShowDialog() == DialogResult.OK)
-        //        {
-        //            //Get the path of specified file
-        //            filePath = openFileDialog.FileName;
-
-        //            //Read the contents of the file into a stream
-        //            var fileStream = openFileDialog.OpenFile();
-
-        //            using (StreamReader reader = new StreamReader(fileStream))
-        //            {
-        //                fileContent = reader.ReadToEnd();
-        //            }
-        //        }
-        //        if (filePath != string.Empty)
-        //        {
-        //            this.TapeWay.Text = filePath;
-        //        }
-        //    }
-        //}
-
-        //private void Read_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //       string path = File.ReadAllText(TapeWay.Text);
-        //    }
-        //    catch
-        //    {
-        //        // Initializes the variables to pass to the MessageBox.Show method.
-        //        string message = "Не удалось считать файл из выбранного пути.";
-        //        string caption = "Error Detected in Input";
-        //        MessageBoxButtons buttons = MessageBoxButtons.OK;
-
-        //        // Displays the MessageBox.
-        //        MessageBox.Show(message, caption, buttons);
-        //    }
-        //}
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        public void InitializePanel1Paint()
         {
-            QuantityStatesForm frm = new QuantityStatesForm(quantities, actions) { BackColor = Color.White, TopLevel = false, Dock = DockStyle.Fill, TopMost = true};
+            QuantityStatesForm frm = new QuantityStatesForm() { BackColor = Color.White, TopLevel = false, Dock = DockStyle.Fill, TopMost = true };
             this.QuantityStates.Controls.Add(frm);
             frm.Show();
+            //QuantityStates.Controls.RemoveAt(0);
+        }
+
+        public void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            InitializePanel1Paint();
         }
 
         private void открытьФайлToolStripMenuItem_Click(object sender, EventArgs e)
@@ -274,9 +251,6 @@ namespace AlgorithmTuringInterface
             // Decrease the size of the rectangle.
             newRectangle.Inflate(-3, -3);
 
-            // Draw the button's border.
-            //e.Graphics.DrawEllipse(System.Drawing.Pens.Black, newRectangle);
-
             // Increase the size of the rectangle to include the border.
             newRectangle.Inflate(1, 1);
 
@@ -299,9 +273,6 @@ namespace AlgorithmTuringInterface
 
             // Decrease the size of the rectangle.
             newRectangle.Inflate(-3, -3);
-
-            // Draw the button's border.
-            //e.Graphics.DrawEllipse(System.Drawing.Pens.Black, newRectangle);
 
             // Increase the size of the rectangle to include the border.
             newRectangle.Inflate(1, 1);
@@ -329,9 +300,6 @@ namespace AlgorithmTuringInterface
             // Decrease the size of the rectangle.
             newRectangle.Inflate(-3, -3);
 
-            // Draw the button's border.
-            //e.Graphics.DrawEllipse(System.Drawing.Pens.Black, newRectangle);
-
             // Increase the size of the rectangle to include the border.
             newRectangle.Inflate(1, 1);
 
@@ -351,8 +319,20 @@ namespace AlgorithmTuringInterface
 
         private void редактироватьФайлToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            EditQuantities editQuantities = new EditQuantities(quantities, actions);
+            EditQuantities editQuantities = new EditQuantities(this);
+            editQuantities.Owner = this;
             editQuantities.Show();
+            Enabled = false;
+        }
+
+        private void MachineTuring_Enter(object sender, EventArgs e)
+        {
+            InitializePanel1Paint();
+        }
+
+        private void MachineTuring_Activated(object sender, EventArgs e)
+        {
+            QuantityStates.Controls.Clear();
         }
     }
 }
