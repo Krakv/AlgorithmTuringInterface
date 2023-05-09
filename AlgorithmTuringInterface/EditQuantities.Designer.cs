@@ -111,7 +111,6 @@
             this.Controls.Add(this.table);
             this.Name = "EditQuantities";
             this.Text = "EditQuantities";
-            this.Activated += new System.EventHandler(this.EditQuantities_Activated);
             this.Deactivate += new System.EventHandler(this.EditQuantities_Deactivate);
             ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

@@ -324,15 +324,5 @@ namespace AlgorithmTuringInterface
             editQuantities.Show();
             Enabled = false;
         }
-
-        private void MachineTuring_Enter(object sender, EventArgs e)
-        {
-            InitializePanel1Paint();
-        }
-
-        private void MachineTuring_Activated(object sender, EventArgs e)
-        {
-            QuantityStates.Controls.Clear();
-        }
     }
 }

@@ -44,11 +44,6 @@ namespace AlgorithmTuringInterface
             }
         }
 
-        private void EditQuantities_Activated(object sender, EventArgs e)
-        {
-            
-        }
-
         private void AddRowBtn_Click(object sender, EventArgs e)
         {
             // если введенный символ уже содержится в алфавите
@@ -62,6 +57,7 @@ namespace AlgorithmTuringInterface
                     return;
                 }
             }
+            // если введенный символ удовлетворяет ограничениям
             {
                 DataGridViewRow row = new DataGridViewRow() { HeaderCell = new DataGridViewRowHeaderCell() { Value = RowNameTxtBx.Text } };
                 table.Rows.Add(row);
@@ -123,7 +119,7 @@ namespace AlgorithmTuringInterface
             // если в алфавит подается несколько символов или ни одного
             if (RowNameTxtBx.Text.Length != 1)
             {
-                errorProvider1.SetError(RowNameTxtBx, "Каждый элемент алфавита должен являться одним символом.");
+                errorProvider1.SetError(RowNameTxtBx, "Элемент алфавита должен являться одним символом.");
                 AddRowBtn.Enabled = false;
                 DelRowBtn.Enabled = false;
                 return;
