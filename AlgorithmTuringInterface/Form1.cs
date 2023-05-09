@@ -91,10 +91,6 @@ namespace AlgorithmTuringInterface
 
         private void Tape_Paint(object sender, PaintEventArgs e)
         {
-            tape[-4] = "0";
-            tape[-1] = "1";
-            tape[0] = "0";
-            tape[1] = "1";
             InitializeTape();
         }
 
@@ -322,7 +318,11 @@ namespace AlgorithmTuringInterface
             EditQuantities editQuantities = new EditQuantities(this);
             editQuantities.Owner = this;
             editQuantities.Show();
-            Enabled = false;
+        }
+
+        private void MachineTuring_Activated(object sender, EventArgs e)
+        {
+            QuantityStates.Controls.Clear();
         }
     }
 }
