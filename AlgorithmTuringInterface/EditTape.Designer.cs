@@ -111,98 +111,119 @@
             // 
             // textBox12
             // 
+            this.textBox12.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox12.BackColor = System.Drawing.SystemColors.Window;
             this.textBox12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F);
             this.textBox12.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox12.Location = new System.Drawing.Point(3, 38);
+            this.textBox12.MaxLength = 1;
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(59, 46);
             this.textBox12.TabIndex = 12;
             this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
+            this.textBox12.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxes_Validating);
+            this.textBox12.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
             // textBox16
             // 
+            this.textBox16.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox16.BackColor = System.Drawing.SystemColors.Window;
             this.textBox16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F);
             this.textBox16.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox16.Location = new System.Drawing.Point(263, 38);
+            this.textBox16.MaxLength = 1;
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(59, 46);
             this.textBox16.TabIndex = 16;
             this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox16.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
+            this.textBox16.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxes_Validating);
+            this.textBox16.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
             // textBox17
             // 
+            this.textBox17.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox17.BackColor = System.Drawing.SystemColors.Window;
             this.textBox17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F);
             this.textBox17.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox17.Location = new System.Drawing.Point(328, 38);
+            this.textBox17.MaxLength = 1;
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(59, 46);
             this.textBox17.TabIndex = 17;
             this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox17.TextChanged += new System.EventHandler(this.textBox17_TextChanged);
+            this.textBox17.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxes_Validating);
+            this.textBox17.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
             // textBox15
             // 
+            this.textBox15.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox15.BackColor = System.Drawing.SystemColors.Window;
             this.textBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F);
             this.textBox15.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox15.Location = new System.Drawing.Point(198, 38);
+            this.textBox15.MaxLength = 1;
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(59, 46);
             this.textBox15.TabIndex = 15;
             this.textBox15.Text = "\r\n";
             this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox15.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
+            this.textBox15.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxes_Validating);
+            this.textBox15.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
             // textBox13
             // 
+            this.textBox13.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox13.BackColor = System.Drawing.SystemColors.Window;
             this.textBox13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F);
             this.textBox13.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox13.Location = new System.Drawing.Point(68, 38);
+            this.textBox13.MaxLength = 1;
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(59, 46);
             this.textBox13.TabIndex = 13;
             this.textBox13.Text = "\r\n";
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox13.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
+            this.textBox13.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxes_Validating);
+            this.textBox13.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
             // textBox14
             // 
+            this.textBox14.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox14.BackColor = System.Drawing.SystemColors.Window;
             this.textBox14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F);
             this.textBox14.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox14.Location = new System.Drawing.Point(133, 38);
+            this.textBox14.MaxLength = 1;
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(59, 46);
             this.textBox14.TabIndex = 14;
             this.textBox14.Text = "\r\n";
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox14.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
+            this.textBox14.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxes_Validating);
+            this.textBox14.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
             // textBox21
             // 
+            this.textBox21.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox21.BackColor = System.Drawing.SystemColors.Window;
             this.textBox21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F);
             this.textBox21.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox21.Location = new System.Drawing.Point(588, 38);
+            this.textBox21.MaxLength = 1;
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(59, 46);
             this.textBox21.TabIndex = 21;
             this.textBox21.Text = "\r\n";
             this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox21.TextChanged += new System.EventHandler(this.textBox21_TextChanged);
+            this.textBox21.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxes_Validating);
+            this.textBox21.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
             // textBox2
             // 
@@ -219,59 +240,71 @@
             // 
             // textBox22
             // 
+            this.textBox22.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox22.BackColor = System.Drawing.SystemColors.Window;
             this.textBox22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F);
             this.textBox22.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox22.Location = new System.Drawing.Point(653, 38);
+            this.textBox22.MaxLength = 1;
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(68, 46);
             this.textBox22.TabIndex = 22;
             this.textBox22.Text = "\r\n";
             this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox22.TextChanged += new System.EventHandler(this.textBox22_TextChanged);
+            this.textBox22.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxes_Validating);
+            this.textBox22.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
             // textBox20
             // 
+            this.textBox20.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox20.BackColor = System.Drawing.SystemColors.Window;
             this.textBox20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F);
             this.textBox20.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox20.Location = new System.Drawing.Point(523, 38);
+            this.textBox20.MaxLength = 1;
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(59, 46);
             this.textBox20.TabIndex = 20;
             this.textBox20.Text = "\r\n";
             this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox20.TextChanged += new System.EventHandler(this.textBox20_TextChanged);
+            this.textBox20.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxes_Validating);
+            this.textBox20.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
             // textBox18
             // 
+            this.textBox18.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox18.BackColor = System.Drawing.SystemColors.Window;
             this.textBox18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F);
             this.textBox18.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox18.Location = new System.Drawing.Point(393, 38);
+            this.textBox18.MaxLength = 1;
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(59, 46);
             this.textBox18.TabIndex = 18;
             this.textBox18.Text = "\r\n";
             this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox18.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
+            this.textBox18.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxes_Validating);
+            this.textBox18.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
             // textBox19
             // 
+            this.textBox19.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox19.BackColor = System.Drawing.SystemColors.Window;
             this.textBox19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F);
             this.textBox19.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox19.Location = new System.Drawing.Point(458, 38);
+            this.textBox19.MaxLength = 1;
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(59, 46);
             this.textBox19.TabIndex = 19;
             this.textBox19.Text = "\r\n";
             this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox19.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
+            this.textBox19.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxes_Validating);
+            this.textBox19.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
             // textBox4
             // 
@@ -353,6 +386,7 @@
             // 
             // textBox11
             // 
+            this.textBox11.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F);
             this.textBox11.ImeMode = System.Windows.Forms.ImeMode.On;

@@ -85,11 +85,11 @@
             this.RowNameTxtBx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.RowNameTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RowNameTxtBx.Location = new System.Drawing.Point(490, 533);
+            this.RowNameTxtBx.MaxLength = 1;
             this.RowNameTxtBx.Name = "RowNameTxtBx";
             this.RowNameTxtBx.Size = new System.Drawing.Size(83, 31);
             this.RowNameTxtBx.TabIndex = 3;
             this.RowNameTxtBx.TextChanged += new System.EventHandler(this.RowNameTxtBx_TextChanged);
-            this.RowNameTxtBx.Validating += new System.ComponentModel.CancelEventHandler(this.RowNameTxtBx_Validating);
             // 
             // DelRowBtn
             // 
@@ -122,6 +122,7 @@
             this.ColumnNameTxtBx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ColumnNameTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ColumnNameTxtBx.Location = new System.Drawing.Point(490, 570);
+            this.ColumnNameTxtBx.MaxLength = 10;
             this.ColumnNameTxtBx.Name = "ColumnNameTxtBx";
             this.ColumnNameTxtBx.Size = new System.Drawing.Size(83, 31);
             this.ColumnNameTxtBx.TabIndex = 7;

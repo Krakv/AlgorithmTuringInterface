@@ -17,6 +17,7 @@ namespace AlgorithmTuringInterface
         long shift = 0;
         TextBox[] textBoxes = new TextBox[22];
         long chosenIndex = 0;
+        
 
         public MachineTuring()
         {
@@ -72,6 +73,8 @@ namespace AlgorithmTuringInterface
             textBoxes[21] = textBox22;
         }
 
+        #region Buttons
+
         private void button1_Click(object sender, EventArgs e)
         {
             shift = chosenIndex;
@@ -88,6 +91,52 @@ namespace AlgorithmTuringInterface
             shift++;
             InitializeTape();
         }
+
+        private void StartBtn_Click(object sender, EventArgs e)
+        {
+            NextStepBtn.Enabled = true;
+            PreviousStepBtn.Enabled = true;
+            FinishBtn.Enabled = true;
+            StartBtn.Enabled = false;
+            //ChooseElementIndexTextBox.Enabled = false;
+            //ChooseElementIndexTextBox.Text = chosenIndex.ToString();
+            //BtnComplete.Enabled = false;
+        }
+
+        private void FinishBtn_Click(object sender, EventArgs e)
+        {
+            NextStepBtn.Enabled = false;
+            PreviousStepBtn.Enabled = false;
+            FinishBtn.Enabled = false;
+            StartBtn.Enabled = true;
+            //ChooseElementIndexTextBox.Enabled = true;
+            //BtnComplete.Enabled = true;
+        }
+
+        //private void BtnComplete_Click(object sender, EventArgs e)
+        //{
+        //    bool isSuccess = Int32.TryParse(ChooseElementIndexTextBox.Text, out int index);
+        //    if (isSuccess)
+        //    {
+        //        chosenIndex = index;
+        //        InitializeTape();
+        //        StartBtn.Enabled = true;
+        //    }
+        //    else
+        //    {
+        //        StartBtn.Enabled = false;
+        //        // Initializes the variables to pass to the MessageBox.Show method.
+        //        string message = "Введенный индекс не является целым числом.";
+        //        string caption = "Ошибка ввода";
+        //        MessageBoxButtons buttons = MessageBoxButtons.OK;
+
+        //        // Displays the MessageBox.
+        //        MessageBox.Show(message, caption, buttons);
+        //    }
+        //    ChooseElementIndexTextBox.Focus();
+        //}
+
+        #endregion Buttons
 
         private void Tape_Paint(object sender, PaintEventArgs e)
         {
@@ -136,7 +185,6 @@ namespace AlgorithmTuringInterface
             QuantityStatesForm frm = new QuantityStatesForm() { BackColor = Color.White, TopLevel = false, Dock = DockStyle.Fill, TopMost = true };
             this.QuantityStates.Controls.Add(frm);
             frm.Show();
-            //QuantityStates.Controls.RemoveAt(0);
         }
 
         public void panel1_Paint(object sender, PaintEventArgs e)
@@ -144,40 +192,13 @@ namespace AlgorithmTuringInterface
             InitializePanel1Paint();
         }
 
-        private void открытьФайлToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenTapeFile_Click(object sender, EventArgs e)
         {
             string tapePath = string.Empty;
             try
             {
-                var fileContent = string.Empty;
-                var filePath = string.Empty;
-
-                using (OpenFileDialog openFileDialog = new OpenFileDialog())
-                {
-                    openFileDialog.InitialDirectory = "c:\\";
-                    openFileDialog.Filter = "csv files (*.csv)|*.csv";
-                    openFileDialog.FilterIndex = 2;
-                    openFileDialog.RestoreDirectory = true;
-
-                    if (openFileDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        //Get the path of specified file
-                        filePath = openFileDialog.FileName;
-
-                        //Read the contents of the file into a stream
-                        var fileStream = openFileDialog.OpenFile();
-
-                        using (StreamReader reader = new StreamReader(fileStream))
-                        {
-                            fileContent = reader.ReadToEnd();
-                        }
-                    }
-                    if (filePath != string.Empty)
-                    {
-                        tapePath = filePath;
-                    }
-                }
-                string path = File.ReadAllText(tapePath);
+                tapePath = Program.FindPathManually();
+                tape = Program.ReadTape(tapePath);
             }
             catch
             {
@@ -191,49 +212,6 @@ namespace AlgorithmTuringInterface
             }
         }
 
-        private void StartBtn_Click(object sender, EventArgs e)
-        {
-            NextStepBtn.Enabled = true;
-            PreviousStepBtn.Enabled = true;
-            FinishBtn.Enabled = true;
-            StartBtn.Enabled = false;
-            ChooseElementIndexTextBox.Enabled = false;
-            ChooseElementIndexTextBox.Text = chosenIndex.ToString();
-            BtnComplete.Enabled = false;
-        }
-
-        private void FinishBtn_Click(object sender, EventArgs e)
-        {
-            NextStepBtn.Enabled = false;
-            PreviousStepBtn.Enabled = false;
-            FinishBtn.Enabled = false;
-            StartBtn.Enabled = true;
-            ChooseElementIndexTextBox.Enabled = true;
-            BtnComplete.Enabled = true;
-        }
-
-        private void BtnComplete_Click(object sender, EventArgs e)
-        {
-            bool isSuccess = Int32.TryParse(ChooseElementIndexTextBox.Text, out int index);
-            if (isSuccess)
-            {
-                chosenIndex = index;
-                InitializeTape();
-                StartBtn.Enabled = true;
-            }
-            else
-            {
-                StartBtn.Enabled = false;
-                // Initializes the variables to pass to the MessageBox.Show method.
-                string message = "Введенный индекс не является целым числом.";
-                string caption = "Ошибка ввода";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-
-                // Displays the MessageBox.
-                MessageBox.Show(message, caption, buttons);
-            }
-            ChooseElementIndexTextBox.Focus();
-        }
 
         private void NextElement_Paint(object sender, PaintEventArgs e)
         {
@@ -307,15 +285,15 @@ namespace AlgorithmTuringInterface
             button1.Region = new System.Drawing.Region(buttonPath);
         }
 
-        private void редактироватьФайлToolStripMenuItem_Click(object sender, EventArgs e)
+        private void EditTapeFile_Click(object sender, EventArgs e)
         {
             EditTape editTape = new EditTape(tape);
             editTape.Show();
         }
 
-        private void редактироватьФайлToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void EditQuantitiesFile_Click(object sender, EventArgs e)
         {
-            EditQuantities editQuantities = new EditQuantities(this);
+            EditQuantities editQuantities = new EditQuantities(this, Data.quantities, Data.actions);
             editQuantities.Owner = this;
             editQuantities.Show();
         }
@@ -323,6 +301,41 @@ namespace AlgorithmTuringInterface
         private void MachineTuring_Activated(object sender, EventArgs e)
         {
             QuantityStates.Controls.Clear();
+        }
+
+        private void CreateTapeFile_Click(object sender, EventArgs e)
+        {
+            EditTape editTape = new EditTape(new Dictionary<long, string>());
+            editTape.Show();
+        }
+
+        private void CreateQuantitiesFile_Click(object sender, EventArgs e)
+        {
+            EditQuantities editQuantities = new EditQuantities(this, new string[0], new Dictionary<string, List<string>>());
+            editQuantities.Owner = this;
+            editQuantities.Show();
+        }
+
+        private void OpenQuantitiesFile_Click(object sender, EventArgs e)
+        {
+            string actionsPath = string.Empty;
+            try
+            {
+                actionsPath = Program.FindPathManually();
+                object[] obj = Program.ReadActionsFile(actionsPath);
+                Data.actions = obj[0] as Dictionary<string, List<string>>;
+                Data.quantities = obj[1] as string[];
+            }
+            catch
+            {
+                // Initializes the variables to pass to the MessageBox.Show method.
+                string message = "Не удалось считать файл из выбранного пути.";
+                string caption = "Ошибка ввода";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+
+                // Displays the MessageBox.
+                MessageBox.Show(message, caption, buttons);
+            }
         }
     }
 }

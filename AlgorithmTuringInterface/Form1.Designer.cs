@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace AlgorithmTuringInterface
 {
@@ -59,26 +60,44 @@ namespace AlgorithmTuringInterface
             this.QuantityLabel = new System.Windows.Forms.Label();
             this.QuantityStates = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.FileComboBox = new System.Windows.Forms.ToolStripMenuItem();
-            this.открытьФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.создатьФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редактироватьФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.множествоСостоянийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.открытьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.создатьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.редактироватьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.StartBtn = new System.Windows.Forms.Button();
             this.NextStepBtn = new System.Windows.Forms.Button();
             this.PreviousStepBtn = new System.Windows.Forms.Button();
             this.StartNFinishBtn = new System.Windows.Forms.Button();
             this.FinishBtn = new System.Windows.Forms.Button();
-            this.ChooseElementIndexLabel = new System.Windows.Forms.Label();
-            this.ChooseElementIndexTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.BtnComplete = new System.Windows.Forms.Button();
+            this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TapeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TapeFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.CreateTapeFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveTapeFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenTapeFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditTapeFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.QuantitiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QuantitiesFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.CreateQuantitiesFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveQuantitiesFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenQuantitiesFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditQuantitiesFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.скоростьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TapeSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.задатьИндексНачальногоЭлементаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.изменитьСкоростьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CurrentSpeedTxtBx = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditQuantitiesFileBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.PreviousElement = new System.Windows.Forms.Button();
             this.NextElement = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.EditTapeFileBtn = new System.Windows.Forms.Button();
+            this.задачиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вывестиВОтдельноеОкноToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Tape.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -256,6 +275,7 @@ namespace AlgorithmTuringInterface
             // 
             // QuantityStates
             // 
+            this.QuantityStates.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.QuantityStates, "QuantityStates");
             this.QuantityStates.Name = "QuantityStates";
             this.QuantityStates.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
@@ -264,61 +284,15 @@ namespace AlgorithmTuringInterface
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FileComboBox,
-            this.множествоСостоянийToolStripMenuItem});
+            this.файлToolStripMenuItem,
+            this.TapeMenuItem,
+            this.QuantitiesMenuItem,
+            this.скоростьToolStripMenuItem,
+            this.задачиToolStripMenuItem,
+            this.помощьToolStripMenuItem,
+            this.оПрограммеToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
-            // 
-            // FileComboBox
-            // 
-            this.FileComboBox.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.открытьФайлToolStripMenuItem,
-            this.создатьФайлToolStripMenuItem,
-            this.редактироватьФайлToolStripMenuItem});
-            this.FileComboBox.Name = "FileComboBox";
-            resources.ApplyResources(this.FileComboBox, "FileComboBox");
-            // 
-            // открытьФайлToolStripMenuItem
-            // 
-            this.открытьФайлToolStripMenuItem.Name = "открытьФайлToolStripMenuItem";
-            resources.ApplyResources(this.открытьФайлToolStripMenuItem, "открытьФайлToolStripMenuItem");
-            this.открытьФайлToolStripMenuItem.Click += new System.EventHandler(this.открытьФайлToolStripMenuItem_Click);
-            // 
-            // создатьФайлToolStripMenuItem
-            // 
-            this.создатьФайлToolStripMenuItem.Name = "создатьФайлToolStripMenuItem";
-            resources.ApplyResources(this.создатьФайлToolStripMenuItem, "создатьФайлToolStripMenuItem");
-            // 
-            // редактироватьФайлToolStripMenuItem
-            // 
-            this.редактироватьФайлToolStripMenuItem.Name = "редактироватьФайлToolStripMenuItem";
-            resources.ApplyResources(this.редактироватьФайлToolStripMenuItem, "редактироватьФайлToolStripMenuItem");
-            this.редактироватьФайлToolStripMenuItem.Click += new System.EventHandler(this.редактироватьФайлToolStripMenuItem_Click);
-            // 
-            // множествоСостоянийToolStripMenuItem
-            // 
-            this.множествоСостоянийToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.открытьФайлToolStripMenuItem1,
-            this.создатьФайлToolStripMenuItem1,
-            this.редактироватьФайлToolStripMenuItem1});
-            this.множествоСостоянийToolStripMenuItem.Name = "множествоСостоянийToolStripMenuItem";
-            resources.ApplyResources(this.множествоСостоянийToolStripMenuItem, "множествоСостоянийToolStripMenuItem");
-            // 
-            // открытьФайлToolStripMenuItem1
-            // 
-            this.открытьФайлToolStripMenuItem1.Name = "открытьФайлToolStripMenuItem1";
-            resources.ApplyResources(this.открытьФайлToolStripMenuItem1, "открытьФайлToolStripMenuItem1");
-            // 
-            // создатьФайлToolStripMenuItem1
-            // 
-            this.создатьФайлToolStripMenuItem1.Name = "создатьФайлToolStripMenuItem1";
-            resources.ApplyResources(this.создатьФайлToolStripMenuItem1, "создатьФайлToolStripMenuItem1");
-            // 
-            // редактироватьФайлToolStripMenuItem1
-            // 
-            this.редактироватьФайлToolStripMenuItem1.Name = "редактироватьФайлToolStripMenuItem1";
-            resources.ApplyResources(this.редактироватьФайлToolStripMenuItem1, "редактироватьФайлToolStripMenuItem1");
-            this.редактироватьФайлToolStripMenuItem1.Click += new System.EventHandler(this.редактироватьФайлToolStripMenuItem1_Click);
             // 
             // StartBtn
             // 
@@ -352,26 +326,178 @@ namespace AlgorithmTuringInterface
             this.FinishBtn.UseVisualStyleBackColor = true;
             this.FinishBtn.Click += new System.EventHandler(this.FinishBtn_Click);
             // 
-            // ChooseElementIndexLabel
-            // 
-            resources.ApplyResources(this.ChooseElementIndexLabel, "ChooseElementIndexLabel");
-            this.ChooseElementIndexLabel.Name = "ChooseElementIndexLabel";
-            // 
-            // ChooseElementIndexTextBox
-            // 
-            resources.ApplyResources(this.ChooseElementIndexTextBox, "ChooseElementIndexTextBox");
-            this.ChooseElementIndexTextBox.Name = "ChooseElementIndexTextBox";
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // BtnComplete
+            // помощьToolStripMenuItem
             // 
-            resources.ApplyResources(this.BtnComplete, "BtnComplete");
-            this.BtnComplete.Name = "BtnComplete";
-            this.BtnComplete.UseVisualStyleBackColor = true;
-            this.BtnComplete.Click += new System.EventHandler(this.BtnComplete_Click);
+            this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
+            resources.ApplyResources(this.помощьToolStripMenuItem, "помощьToolStripMenuItem");
+            // 
+            // файлToolStripMenuItem
+            // 
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сохранитьФайлToolStripMenuItem1,
+            this.загрузитьToolStripMenuItem});
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            resources.ApplyResources(this.файлToolStripMenuItem, "файлToolStripMenuItem");
+            // 
+            // сохранитьФайлToolStripMenuItem1
+            // 
+            this.сохранитьФайлToolStripMenuItem1.Name = "сохранитьФайлToolStripMenuItem1";
+            resources.ApplyResources(this.сохранитьФайлToolStripMenuItem1, "сохранитьФайлToolStripMenuItem1");
+            // 
+            // загрузитьToolStripMenuItem
+            // 
+            this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
+            resources.ApplyResources(this.загрузитьToolStripMenuItem, "загрузитьToolStripMenuItem");
+            // 
+            // TapeMenuItem
+            // 
+            this.TapeMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TapeFile,
+            this.TapeSeparator,
+            this.задатьИндексНачальногоЭлементаToolStripMenuItem});
+            this.TapeMenuItem.Name = "TapeMenuItem";
+            resources.ApplyResources(this.TapeMenuItem, "TapeMenuItem");
+            // 
+            // TapeFile
+            // 
+            this.TapeFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CreateTapeFile,
+            this.SaveTapeFile,
+            this.OpenTapeFile,
+            this.EditTapeFile});
+            this.TapeFile.Name = "TapeFile";
+            resources.ApplyResources(this.TapeFile, "TapeFile");
+            // 
+            // CreateTapeFile
+            // 
+            this.CreateTapeFile.Name = "CreateTapeFile";
+            resources.ApplyResources(this.CreateTapeFile, "CreateTapeFile");
+            this.CreateTapeFile.Click += new System.EventHandler(this.CreateTapeFile_Click);
+            // 
+            // SaveTapeFile
+            // 
+            this.SaveTapeFile.Name = "SaveTapeFile";
+            resources.ApplyResources(this.SaveTapeFile, "SaveTapeFile");
+            // 
+            // OpenTapeFile
+            // 
+            this.OpenTapeFile.Name = "OpenTapeFile";
+            resources.ApplyResources(this.OpenTapeFile, "OpenTapeFile");
+            this.OpenTapeFile.Click += new System.EventHandler(this.OpenTapeFile_Click);
+            // 
+            // EditTapeFile
+            // 
+            this.EditTapeFile.Name = "EditTapeFile";
+            resources.ApplyResources(this.EditTapeFile, "EditTapeFile");
+            this.EditTapeFile.Click += new System.EventHandler(this.EditTapeFile_Click);
+            // 
+            // QuantitiesMenuItem
+            // 
+            this.QuantitiesMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.QuantitiesFile,
+            this.toolStripSeparator2,
+            this.вывестиВОтдельноеОкноToolStripMenuItem});
+            this.QuantitiesMenuItem.Name = "QuantitiesMenuItem";
+            resources.ApplyResources(this.QuantitiesMenuItem, "QuantitiesMenuItem");
+            // 
+            // QuantitiesFile
+            // 
+            this.QuantitiesFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CreateQuantitiesFile,
+            this.SaveQuantitiesFile,
+            this.OpenQuantitiesFile,
+            this.EditQuantitiesFile});
+            this.QuantitiesFile.Name = "QuantitiesFile";
+            resources.ApplyResources(this.QuantitiesFile, "QuantitiesFile");
+            // 
+            // CreateQuantitiesFile
+            // 
+            this.CreateQuantitiesFile.Name = "CreateQuantitiesFile";
+            resources.ApplyResources(this.CreateQuantitiesFile, "CreateQuantitiesFile");
+            this.CreateQuantitiesFile.Click += new System.EventHandler(this.CreateQuantitiesFile_Click);
+            // 
+            // SaveQuantitiesFile
+            // 
+            this.SaveQuantitiesFile.Name = "SaveQuantitiesFile";
+            resources.ApplyResources(this.SaveQuantitiesFile, "SaveQuantitiesFile");
+            // 
+            // OpenQuantitiesFile
+            // 
+            this.OpenQuantitiesFile.Name = "OpenQuantitiesFile";
+            resources.ApplyResources(this.OpenQuantitiesFile, "OpenQuantitiesFile");
+            this.OpenQuantitiesFile.Click += new System.EventHandler(this.OpenQuantitiesFile_Click);
+            // 
+            // EditQuantitiesFile
+            // 
+            this.EditQuantitiesFile.Name = "EditQuantitiesFile";
+            resources.ApplyResources(this.EditQuantitiesFile, "EditQuantitiesFile");
+            this.EditQuantitiesFile.Click += new System.EventHandler(this.EditQuantitiesFile_Click);
+            // 
+            // скоростьToolStripMenuItem
+            // 
+            this.скоростьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CurrentSpeedTxtBx,
+            this.toolStripSeparator1,
+            this.toolStripSeparator3,
+            this.изменитьСкоростьToolStripMenuItem});
+            this.скоростьToolStripMenuItem.Name = "скоростьToolStripMenuItem";
+            resources.ApplyResources(this.скоростьToolStripMenuItem, "скоростьToolStripMenuItem");
+            // 
+            // TapeSeparator
+            // 
+            this.TapeSeparator.Name = "TapeSeparator";
+            resources.ApplyResources(this.TapeSeparator, "TapeSeparator");
+            // 
+            // задатьИндексНачальногоЭлементаToolStripMenuItem
+            // 
+            this.задатьИндексНачальногоЭлементаToolStripMenuItem.Name = "задатьИндексНачальногоЭлементаToolStripMenuItem";
+            resources.ApplyResources(this.задатьИндексНачальногоЭлементаToolStripMenuItem, "задатьИндексНачальногоЭлементаToolStripMenuItem");
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            // 
+            // toolStripSeparator1
+            // 
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+            // 
+            // изменитьСкоростьToolStripMenuItem
+            // 
+            this.изменитьСкоростьToolStripMenuItem.Name = "изменитьСкоростьToolStripMenuItem";
+            resources.ApplyResources(this.изменитьСкоростьToolStripMenuItem, "изменитьСкоростьToolStripMenuItem");
+            // 
+            // CurrentSpeedTxtBx
+            // 
+            resources.ApplyResources(this.CurrentSpeedTxtBx, "CurrentSpeedTxtBx");
+            this.CurrentSpeedTxtBx.Name = "CurrentSpeedTxtBx";
+            // 
+            // EditQuantitiesFileBtn
+            // 
+            this.EditQuantitiesFileBtn.BackgroundImage = global::AlgorithmTuringInterface.Properties.Resources._1159633;
+            resources.ApplyResources(this.EditQuantitiesFileBtn, "EditQuantitiesFileBtn");
+            this.EditQuantitiesFileBtn.Name = "EditQuantitiesFileBtn";
+            this.EditQuantitiesFileBtn.UseVisualStyleBackColor = true;
+            this.EditQuantitiesFileBtn.Click += new System.EventHandler(this.EditQuantitiesFile_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::AlgorithmTuringInterface.Properties.Resources._109164;
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Paint += new System.Windows.Forms.PaintEventHandler(this.button1_Paint);
             // 
             // PreviousElement
             // 
@@ -391,14 +517,28 @@ namespace AlgorithmTuringInterface
             this.NextElement.Click += new System.EventHandler(this.NextElement_Click);
             this.NextElement.Paint += new System.Windows.Forms.PaintEventHandler(this.NextElement_Paint);
             // 
-            // button1
+            // EditTapeFileBtn
             // 
-            this.button1.BackgroundImage = global::AlgorithmTuringInterface.Properties.Resources._109164;
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.Paint += new System.Windows.Forms.PaintEventHandler(this.button1_Paint);
+            this.EditTapeFileBtn.BackgroundImage = global::AlgorithmTuringInterface.Properties.Resources._1159633;
+            resources.ApplyResources(this.EditTapeFileBtn, "EditTapeFileBtn");
+            this.EditTapeFileBtn.Name = "EditTapeFileBtn";
+            this.EditTapeFileBtn.UseVisualStyleBackColor = true;
+            this.EditTapeFileBtn.Click += new System.EventHandler(this.EditTapeFile_Click);
+            // 
+            // задачиToolStripMenuItem
+            // 
+            this.задачиToolStripMenuItem.Name = "задачиToolStripMenuItem";
+            resources.ApplyResources(this.задачиToolStripMenuItem, "задачиToolStripMenuItem");
+            // 
+            // вывестиВОтдельноеОкноToolStripMenuItem
+            // 
+            this.вывестиВОтдельноеОкноToolStripMenuItem.Name = "вывестиВОтдельноеОкноToolStripMenuItem";
+            resources.ApplyResources(this.вывестиВОтдельноеОкноToolStripMenuItem, "вывестиВОтдельноеОкноToolStripMenuItem");
+            // 
+            // оПрограммеToolStripMenuItem
+            // 
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            resources.ApplyResources(this.оПрограммеToolStripMenuItem, "оПрограммеToolStripMenuItem");
             // 
             // MachineTuring
             // 
@@ -406,10 +546,9 @@ namespace AlgorithmTuringInterface
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.EditTapeFileBtn);
+            this.Controls.Add(this.EditQuantitiesFileBtn);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.BtnComplete);
-            this.Controls.Add(this.ChooseElementIndexTextBox);
-            this.Controls.Add(this.ChooseElementIndexLabel);
             this.Controls.Add(this.FinishBtn);
             this.Controls.Add(this.StartNFinishBtn);
             this.Controls.Add(this.PreviousStepBtn);
@@ -469,23 +608,41 @@ namespace AlgorithmTuringInterface
         private Label QuantityLabel;
         private Panel QuantityStates;
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem FileComboBox;
-        private ToolStripMenuItem открытьФайлToolStripMenuItem;
-        private ToolStripMenuItem создатьФайлToolStripMenuItem;
-        private ToolStripMenuItem множествоСостоянийToolStripMenuItem;
-        private ToolStripMenuItem открытьФайлToolStripMenuItem1;
-        private ToolStripMenuItem создатьФайлToolStripMenuItem1;
-        private ToolStripMenuItem редактироватьФайлToolStripMenuItem;
-        private ToolStripMenuItem редактироватьФайлToolStripMenuItem1;
         private Button StartBtn;
         private Button NextStepBtn;
         private Button PreviousStepBtn;
         private Button StartNFinishBtn;
         private Button FinishBtn;
-        private Label ChooseElementIndexLabel;
-        private TextBox ChooseElementIndexTextBox;
         private ErrorProvider errorProvider1;
-        private Button BtnComplete;
+        private ToolStripMenuItem файлToolStripMenuItem;
+        private ToolStripMenuItem сохранитьФайлToolStripMenuItem1;
+        private ToolStripMenuItem загрузитьToolStripMenuItem;
+        private ToolStripMenuItem TapeMenuItem;
+        private ToolStripMenuItem TapeFile;
+        private ToolStripMenuItem CreateTapeFile;
+        private ToolStripMenuItem SaveTapeFile;
+        private ToolStripMenuItem OpenTapeFile;
+        private ToolStripMenuItem EditTapeFile;
+        private ToolStripMenuItem помощьToolStripMenuItem;
+        private ToolStripMenuItem QuantitiesMenuItem;
+        private ToolStripMenuItem QuantitiesFile;
+        private ToolStripSeparator TapeSeparator;
+        private ToolStripMenuItem задатьИндексНачальногоЭлементаToolStripMenuItem;
+        private ToolStripMenuItem CreateQuantitiesFile;
+        private ToolStripMenuItem SaveQuantitiesFile;
+        private ToolStripMenuItem OpenQuantitiesFile;
+        private ToolStripMenuItem EditQuantitiesFile;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripMenuItem скоростьToolStripMenuItem;
+        private ToolStripTextBox toolStripSeparator1;
+        private ToolStripSeparator toolStripSeparator3;
+        private ToolStripMenuItem изменитьСкоростьToolStripMenuItem;
+        private ToolStripMenuItem CurrentSpeedTxtBx;
+        private Button EditQuantitiesFileBtn;
+        private Button EditTapeFileBtn;
+        private ToolStripMenuItem задачиToolStripMenuItem;
+        private ToolStripMenuItem вывестиВОтдельноеОкноToolStripMenuItem;
+        private ToolStripMenuItem оПрограммеToolStripMenuItem;
     }
 }
 

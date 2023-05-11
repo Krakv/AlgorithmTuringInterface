@@ -73,6 +73,16 @@ namespace AlgorithmTuringInterface.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1159633 {
+            get {
+                object obj = ResourceManager.GetObject("1159633", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap w512h5121390846436left512 {
             get {
                 object obj = ResourceManager.GetObject("w512h5121390846436left512", resourceCulture);

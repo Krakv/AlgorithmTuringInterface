@@ -123,59 +123,28 @@ namespace AlgorithmTuringInterface
             }
         }
 
-        private void textBox12_TextChanged(object sender, EventArgs e)
+        private void textBoxes_Validating(object sender, CancelEventArgs e)
         {
-            tape[textBox12.TabIndex - 17 + shift] = textBox12.Text;
+            TextBox txtbx = sender as TextBox;
+            foreach(string index in Data.actions.Keys)
+            {
+                if (index == txtbx.Text)
+                {
+                    tape[txtbx.TabIndex - 17 + shift] = txtbx.Text;
+                    errorProvider1.SetError(txtbx, null);
+                    return;
+                }
+            }
+            if (txtbx.Text != "")
+                errorProvider1.SetError(txtbx, "Символ не найден в алфавите таблицы множества состояний.");
+            else
+                errorProvider1.SetError(txtbx, null);
         }
 
-        private void textBox13_TextChanged(object sender, EventArgs e)
+        private void textBoxes_Validated(object sender, EventArgs e)
         {
-            tape[textBox13.TabIndex - 17 + shift] = textBox13.Text;
-        }
-
-        private void textBox14_TextChanged(object sender, EventArgs e)
-        {
-            tape[textBox14.TabIndex - 17 + shift] = textBox14.Text;
-        }
-
-        private void textBox15_TextChanged(object sender, EventArgs e)
-        {
-            tape[textBox15.TabIndex - 17 + shift] = textBox15.Text;
-        }
-
-        private void textBox16_TextChanged(object sender, EventArgs e)
-        {
-            tape[textBox16.TabIndex - 17 + shift] = textBox16.Text;
-        }
-
-        private void textBox17_TextChanged(object sender, EventArgs e)
-        {
-            tape[textBox17.TabIndex - 17 + shift] = textBox17.Text;
-        }
-
-        private void textBox18_TextChanged(object sender, EventArgs e)
-        {
-            tape[textBox18.TabIndex - 17 + shift] = textBox18.Text;
-        }
-
-        private void textBox19_TextChanged(object sender, EventArgs e)
-        {
-            tape[textBox19.TabIndex - 17 + shift] = textBox19.Text;
-        }
-
-        private void textBox20_TextChanged(object sender, EventArgs e)
-        {
-            tape[textBox20.TabIndex - 17 + shift] = textBox20.Text;
-        }
-
-        private void textBox21_TextChanged(object sender, EventArgs e)
-        {
-            tape[textBox21.TabIndex - 17 + shift] = textBox21.Text;
-        }
-
-        private void textBox22_TextChanged(object sender, EventArgs e)
-        {
-            tape[textBox22.TabIndex - 17 + shift] = textBox22.Text;
+            TextBox txtbx = sender as TextBox;
+            
         }
     }
 }
