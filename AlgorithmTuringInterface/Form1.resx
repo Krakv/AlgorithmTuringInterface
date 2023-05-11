@@ -1084,13 +1084,13 @@
     <value>17, 17</value>
   </metadata>
   <data name="сохранитьФайлToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>133, 22</value>
   </data>
   <data name="сохранитьФайлToolStripMenuItem1.Text" xml:space="preserve">
     <value>Сохранить</value>
   </data>
   <data name="загрузитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>133, 22</value>
   </data>
   <data name="загрузитьToolStripMenuItem.Text" xml:space="preserve">
     <value>Загрузить</value>
@@ -1608,23 +1608,8 @@
   <data name="&gt;&gt;NextElement.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>MachineTuring</value>
-  </data>
-  <data name="&gt;&gt;errorProvider1.Name" xml:space="preserve">
-    <value>errorProvider1</value>
-  </data>
-  <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;помощьToolStripMenuItem.Name" xml:space="preserve">
-    <value>помощьToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;помощьToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;файлToolStripMenuItem.Name" xml:space="preserve">
     <value>файлToolStripMenuItem</value>
@@ -1680,6 +1665,18 @@
   <data name="&gt;&gt;EditTapeFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;TapeSeparator.Name" xml:space="preserve">
+    <value>TapeSeparator</value>
+  </data>
+  <data name="&gt;&gt;TapeSeparator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;задатьИндексНачальногоЭлементаToolStripMenuItem.Name" xml:space="preserve">
+    <value>задатьИндексНачальногоЭлементаToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;задатьИндексНачальногоЭлементаToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;QuantitiesMenuItem.Name" xml:space="preserve">
     <value>QuantitiesMenuItem</value>
   </data>
@@ -1716,29 +1713,29 @@
   <data name="&gt;&gt;EditQuantitiesFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;вывестиВОтдельноеОкноToolStripMenuItem.Name" xml:space="preserve">
+    <value>вывестиВОтдельноеОкноToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;вывестиВОтдельноеОкноToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;скоростьToolStripMenuItem.Name" xml:space="preserve">
     <value>скоростьToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;скоростьToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TapeSeparator.Name" xml:space="preserve">
-    <value>TapeSeparator</value>
+  <data name="&gt;&gt;CurrentSpeedTxtBx.Name" xml:space="preserve">
+    <value>CurrentSpeedTxtBx</value>
   </data>
-  <data name="&gt;&gt;TapeSeparator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;задатьИндексНачальногоЭлементаToolStripMenuItem.Name" xml:space="preserve">
-    <value>задатьИндексНачальногоЭлементаToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;задатьИндексНачальногоЭлементаToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;CurrentSpeedTxtBx.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
     <value>toolStripSeparator1</value>
@@ -1758,22 +1755,16 @@
   <data name="&gt;&gt;изменитьСкоростьToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CurrentSpeedTxtBx.Name" xml:space="preserve">
-    <value>CurrentSpeedTxtBx</value>
-  </data>
-  <data name="&gt;&gt;CurrentSpeedTxtBx.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;задачиToolStripMenuItem.Name" xml:space="preserve">
     <value>задачиToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;задачиToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;вывестиВОтдельноеОкноToolStripMenuItem.Name" xml:space="preserve">
-    <value>вывестиВОтдельноеОкноToolStripMenuItem</value>
+  <data name="&gt;&gt;помощьToolStripMenuItem.Name" xml:space="preserve">
+    <value>помощьToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;вывестиВОтдельноеОкноToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;помощьToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;оПрограммеToolStripMenuItem.Name" xml:space="preserve">
@@ -1781,6 +1772,12 @@
   </data>
   <data name="&gt;&gt;оПрограммеToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;errorProvider1.Name" xml:space="preserve">
+    <value>errorProvider1</value>
+  </data>
+  <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MachineTuring</value>
