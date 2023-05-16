@@ -518,7 +518,9 @@
             this.MaximizeBox = false;
             this.Name = "EditTape";
             this.Text = "Редактирование Ленты";
+            this.Deactivate += new System.EventHandler(this.EditTape_Deactivate);
             this.Load += new System.EventHandler(this.EditTape_Load);
+            this.Shown += new System.EventHandler(this.EditTape_Shown);
             this.Tape.ResumeLayout(false);
             this.Tape.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

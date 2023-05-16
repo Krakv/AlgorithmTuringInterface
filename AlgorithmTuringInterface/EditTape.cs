@@ -12,42 +12,16 @@ namespace AlgorithmTuringInterface
 {
     public partial class EditTape : Form
     {
-        TextBox[] textBoxes = new TextBox[22];
         Dictionary<long, string> tape = new Dictionary<long, string>();
         long shift = 0;
         long chosenIndex = 0;
+        MachineTuring owner;
 
-        public EditTape(Dictionary<long, string> tape)
+        public EditTape(MachineTuring owner, Dictionary<long, string> tape)
         {
+            this.owner = owner;
             this.tape = tape;
             InitializeComponent();
-        }
-
-        //Занесение textbox-ов в массив
-        private void InitializeTextBoxes()
-        {
-            textBoxes[0] = textBox1;
-            textBoxes[1] = textBox2;
-            textBoxes[2] = textBox3;
-            textBoxes[3] = textBox4;
-            textBoxes[4] = textBox5;
-            textBoxes[5] = textBox6;
-            textBoxes[6] = textBox7;
-            textBoxes[7] = textBox8;
-            textBoxes[8] = textBox9;
-            textBoxes[9] = textBox10;
-            textBoxes[10] = textBox11;
-            textBoxes[11] = textBox12;
-            textBoxes[12] = textBox13;
-            textBoxes[13] = textBox14;
-            textBoxes[14] = textBox15;
-            textBoxes[15] = textBox16;
-            textBoxes[16] = textBox17;
-            textBoxes[17] = textBox18;
-            textBoxes[18] = textBox19;
-            textBoxes[19] = textBox20;
-            textBoxes[20] = textBox21;
-            textBoxes[21] = textBox22;
         }
 
         private void PrintIndex(TextBox box, long shift)
@@ -75,9 +49,7 @@ namespace AlgorithmTuringInterface
 
         private void InitializeTape()
         {
-            if (textBoxes[0] == null)
-                InitializeTextBoxes();
-            foreach (TextBox textbox in textBoxes)
+            foreach (TextBox textbox in Tape.Controls)
             {
                 if (textbox.TabIndex <= 11)
                     PrintIndex(textbox, shift);
@@ -88,8 +60,7 @@ namespace AlgorithmTuringInterface
 
         private void EditTape_Load(object sender, EventArgs e)
         {
-            InitializeTextBoxes();
-            InitializeTape();
+            
         }
 
         private void NextElement_Click(object sender, EventArgs e)
@@ -145,6 +116,16 @@ namespace AlgorithmTuringInterface
         {
             TextBox txtbx = sender as TextBox;
             
+        }
+
+        private void EditTape_Shown(object sender, EventArgs e)
+        {
+            InitializeTape();
+        }
+
+        private void EditTape_Deactivate(object sender, EventArgs e)
+        {
+            owner.InitializeTape();
         }
     }
 }

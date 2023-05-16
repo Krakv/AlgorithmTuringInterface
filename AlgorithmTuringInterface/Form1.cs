@@ -15,14 +15,12 @@ namespace AlgorithmTuringInterface
     {
         Dictionary<long, string> tape = new Dictionary<long, string>();
         long shift = 0;
-        TextBox[] textBoxes = new TextBox[22];
         long chosenIndex = 0;
         
 
         public MachineTuring()
         {
             InitializeActions();
-            InitializeTextBoxes();
             InitializeComponent();
         }
 
@@ -45,32 +43,6 @@ namespace AlgorithmTuringInterface
             {
                 //nothing
             }
-        }
-
-        private void InitializeTextBoxes()
-        {
-            textBoxes[0] = textBox1;
-            textBoxes[1] = textBox2;
-            textBoxes[2] = textBox3;
-            textBoxes[3] = textBox4;
-            textBoxes[4] = textBox5;
-            textBoxes[5] = textBox6;
-            textBoxes[6] = textBox7;
-            textBoxes[7] = textBox8;
-            textBoxes[8] = textBox9;
-            textBoxes[9] = textBox10;
-            textBoxes[10] = textBox11;
-            textBoxes[11] = textBox12;
-            textBoxes[12] = textBox13;
-            textBoxes[13] = textBox14;
-            textBoxes[14] = textBox15;
-            textBoxes[15] = textBox16;
-            textBoxes[16] = textBox17;
-            textBoxes[17] = textBox18;
-            textBoxes[18] = textBox19;
-            textBoxes[19] = textBox20;
-            textBoxes[20] = textBox21;
-            textBoxes[21] = textBox22;
         }
 
         #region Buttons
@@ -138,16 +110,9 @@ namespace AlgorithmTuringInterface
 
         #endregion Buttons
 
-        private void Tape_Paint(object sender, PaintEventArgs e)
+        public void InitializeTape()
         {
-            InitializeTape();
-        }
-
-        private void InitializeTape()
-        {
-            if (textBoxes[0] == null)
-                InitializeTextBoxes();
-            foreach(TextBox textbox in textBoxes)
+            foreach(TextBox textbox in Tape.Controls)
             {
                 if (textbox.TabIndex <= 11)
                     PrintIndex(textbox, shift);
@@ -180,16 +145,12 @@ namespace AlgorithmTuringInterface
 
         }
 
-        public void InitializePanel1Paint()
+        public void PaintQuantitiesStatesForm()
         {
+            this.QuantityStates.Controls.Clear();
             QuantityStatesForm frm = new QuantityStatesForm() { BackColor = Color.White, TopLevel = false, Dock = DockStyle.Fill, TopMost = true };
             this.QuantityStates.Controls.Add(frm);
             frm.Show();
-        }
-
-        public void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            InitializePanel1Paint();
         }
 
         private void OpenTapeFile_Click(object sender, EventArgs e)
@@ -287,7 +248,7 @@ namespace AlgorithmTuringInterface
 
         private void EditTapeFile_Click(object sender, EventArgs e)
         {
-            EditTape editTape = new EditTape(tape);
+            EditTape editTape = new EditTape(this, tape);
             editTape.Show();
         }
 
@@ -300,12 +261,12 @@ namespace AlgorithmTuringInterface
 
         private void MachineTuring_Activated(object sender, EventArgs e)
         {
-            QuantityStates.Controls.Clear();
+            
         }
 
         private void CreateTapeFile_Click(object sender, EventArgs e)
         {
-            EditTape editTape = new EditTape(new Dictionary<long, string>());
+            EditTape editTape = new EditTape(this, new Dictionary<long, string>());
             editTape.Show();
         }
 
@@ -336,6 +297,12 @@ namespace AlgorithmTuringInterface
                 // Displays the MessageBox.
                 MessageBox.Show(message, caption, buttons);
             }
+        }
+
+        private void MachineTuring_Shown(object sender, EventArgs e)
+        {
+            PaintQuantitiesStatesForm();
+            InitializeTape();
         }
     }
 }

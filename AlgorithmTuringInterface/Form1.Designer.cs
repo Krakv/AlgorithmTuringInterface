@@ -129,7 +129,6 @@ namespace AlgorithmTuringInterface
             this.Tape.Controls.Add(this.textBox7, 0, 0);
             this.Tape.Controls.Add(this.textBox8, 0, 0);
             this.Tape.Name = "Tape";
-            this.Tape.Paint += new System.Windows.Forms.PaintEventHandler(this.Tape_Paint);
             // 
             // textBox12
             // 
@@ -278,7 +277,6 @@ namespace AlgorithmTuringInterface
             this.QuantityStates.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.QuantityStates, "QuantityStates");
             this.QuantityStates.Name = "QuantityStates";
-            this.QuantityStates.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // menuStrip1
             // 
@@ -566,6 +564,7 @@ namespace AlgorithmTuringInterface
             this.MaximizeBox = false;
             this.Name = "MachineTuring";
             this.Activated += new System.EventHandler(this.MachineTuring_Activated);
+            this.Shown += new System.EventHandler(this.MachineTuring_Shown);
             this.Tape.ResumeLayout(false);
             this.Tape.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
