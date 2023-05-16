@@ -1083,47 +1083,11 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="сохранитьФайлToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 22</value>
-  </data>
-  <data name="сохранитьФайлToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
-  <data name="загрузитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 22</value>
-  </data>
-  <data name="загрузитьToolStripMenuItem.Text" xml:space="preserve">
-    <value>Загрузить</value>
-  </data>
   <data name="файлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
   </data>
   <data name="файлToolStripMenuItem.Text" xml:space="preserve">
     <value>Файл</value>
-  </data>
-  <data name="CreateTapeFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="CreateTapeFile.Text" xml:space="preserve">
-    <value>Создать</value>
-  </data>
-  <data name="SaveTapeFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="SaveTapeFile.Text" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
-  <data name="OpenTapeFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="OpenTapeFile.Text" xml:space="preserve">
-    <value>Открыть</value>
-  </data>
-  <data name="EditTapeFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="EditTapeFile.Text" xml:space="preserve">
-    <value>Редактировать</value>
   </data>
   <data name="TapeFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>274, 22</value>
@@ -1134,10 +1098,10 @@
   <data name="TapeSeparator.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 6</value>
   </data>
-  <data name="задатьИндексНачальногоЭлементаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="InitChosenIndexBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>274, 22</value>
   </data>
-  <data name="задатьИндексНачальногоЭлементаToolStripMenuItem.Text" xml:space="preserve">
+  <data name="InitChosenIndexBtn.Text" xml:space="preserve">
     <value>Задать индекс начального элемента</value>
   </data>
   <data name="TapeMenuItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -1146,80 +1110,11 @@
   <data name="TapeMenuItem.Text" xml:space="preserve">
     <value>Лента</value>
   </data>
-  <data name="CreateQuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="CreateQuantitiesFile.Text" xml:space="preserve">
-    <value>Создать</value>
-  </data>
-  <data name="SaveQuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="SaveQuantitiesFile.Text" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
-  <data name="OpenQuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="OpenQuantitiesFile.Text" xml:space="preserve">
-    <value>Открыть</value>
-  </data>
-  <data name="EditQuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="EditQuantitiesFile.Text" xml:space="preserve">
-    <value>Редактировать</value>
-  </data>
-  <data name="QuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
-  <data name="QuantitiesFile.Text" xml:space="preserve">
-    <value>Файл</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 6</value>
-  </data>
-  <data name="вывестиВОтдельноеОкноToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
-  <data name="вывестиВОтдельноеОкноToolStripMenuItem.Text" xml:space="preserve">
-    <value>Вывести в отдельное окно</value>
-  </data>
   <data name="QuantitiesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 20</value>
   </data>
   <data name="QuantitiesMenuItem.Text" xml:space="preserve">
     <value>Множество состояний</value>
-  </data>
-  <data name="CurrentSpeedTxtBx.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="CurrentSpeedTxtBx.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="CurrentSpeedTxtBx.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 22</value>
-  </data>
-  <data name="CurrentSpeedTxtBx.Text" xml:space="preserve">
-    <value>Текущая скорость</value>
-  </data>
-  <data name="toolStripSeparator1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 23</value>
-  </data>
-  <data name="toolStripSeparator1.Text" xml:space="preserve">
-    <value>1000 мс</value>
-  </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 6</value>
-  </data>
-  <data name="изменитьСкоростьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 22</value>
-  </data>
-  <data name="изменитьСкоростьToolStripMenuItem.Text" xml:space="preserve">
-    <value>Изменить скорость</value>
   </data>
   <data name="скоростьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 20</value>
@@ -1271,6 +1166,108 @@
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>14</value>
+  </data>
+  <data name="сохранитьФайлToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 22</value>
+  </data>
+  <data name="сохранитьФайлToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="загрузитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 22</value>
+  </data>
+  <data name="загрузитьToolStripMenuItem.Text" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
+  <data name="CreateTapeFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="CreateTapeFile.Text" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="SaveTapeFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="SaveTapeFile.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="OpenTapeFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="OpenTapeFile.Text" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="EditTapeFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="EditTapeFile.Text" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="QuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="QuantitiesFile.Text" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="CreateQuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="CreateQuantitiesFile.Text" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="SaveQuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="SaveQuantitiesFile.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="OpenQuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="OpenQuantitiesFile.Text" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="EditQuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="EditQuantitiesFile.Text" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 6</value>
+  </data>
+  <data name="OpenQuantitiesTableBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="OpenQuantitiesTableBtn.Text" xml:space="preserve">
+    <value>Вывести в отдельное окно</value>
+  </data>
+  <data name="CurrentSpeedTxtBx.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CurrentSpeedTxtBx.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
+  </data>
+  <data name="CurrentSpeedTxtBx.Text" xml:space="preserve">
+    <value>Текущая скорость</value>
+  </data>
+  <data name="SpeedTxtBx.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="SpeedTxtBx.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
+  </data>
+  <data name="SpeedTxtBx.Text" xml:space="preserve">
+    <value>1000 мс</value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 6</value>
+  </data>
+  <data name="ChangeSpeedBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
+  </data>
+  <data name="ChangeSpeedBtn.Text" xml:space="preserve">
+    <value>Изменить скорость</value>
   </data>
   <data name="StartBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
@@ -1671,10 +1668,10 @@
   <data name="&gt;&gt;TapeSeparator.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;задатьИндексНачальногоЭлементаToolStripMenuItem.Name" xml:space="preserve">
-    <value>задатьИндексНачальногоЭлементаToolStripMenuItem</value>
+  <data name="&gt;&gt;InitChosenIndexBtn.Name" xml:space="preserve">
+    <value>InitChosenIndexBtn</value>
   </data>
-  <data name="&gt;&gt;задатьИндексНачальногоЭлементаToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;InitChosenIndexBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;QuantitiesMenuItem.Name" xml:space="preserve">
@@ -1719,10 +1716,10 @@
   <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;вывестиВОтдельноеОкноToolStripMenuItem.Name" xml:space="preserve">
-    <value>вывестиВОтдельноеОкноToolStripMenuItem</value>
+  <data name="&gt;&gt;OpenQuantitiesTableBtn.Name" xml:space="preserve">
+    <value>OpenQuantitiesTableBtn</value>
   </data>
-  <data name="&gt;&gt;вывестиВОтдельноеОкноToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpenQuantitiesTableBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;скоростьToolStripMenuItem.Name" xml:space="preserve">
@@ -1737,11 +1734,11 @@
   <data name="&gt;&gt;CurrentSpeedTxtBx.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
+  <data name="&gt;&gt;SpeedTxtBx.Name" xml:space="preserve">
+    <value>SpeedTxtBx</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;SpeedTxtBx.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
     <value>toolStripSeparator3</value>
@@ -1749,10 +1746,10 @@
   <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;изменитьСкоростьToolStripMenuItem.Name" xml:space="preserve">
-    <value>изменитьСкоростьToolStripMenuItem</value>
+  <data name="&gt;&gt;ChangeSpeedBtn.Name" xml:space="preserve">
+    <value>ChangeSpeedBtn</value>
   </data>
-  <data name="&gt;&gt;изменитьСкоростьToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;ChangeSpeedBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;задачиToolStripMenuItem.Name" xml:space="preserve">

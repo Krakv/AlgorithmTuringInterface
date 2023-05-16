@@ -70,7 +70,7 @@ namespace AlgorithmTuringInterface
             this.OpenTapeFile = new System.Windows.Forms.ToolStripMenuItem();
             this.EditTapeFile = new System.Windows.Forms.ToolStripMenuItem();
             this.TapeSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.задатьИндексНачальногоЭлементаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.InitChosenIndexBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.QuantitiesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuantitiesFile = new System.Windows.Forms.ToolStripMenuItem();
             this.CreateQuantitiesFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,12 +78,12 @@ namespace AlgorithmTuringInterface
             this.OpenQuantitiesFile = new System.Windows.Forms.ToolStripMenuItem();
             this.EditQuantitiesFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.вывестиВОтдельноеОкноToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenQuantitiesTableBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.скоростьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CurrentSpeedTxtBx = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripTextBox();
+            this.SpeedTxtBx = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.изменитьСкоростьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ChangeSpeedBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.задачиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -315,7 +315,7 @@ namespace AlgorithmTuringInterface
             this.TapeMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TapeFile,
             this.TapeSeparator,
-            this.задатьИндексНачальногоЭлементаToolStripMenuItem});
+            this.InitChosenIndexBtn});
             this.TapeMenuItem.Name = "TapeMenuItem";
             resources.ApplyResources(this.TapeMenuItem, "TapeMenuItem");
             // 
@@ -357,17 +357,18 @@ namespace AlgorithmTuringInterface
             this.TapeSeparator.Name = "TapeSeparator";
             resources.ApplyResources(this.TapeSeparator, "TapeSeparator");
             // 
-            // задатьИндексНачальногоЭлементаToolStripMenuItem
+            // InitChosenIndexBtn
             // 
-            this.задатьИндексНачальногоЭлементаToolStripMenuItem.Name = "задатьИндексНачальногоЭлементаToolStripMenuItem";
-            resources.ApplyResources(this.задатьИндексНачальногоЭлементаToolStripMenuItem, "задатьИндексНачальногоЭлементаToolStripMenuItem");
+            this.InitChosenIndexBtn.Name = "InitChosenIndexBtn";
+            resources.ApplyResources(this.InitChosenIndexBtn, "InitChosenIndexBtn");
+            this.InitChosenIndexBtn.Click += new System.EventHandler(this.InitChosenIndexBtn_Click);
             // 
             // QuantitiesMenuItem
             // 
             this.QuantitiesMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.QuantitiesFile,
             this.toolStripSeparator2,
-            this.вывестиВОтдельноеОкноToolStripMenuItem});
+            this.OpenQuantitiesTableBtn});
             this.QuantitiesMenuItem.Name = "QuantitiesMenuItem";
             resources.ApplyResources(this.QuantitiesMenuItem, "QuantitiesMenuItem");
             // 
@@ -409,18 +410,19 @@ namespace AlgorithmTuringInterface
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
-            // вывестиВОтдельноеОкноToolStripMenuItem
+            // OpenQuantitiesTableBtn
             // 
-            this.вывестиВОтдельноеОкноToolStripMenuItem.Name = "вывестиВОтдельноеОкноToolStripMenuItem";
-            resources.ApplyResources(this.вывестиВОтдельноеОкноToolStripMenuItem, "вывестиВОтдельноеОкноToolStripMenuItem");
+            this.OpenQuantitiesTableBtn.Name = "OpenQuantitiesTableBtn";
+            resources.ApplyResources(this.OpenQuantitiesTableBtn, "OpenQuantitiesTableBtn");
+            this.OpenQuantitiesTableBtn.Click += new System.EventHandler(this.OpenQuantitiesTableBtn_Click);
             // 
             // скоростьToolStripMenuItem
             // 
             this.скоростьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CurrentSpeedTxtBx,
-            this.toolStripSeparator1,
+            this.SpeedTxtBx,
             this.toolStripSeparator3,
-            this.изменитьСкоростьToolStripMenuItem});
+            this.ChangeSpeedBtn});
             this.скоростьToolStripMenuItem.Name = "скоростьToolStripMenuItem";
             resources.ApplyResources(this.скоростьToolStripMenuItem, "скоростьToolStripMenuItem");
             // 
@@ -429,20 +431,21 @@ namespace AlgorithmTuringInterface
             resources.ApplyResources(this.CurrentSpeedTxtBx, "CurrentSpeedTxtBx");
             this.CurrentSpeedTxtBx.Name = "CurrentSpeedTxtBx";
             // 
-            // toolStripSeparator1
+            // SpeedTxtBx
             // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.SpeedTxtBx, "SpeedTxtBx");
+            this.SpeedTxtBx.Name = "SpeedTxtBx";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
-            // изменитьСкоростьToolStripMenuItem
+            // ChangeSpeedBtn
             // 
-            this.изменитьСкоростьToolStripMenuItem.Name = "изменитьСкоростьToolStripMenuItem";
-            resources.ApplyResources(this.изменитьСкоростьToolStripMenuItem, "изменитьСкоростьToolStripMenuItem");
+            this.ChangeSpeedBtn.Name = "ChangeSpeedBtn";
+            resources.ApplyResources(this.ChangeSpeedBtn, "ChangeSpeedBtn");
+            this.ChangeSpeedBtn.Click += new System.EventHandler(this.ChangeSpeedBtn_Click);
             // 
             // задачиToolStripMenuItem
             // 
@@ -626,22 +629,22 @@ namespace AlgorithmTuringInterface
         private ToolStripMenuItem QuantitiesMenuItem;
         private ToolStripMenuItem QuantitiesFile;
         private ToolStripSeparator TapeSeparator;
-        private ToolStripMenuItem задатьИндексНачальногоЭлементаToolStripMenuItem;
+        private ToolStripMenuItem InitChosenIndexBtn;
         private ToolStripMenuItem CreateQuantitiesFile;
         private ToolStripMenuItem SaveQuantitiesFile;
         private ToolStripMenuItem OpenQuantitiesFile;
         private ToolStripMenuItem EditQuantitiesFile;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem скоростьToolStripMenuItem;
-        private ToolStripTextBox toolStripSeparator1;
         private ToolStripSeparator toolStripSeparator3;
-        private ToolStripMenuItem изменитьСкоростьToolStripMenuItem;
-        private ToolStripMenuItem CurrentSpeedTxtBx;
+        private ToolStripMenuItem ChangeSpeedBtn;
         private Button EditQuantitiesFileBtn;
         private Button EditTapeFileBtn;
         private ToolStripMenuItem задачиToolStripMenuItem;
-        private ToolStripMenuItem вывестиВОтдельноеОкноToolStripMenuItem;
+        private ToolStripMenuItem OpenQuantitiesTableBtn;
         private ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private ToolStripMenuItem CurrentSpeedTxtBx;
+        private ToolStripMenuItem SpeedTxtBx;
     }
 }
 

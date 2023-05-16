@@ -41,7 +41,7 @@ namespace AlgorithmTuringInterface
             int counter = 0;
             foreach (string key in actions.Keys)
             {
-                Label lbl1 = new Label() { Text = key, Font = font, Dock = DockStyle.Fill, AutoSize = true, Anchor = AnchorStyles.None};
+                Label lbl1 = new Label() { Text = key, Font = font, Dock = DockStyle.Fill, AutoSize = true, Anchor = AnchorStyles.None };
                 QuantitiesTable.Controls.Add(lbl1, 0, ++counter);
                 for (int i = 0; i < actions[key].Count; i++)
                 {
@@ -50,10 +50,6 @@ namespace AlgorithmTuringInterface
                 }
             }
             this.Controls.Add(QuantitiesTable);
-        }
-
-        private void QuantityStatesForm_Deactivate(object sender, EventArgs e)
-        {
         }
     }
 }

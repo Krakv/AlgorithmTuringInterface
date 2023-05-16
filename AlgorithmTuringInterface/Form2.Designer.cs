@@ -56,7 +56,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "QuantityStatesForm";
             this.Text = "Form2";
-            this.Deactivate += new System.EventHandler(this.QuantityStatesForm_Deactivate);
             this.ResumeLayout(false);
             this.PerformLayout();
 

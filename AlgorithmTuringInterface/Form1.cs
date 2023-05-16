@@ -6,8 +6,10 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace AlgorithmTuringInterface
 {
@@ -16,12 +18,14 @@ namespace AlgorithmTuringInterface
         Dictionary<long, string> tape = new Dictionary<long, string>();
         long shift = 0;
         long chosenIndex = 0;
-        
+        long speed;
 
         public MachineTuring()
         {
             InitializeActions();
             InitializeComponent();
+            speed = Int64.Parse(Regex.Replace(SpeedTxtBx.Text, @"[^\d]+", ""));
+
         }
 
         private void InitializeActions()
@@ -303,6 +307,40 @@ namespace AlgorithmTuringInterface
         {
             PaintQuantitiesStatesForm();
             InitializeTape();
+        }
+
+        private void ChangeSpeedBtn_Click(object sender, EventArgs e)
+        {
+            string result = Microsoft.VisualBasic.Interaction.InputBox("Введите положительное число - скорость выполнения алгоритма:");
+            bool isSuccess = result == "" || Int64.TryParse(result, out speed) && speed >= 0;
+            if (!isSuccess )
+            {
+                MessageBox.Show("Не удалось получить положительное число", "Ошибка ввода", MessageBoxButtons.OK);
+                ChangeSpeedBtn_Click(sender, e);
+                return;
+            }
+            if (result != "")
+                SpeedTxtBx.Text = speed.ToString() + " мс";
+        }
+
+        private void OpenQuantitiesTableBtn_Click(object sender, EventArgs e)
+        {
+            QuantityStatesForm frm = new QuantityStatesForm() { FormBorderStyle = FormBorderStyle.Sizable };
+            frm.Show();
+        }
+
+        private void InitChosenIndexBtn_Click(object sender, EventArgs e)
+        {
+            string result = Microsoft.VisualBasic.Interaction.InputBox("Введите целое число - индекс элемента, с которого будет произведен запуск алогритма:");
+            bool isSuccess = result == "" || Int64.TryParse(result, out chosenIndex);
+            if (!isSuccess)
+            {
+                MessageBox.Show("Введенный индекс не является целым числом", "Ошибка ввода", MessageBoxButtons.OK);
+                InitChosenIndexBtn_Click(sender, e);
+                return;
+            }
+            if (result != "")
+                InitializeTape();
         }
     }
 }
