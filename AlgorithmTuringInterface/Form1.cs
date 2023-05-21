@@ -27,6 +27,7 @@ namespace AlgorithmTuringInterface
             InitializeActions();
             InitializeComponent();
             InitializeTable(Data.quantities, Data.actions);
+            Data.table = table;
             speed = Int64.Parse(Regex.Replace(SpeedTxtBx.Text, @"[^\d]+", ""));
         }
 
@@ -376,6 +377,8 @@ namespace AlgorithmTuringInterface
         public void Table_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             Data.actions[table.Rows[e.RowIndex].HeaderCell.Value.ToString()][e.ColumnIndex] = table[e.ColumnIndex, e.RowIndex].Value.ToString();
+            QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
+            tablePanel.ChangeTableElement(table[e.ColumnIndex, e.RowIndex].Value.ToString(), (e.RowIndex + 1) * (table.ColumnCount + 1)  + e.ColumnIndex + 1);
         }
     }
 }

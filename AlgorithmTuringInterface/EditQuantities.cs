@@ -69,7 +69,6 @@ namespace AlgorithmTuringInterface
             }
             Data.actions = actions;
             Data.quantities = quantities;
-            owner.PaintQuantitiesStatesForm();
         }
 
         #region RowFuncs

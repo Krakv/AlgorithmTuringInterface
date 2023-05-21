@@ -551,6 +551,7 @@ namespace AlgorithmTuringInterface
             this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.table.Name = "table";
             this.table.StandardTab = true;
+            this.table.Dock = DockStyle.Fill;
             this.table.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_CellEndEdit);
             // 
             // MachineTuring

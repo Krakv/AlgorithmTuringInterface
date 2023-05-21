@@ -21,10 +21,15 @@ namespace AlgorithmTuringInterface
             this.quantities = Data.quantities;
             this.actions = Data.actions;
             InitializeComponent();
-            QuantitiesTable_Paint();
+            MakeQuantitiesTable();
+        }
+        
+        public void ChangeTableElement(string value, int index)
+        {
+            QuantitiesTable.Controls[index].Text = value;
         }
 
-        private void QuantitiesTable_Paint()
+        private void MakeQuantitiesTable()
         {
             Font font = new Font("Microsoft Sans Serif; 16pt", 16);
             QuantitiesTable.Controls.Clear();
