@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static AlgorithmTuringInterface.Program;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace AlgorithmTuringInterface
@@ -16,6 +17,7 @@ namespace AlgorithmTuringInterface
     public partial class MachineTuring : Form
     {
         Dictionary<long, string> tape = new Dictionary<long, string>();
+        DoubleBufferedDataGridView table = new Program.DoubleBufferedDataGridView();
         long shift = 0;
         long chosenIndex = 0;
         long speed;
@@ -24,8 +26,29 @@ namespace AlgorithmTuringInterface
         {
             InitializeActions();
             InitializeComponent();
+            InitializeTable(Data.quantities, Data.actions);
             speed = Int64.Parse(Regex.Replace(SpeedTxtBx.Text, @"[^\d]+", ""));
+        }
 
+        public void InitializeTable(string[] quantities, Dictionary<string, List<string>> actions)
+        {
+            // Adding first row (quantities)
+            for (int i = 0; i < quantities.Length; i++)
+            {
+                table.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = quantities[i] });
+            }
+            // Adding Rows (actions)
+            foreach (string key in actions.Keys)
+            {
+                DataGridViewCell[] array = new DataGridViewCell[actions[key].Count];
+                for (int i = 0; i < actions[key].Count; i++)
+                {
+                    array[i] = new DataGridViewTextBoxCell() { Value = actions[key][i] };
+                }
+                DataGridViewRow row = new DataGridViewRow() { HeaderCell = new DataGridViewRowHeaderCell() { Value = key } };
+                row.Cells.AddRange(array);
+                table.Rows.Add(row);
+            }
         }
 
         private void InitializeActions()
@@ -116,6 +139,7 @@ namespace AlgorithmTuringInterface
 
         public void InitializeTape()
         {
+            tape = Data.tape;
             foreach(TextBox textbox in Tape.Controls)
             {
                 if (textbox.TabIndex <= 11)
@@ -258,8 +282,7 @@ namespace AlgorithmTuringInterface
 
         private void EditQuantitiesFile_Click(object sender, EventArgs e)
         {
-            EditQuantities editQuantities = new EditQuantities(this, Data.quantities, Data.actions);
-            editQuantities.Owner = this;
+            EditQuantities editQuantities = new EditQuantities(this, table);
             editQuantities.Show();
         }
 
@@ -276,8 +299,7 @@ namespace AlgorithmTuringInterface
 
         private void CreateQuantitiesFile_Click(object sender, EventArgs e)
         {
-            EditQuantities editQuantities = new EditQuantities(this, new string[0], new Dictionary<string, List<string>>());
-            editQuantities.Owner = this;
+            EditQuantities editQuantities = new EditQuantities(this, table);
             editQuantities.Show();
         }
 
@@ -341,6 +363,19 @@ namespace AlgorithmTuringInterface
             }
             if (result != "")
                 InitializeTape();
+        }
+
+        private void MachineTuring_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var res = MessageBox.Show("Вы действительно хотите выйти?", "Выход из программы",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            e.Cancel = !(res == DialogResult.Yes);
+        }
+
+        public void Table_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            Data.actions[table.Rows[e.RowIndex].HeaderCell.Value.ToString()][e.ColumnIndex] = table[e.ColumnIndex, e.RowIndex].Value.ToString();
         }
     }
 }

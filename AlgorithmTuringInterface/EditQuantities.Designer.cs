@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.table = new System.Windows.Forms.DataGridView();
+            this.table = new AlgorithmTuringInterface.Program.DoubleBufferedDataGridView();
             this.AddRowBtn = new System.Windows.Forms.Button();
             this.RowNameLbl = new System.Windows.Forms.Label();
             this.RowNameTxtBx = new System.Windows.Forms.TextBox();
@@ -52,18 +52,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.table.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.table.Location = new System.Drawing.Point(12, 12);
+            this.table.Location = new System.Drawing.Point(16, 15);
+            this.table.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.table.Name = "table";
-            this.table.Size = new System.Drawing.Size(1097, 515);
+            this.table.RowHeadersWidth = 51;
+            this.table.Size = new System.Drawing.Size(1463, 634);
             this.table.StandardTab = true;
             this.table.TabIndex = 0;
+            this.table.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_CellEndEdit);
             // 
             // AddRowBtn
             // 
             this.AddRowBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AddRowBtn.Location = new System.Drawing.Point(579, 533);
+            this.AddRowBtn.Location = new System.Drawing.Point(772, 656);
+            this.AddRowBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddRowBtn.Name = "AddRowBtn";
-            this.AddRowBtn.Size = new System.Drawing.Size(175, 31);
+            this.AddRowBtn.Size = new System.Drawing.Size(233, 38);
             this.AddRowBtn.TabIndex = 1;
             this.AddRowBtn.Text = "Добавить";
             this.AddRowBtn.UseVisualStyleBackColor = true;
@@ -74,9 +78,10 @@
             this.RowNameLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.RowNameLbl.AutoSize = true;
             this.RowNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RowNameLbl.Location = new System.Drawing.Point(12, 536);
+            this.RowNameLbl.Location = new System.Drawing.Point(16, 660);
+            this.RowNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RowNameLbl.Name = "RowNameLbl";
-            this.RowNameLbl.Size = new System.Drawing.Size(472, 25);
+            this.RowNameLbl.Size = new System.Drawing.Size(591, 31);
             this.RowNameLbl.TabIndex = 2;
             this.RowNameLbl.Text = "Введите символ алфавита (название строки):";
             // 
@@ -84,19 +89,21 @@
             // 
             this.RowNameTxtBx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.RowNameTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RowNameTxtBx.Location = new System.Drawing.Point(490, 533);
+            this.RowNameTxtBx.Location = new System.Drawing.Point(653, 656);
+            this.RowNameTxtBx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RowNameTxtBx.MaxLength = 1;
             this.RowNameTxtBx.Name = "RowNameTxtBx";
-            this.RowNameTxtBx.Size = new System.Drawing.Size(83, 31);
+            this.RowNameTxtBx.Size = new System.Drawing.Size(109, 37);
             this.RowNameTxtBx.TabIndex = 3;
             this.RowNameTxtBx.TextChanged += new System.EventHandler(this.RowNameTxtBx_TextChanged);
             // 
             // DelRowBtn
             // 
             this.DelRowBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.DelRowBtn.Location = new System.Drawing.Point(760, 533);
+            this.DelRowBtn.Location = new System.Drawing.Point(1013, 656);
+            this.DelRowBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DelRowBtn.Name = "DelRowBtn";
-            this.DelRowBtn.Size = new System.Drawing.Size(175, 31);
+            this.DelRowBtn.Size = new System.Drawing.Size(233, 38);
             this.DelRowBtn.TabIndex = 4;
             this.DelRowBtn.Text = "Удалить";
             this.DelRowBtn.UseVisualStyleBackColor = true;
@@ -109,9 +116,10 @@
             // DelColumnBtn
             // 
             this.DelColumnBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.DelColumnBtn.Location = new System.Drawing.Point(760, 570);
+            this.DelColumnBtn.Location = new System.Drawing.Point(1013, 702);
+            this.DelColumnBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DelColumnBtn.Name = "DelColumnBtn";
-            this.DelColumnBtn.Size = new System.Drawing.Size(175, 31);
+            this.DelColumnBtn.Size = new System.Drawing.Size(233, 38);
             this.DelColumnBtn.TabIndex = 8;
             this.DelColumnBtn.Text = "Удалить";
             this.DelColumnBtn.UseVisualStyleBackColor = true;
@@ -121,10 +129,11 @@
             // 
             this.ColumnNameTxtBx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ColumnNameTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ColumnNameTxtBx.Location = new System.Drawing.Point(490, 570);
+            this.ColumnNameTxtBx.Location = new System.Drawing.Point(653, 702);
+            this.ColumnNameTxtBx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ColumnNameTxtBx.MaxLength = 10;
             this.ColumnNameTxtBx.Name = "ColumnNameTxtBx";
-            this.ColumnNameTxtBx.Size = new System.Drawing.Size(83, 31);
+            this.ColumnNameTxtBx.Size = new System.Drawing.Size(109, 37);
             this.ColumnNameTxtBx.TabIndex = 7;
             this.ColumnNameTxtBx.TextChanged += new System.EventHandler(this.ColumnNameTxtBx_TextChanged);
             this.ColumnNameTxtBx.Validating += new System.ComponentModel.CancelEventHandler(this.ColumnNameTxtBx_Validating);
@@ -134,18 +143,20 @@
             this.ColumnNameLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ColumnNameLbl.AutoSize = true;
             this.ColumnNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ColumnNameLbl.Location = new System.Drawing.Point(73, 573);
+            this.ColumnNameLbl.Location = new System.Drawing.Point(97, 705);
+            this.ColumnNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ColumnNameLbl.Name = "ColumnNameLbl";
-            this.ColumnNameLbl.Size = new System.Drawing.Size(411, 25);
+            this.ColumnNameLbl.Size = new System.Drawing.Size(516, 31);
             this.ColumnNameLbl.TabIndex = 6;
             this.ColumnNameLbl.Text = "Введите состояние (название столбца):";
             // 
             // AddColumnBtn
             // 
             this.AddColumnBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AddColumnBtn.Location = new System.Drawing.Point(579, 570);
+            this.AddColumnBtn.Location = new System.Drawing.Point(772, 702);
+            this.AddColumnBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddColumnBtn.Name = "AddColumnBtn";
-            this.AddColumnBtn.Size = new System.Drawing.Size(175, 31);
+            this.AddColumnBtn.Size = new System.Drawing.Size(233, 38);
             this.AddColumnBtn.TabIndex = 5;
             this.AddColumnBtn.Text = "Добавить";
             this.AddColumnBtn.UseVisualStyleBackColor = true;
@@ -153,9 +164,9 @@
             // 
             // EditQuantities
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 608);
+            this.ClientSize = new System.Drawing.Size(1495, 748);
             this.Controls.Add(this.DelColumnBtn);
             this.Controls.Add(this.ColumnNameTxtBx);
             this.Controls.Add(this.ColumnNameLbl);
@@ -165,9 +176,11 @@
             this.Controls.Add(this.RowNameLbl);
             this.Controls.Add(this.AddRowBtn);
             this.Controls.Add(this.table);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditQuantities";
             this.Text = "EditQuantities";
             this.Deactivate += new System.EventHandler(this.EditQuantities_Deactivate);
+            this.Shown += new System.EventHandler(this.EditQuantities_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -176,8 +189,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView table;
         private System.Windows.Forms.Button AddRowBtn;
         private System.Windows.Forms.Label RowNameLbl;
         private System.Windows.Forms.TextBox RowNameTxtBx;
@@ -187,5 +198,6 @@
         private System.Windows.Forms.TextBox ColumnNameTxtBx;
         private System.Windows.Forms.Label ColumnNameLbl;
         private System.Windows.Forms.Button AddColumnBtn;
+        private Program.DoubleBufferedDataGridView table;
     }
 }

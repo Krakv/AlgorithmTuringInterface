@@ -20,7 +20,10 @@ namespace AlgorithmTuringInterface
         public EditTape(MachineTuring owner, Dictionary<long, string> tape)
         {
             this.owner = owner;
-            this.tape = tape;
+            foreach(long key in tape.Keys)
+            {
+                this.tape[key] = tape[key];
+            }
             InitializeComponent();
         }
 
@@ -109,7 +112,10 @@ namespace AlgorithmTuringInterface
             if (txtbx.Text != "")
                 errorProvider1.SetError(txtbx, "Символ не найден в алфавите таблицы множества состояний.");
             else
+            {
+                tape.Remove(txtbx.TabIndex - 17 + shift);
                 errorProvider1.SetError(txtbx, null);
+            }
         }
 
         private void textBoxes_Validated(object sender, EventArgs e)
@@ -126,6 +132,18 @@ namespace AlgorithmTuringInterface
         private void EditTape_Deactivate(object sender, EventArgs e)
         {
             owner.InitializeTape();
+        }
+
+        private void EditTape_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var res = MessageBox.Show("Хотите сохранить изменения?", "Выход из программы",
+            MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            
+            if (res == DialogResult.Yes)
+            {
+                Data.tape = this.tape;
+            }
+            e.Cancel = !(res == DialogResult.No || res == DialogResult.Yes);
         }
     }
 }

@@ -98,9 +98,11 @@ namespace AlgorithmTuringInterface
             this.PreviousElement = new System.Windows.Forms.Button();
             this.NextElement = new System.Windows.Forms.Button();
             this.EditTapeFileBtn = new System.Windows.Forms.Button();
+            this.table = new AlgorithmTuringInterface.Program.DoubleBufferedDataGridView();
             this.Tape.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.SuspendLayout();
             // 
             // Tape
@@ -541,6 +543,16 @@ namespace AlgorithmTuringInterface
             this.EditTapeFileBtn.UseVisualStyleBackColor = true;
             this.EditTapeFileBtn.Click += new System.EventHandler(this.EditTapeFile_Click);
             // 
+            // table
+            // 
+            this.table.AllowUserToAddRows = false;
+            this.table.AllowUserToDeleteRows = false;
+            resources.ApplyResources(this.table, "table");
+            this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.table.Name = "table";
+            this.table.StandardTab = true;
+            this.table.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_CellEndEdit);
+            // 
             // MachineTuring
             // 
             resources.ApplyResources(this, "$this");
@@ -567,12 +579,14 @@ namespace AlgorithmTuringInterface
             this.MaximizeBox = false;
             this.Name = "MachineTuring";
             this.Activated += new System.EventHandler(this.MachineTuring_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MachineTuring_FormClosing);
             this.Shown += new System.EventHandler(this.MachineTuring_Shown);
             this.Tape.ResumeLayout(false);
             this.Tape.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

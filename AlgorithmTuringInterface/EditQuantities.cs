@@ -10,15 +10,16 @@ namespace AlgorithmTuringInterface
         string[] quantities;
         Dictionary<string, List<string>> actions;
         MachineTuring owner;
+        Program.DoubleBufferedDataGridView tableReference;
 
-        public EditQuantities(MachineTuring owner, string[] quantities, Dictionary<string, List<string>> actions)
+        public EditQuantities(MachineTuring owner, Program.DoubleBufferedDataGridView table)
         {
-            table = new Program.DoubleBufferedDataGridView();
-            this.quantities = quantities;
-            this.actions = actions;
+            tableReference = table;
             this.owner = owner;
             InitializeComponent();
-            InitializeQuantitiesTableEdit();
+            this.table.Visible = false;
+            this.table = table;
+            Controls.Add(table);
         }
 
         private void InitializeQuantitiesTableEdit()
@@ -40,6 +41,11 @@ namespace AlgorithmTuringInterface
                 row.Cells.AddRange(array);
                 table.Rows.Add(row);
             }
+        }
+
+        public void Table_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            actions[table.Rows[e.RowIndex].HeaderCell.Value.ToString()][e.ColumnIndex] = table[e.ColumnIndex, e.RowIndex].Value.ToString();
         }
 
         // Сохранение 
@@ -201,5 +207,11 @@ namespace AlgorithmTuringInterface
         }
 
         #endregion ColumnFuncs
+
+        private void EditQuantities_Shown(object sender, EventArgs e)
+        {
+            table = tableReference;
+            
+        }
     }
 }
