@@ -15,11 +15,12 @@ namespace AlgorithmTuringInterface
     {
         string[] quantities;
         Dictionary<string, List<string>> actions;
+        Font font = new Font("Microsoft Sans Serif; 16pt", 16);
 
-        public QuantityStatesForm()
+        public QuantityStatesForm(string[] quantities, Dictionary<string, List<string>> actions)
         {
-            this.quantities = Data.quantities;
-            this.actions = Data.actions;
+            this.quantities = quantities;
+            this.actions = actions;
             InitializeComponent();
             MakeQuantitiesTable();
         }
@@ -29,9 +30,16 @@ namespace AlgorithmTuringInterface
             QuantitiesTable.Controls[index].Text = value;
         }
 
+        public void AddColumn(string[] quantities, Dictionary<string, List<string>> actions)
+        {
+            this.quantities = quantities;
+            this.actions = actions;
+            Controls.Clear();
+            MakeQuantitiesTable();
+        }
+
         private void MakeQuantitiesTable()
         {
-            Font font = new Font("Microsoft Sans Serif; 16pt", 16);
             QuantitiesTable.Controls.Clear();
             QuantitiesTable.ColumnCount = quantities.Length + 1;
             QuantitiesTable.RowCount = actions.Count + 1;

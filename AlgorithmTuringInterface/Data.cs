@@ -12,6 +12,6 @@ namespace AlgorithmTuringInterface
         public static string[] quantities = { "Q1", "Q2", "Q3", "Q4", "Q5" };
         public static Dictionary<string, List<string>> actions = new Dictionary<string, List<string>>();
         public static Dictionary<long, string> tape = new Dictionary<long, string>();
-        public static DoubleBufferedDataGridView table = new Program.DoubleBufferedDataGridView();
+        public static System.Windows.Forms.DataGridView table = new System.Windows.Forms.DataGridView();
     }
 }

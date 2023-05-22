@@ -10,11 +10,9 @@ namespace AlgorithmTuringInterface
         string[] quantities;
         Dictionary<string, List<string>> actions;
         MachineTuring owner;
-        Program.DoubleBufferedDataGridView tableReference;
 
-        public EditQuantities(MachineTuring owner, Program.DoubleBufferedDataGridView table)
+        public EditQuantities(MachineTuring owner, DataGridView table)
         {
-            tableReference = table;
             this.owner = owner;
             InitializeComponent();
             this.table.Visible = false;
@@ -51,24 +49,25 @@ namespace AlgorithmTuringInterface
         // Сохранение 
         private void EditQuantities_Deactivate(object sender, EventArgs e)
         {
-            quantities = new string[table.Columns.Count];
-            foreach(DataGridViewTextBoxColumn column in table.Columns)
-            {
-                quantities[column.Index] = column.HeaderText;
-            }
-            actions = new Dictionary<string, List<string>>();
-            foreach (DataGridViewRow row in table.Rows)
-            {
-                List<string> list = new List<string>();
-                foreach(DataGridViewTextBoxCell item in row.Cells)
-                {
-                    list.Add(item.Value?.ToString());
-                }
-                if (row.HeaderCell.Value != null)
-                    actions[row.HeaderCell.Value?.ToString()] = list;
-            }
-            Data.actions = actions;
-            Data.quantities = quantities;
+            //quantities = new string[table.Columns.Count];
+            //foreach(DataGridViewTextBoxColumn column in table.Columns)
+            //{
+            //    quantities[column.Index] = column.HeaderText;
+            //}
+            //actions = new Dictionary<string, List<string>>();
+            //foreach (DataGridViewRow row in table.Rows)
+            //{
+            //    List<string> list = new List<string>();
+            //    foreach(DataGridViewTextBoxCell item in row.Cells)
+            //    {
+            //        list.Add(item.Value?.ToString());
+            //    }
+            //    if (row.HeaderCell.Value != null)
+            //        actions[row.HeaderCell.Value?.ToString()] = list;
+            //}
+            //Data.actions = actions;
+            //Data.quantities = quantities;
+            Controls.Clear();
         }
 
         #region RowFuncs
@@ -209,8 +208,8 @@ namespace AlgorithmTuringInterface
 
         private void EditQuantities_Shown(object sender, EventArgs e)
         {
-            table = tableReference;
-            
         }
+
+        
     }
 }

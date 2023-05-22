@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -16,11 +18,12 @@ namespace AlgorithmTuringInterface
 {
     public partial class MachineTuring : Form
     {
-        Dictionary<long, string> tape = new Dictionary<long, string>();
-        DoubleBufferedDataGridView table = new Program.DoubleBufferedDataGridView();
+        Dictionary<long, string> tape;
+        System.Windows.Forms.DataGridView table;
         long shift = 0;
         long chosenIndex = 0;
         long speed;
+        bool isCreated = false;
 
         public MachineTuring()
         {
@@ -29,6 +32,8 @@ namespace AlgorithmTuringInterface
             InitializeTable(Data.quantities, Data.actions);
             Data.table = table;
             speed = Int64.Parse(Regex.Replace(SpeedTxtBx.Text, @"[^\d]+", ""));
+            isCreated = true;
+            
         }
 
         public void InitializeTable(string[] quantities, Dictionary<string, List<string>> actions)
@@ -177,7 +182,7 @@ namespace AlgorithmTuringInterface
         public void PaintQuantitiesStatesForm()
         {
             this.QuantityStates.Controls.Clear();
-            QuantityStatesForm frm = new QuantityStatesForm() { BackColor = Color.White, TopLevel = false, Dock = DockStyle.Fill, TopMost = true };
+            QuantityStatesForm frm = new QuantityStatesForm(Data.quantities, Data.actions) { BackColor = Color.White, TopLevel = false, Dock = DockStyle.Fill, TopMost = true };
             this.QuantityStates.Controls.Add(frm);
             frm.Show();
         }
@@ -348,7 +353,7 @@ namespace AlgorithmTuringInterface
 
         private void OpenQuantitiesTableBtn_Click(object sender, EventArgs e)
         {
-            QuantityStatesForm frm = new QuantityStatesForm() { FormBorderStyle = FormBorderStyle.Sizable };
+            QuantityStatesForm frm = new QuantityStatesForm(Data.quantities, Data.actions) { FormBorderStyle = FormBorderStyle.Sizable };
             frm.Show();
         }
 
@@ -379,6 +384,22 @@ namespace AlgorithmTuringInterface
             Data.actions[table.Rows[e.RowIndex].HeaderCell.Value.ToString()][e.ColumnIndex] = table[e.ColumnIndex, e.RowIndex].Value.ToString();
             QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
             tablePanel.ChangeTableElement(table[e.ColumnIndex, e.RowIndex].Value.ToString(), (e.RowIndex + 1) * (table.ColumnCount + 1)  + e.ColumnIndex + 1);
+        }
+
+        private void table_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            if (isCreated)
+            {
+                string[] states = new string[table.Columns.Count];
+                int counter = 0;
+                foreach (DataGridViewColumn dataGridViewColumn in table.Columns)
+                    states[counter++] = dataGridViewColumn.HeaderText;
+                Data.quantities = states;
+                foreach (List<string> list in Data.actions.Values)
+                    list.Add("");
+                QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
+                tablePanel.AddColumn(Data.quantities, Data.actions);
+            }
         }
     }
 }

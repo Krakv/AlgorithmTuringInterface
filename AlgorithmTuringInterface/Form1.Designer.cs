@@ -98,7 +98,7 @@ namespace AlgorithmTuringInterface
             this.PreviousElement = new System.Windows.Forms.Button();
             this.NextElement = new System.Windows.Forms.Button();
             this.EditTapeFileBtn = new System.Windows.Forms.Button();
-            this.table = new AlgorithmTuringInterface.Program.DoubleBufferedDataGridView();
+            this.table = new System.Windows.Forms.DataGridView();
             this.Tape.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -547,12 +547,12 @@ namespace AlgorithmTuringInterface
             // 
             this.table.AllowUserToAddRows = false;
             this.table.AllowUserToDeleteRows = false;
-            resources.ApplyResources(this.table, "table");
             this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.table, "table");
             this.table.Name = "table";
             this.table.StandardTab = true;
-            this.table.Dock = DockStyle.Fill;
             this.table.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_CellEndEdit);
+            this.table.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.table_ColumnAdded);
             // 
             // MachineTuring
             // 
