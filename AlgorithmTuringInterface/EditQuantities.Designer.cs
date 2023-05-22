@@ -152,7 +152,6 @@ namespace AlgorithmTuringInterface
             this.Controls.Add(this.AddRowBtn);
             this.Name = "EditQuantities";
             this.Text = "EditQuantities";
-            this.Deactivate += new System.EventHandler(this.EditQuantities_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditQuantities_FormClosing);
             this.Shown += new System.EventHandler(this.EditQuantities_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

@@ -1,8 +1,6 @@
-﻿using System;
+﻿using AlgorithmTuringInterface.Properties;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -19,7 +17,7 @@ namespace AlgorithmTuringInterface
     public partial class MachineTuring : Form
     {
         Dictionary<long, string> tape;
-        System.Windows.Forms.DataGridView table;
+        DataGridView table;
         long shift = 0;
         long chosenIndex = 0;
         long speed;
@@ -35,6 +33,22 @@ namespace AlgorithmTuringInterface
             isCreated = true;
             Data.InitializeKeysIndexes(); 
         }
+
+        private void MachineTuring_Shown(object sender, EventArgs e)
+        {
+            PaintQuantitiesStatesForm();
+            InitializeTape();
+        }
+
+        private void MachineTuring_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var res = MessageBox.Show("Вы действительно хотите выйти?", "Выход из программы",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            e.Cancel = !(res == DialogResult.Yes);
+        }
+
+        #region Initializing
 
         public void InitializeTable(string[] quantities, Dictionary<string, List<string>> actions)
         {
@@ -65,16 +79,9 @@ namespace AlgorithmTuringInterface
         {
             try
             {
-                Data.Actions.Add("0", new List<string> { "0>Q5", "0>Q5", "0>Q5", "0>Q5", "0>Q5" });
-                Data.Actions.Add("1", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
-                Data.Actions.Add("2", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
-                Data.Actions.Add("3", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
-                Data.Actions.Add("4", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
-                Data.Actions.Add("5", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
-                Data.Actions.Add("6", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
-                Data.Actions.Add("7", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
-                Data.Actions.Add("8", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
-                Data.Actions.Add("9", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.Actions.Add("", new List<string> { "<Q2", ">finish"});
+                Data.Actions.Add("0", new List<string> { "1>Q1", "<Q2" });
+                Data.Actions.Add("1", new List<string> { "0>Q1", "<Q2" });
             }
             catch
             {
@@ -125,6 +132,60 @@ namespace AlgorithmTuringInterface
             this.QuantityStates.Controls.Add(frm);
             frm.Show();
         }
+
+        #region change the square button to a circular button
+
+        // This method will change the square button to a circular button by 
+        // creating a new circle-shaped GraphicsPath object and setting it 
+        // to the RoundButton objects region.
+        private void NextElement_Paint(object sender, PaintEventArgs e)
+        {
+            System.Drawing.Drawing2D.GraphicsPath buttonPath =
+                new System.Drawing.Drawing2D.GraphicsPath();
+
+            // Set a new rectangle to the same size as the button's 
+            // ClientRectangle property.
+            System.Drawing.Rectangle newRectangle = NextElement.ClientRectangle;
+
+            // Decrease the size of the rectangle.
+            newRectangle.Inflate(-3, -3);
+
+            // Increase the size of the rectangle to include the border.
+            newRectangle.Inflate(1, 1);
+
+            // Create a circle within the new rectangle.
+            buttonPath.AddEllipse(newRectangle);
+
+            // Set the button's Region property to the newly created 
+            // circle region.
+            NextElement.Region = new System.Drawing.Region(buttonPath);
+        }
+
+        private void PreviousElement_Paint(object sender, PaintEventArgs e)
+        {
+            System.Drawing.Drawing2D.GraphicsPath buttonPath =
+                new System.Drawing.Drawing2D.GraphicsPath();
+            System.Drawing.Rectangle newRectangle = PreviousElement.ClientRectangle;
+            newRectangle.Inflate(-3, -3);
+            newRectangle.Inflate(1, 1);
+            buttonPath.AddEllipse(newRectangle);
+            PreviousElement.Region = new System.Drawing.Region(buttonPath);
+        }
+
+        private void button1_Paint(object sender, PaintEventArgs e)
+        {
+            System.Drawing.Drawing2D.GraphicsPath buttonPath =
+                new System.Drawing.Drawing2D.GraphicsPath();
+            System.Drawing.Rectangle newRectangle = button1.ClientRectangle;
+            newRectangle.Inflate(-3, -3);
+            newRectangle.Inflate(1, 1);
+            buttonPath.AddEllipse(newRectangle);
+            button1.Region = new System.Drawing.Region(buttonPath);
+        }
+
+        #endregion change the square button to a circular button
+
+        #endregion Initializing
 
         #region Buttons
 
@@ -191,57 +252,9 @@ namespace AlgorithmTuringInterface
 
         #endregion Buttons
 
-        #region change the square button to a circular button
+        #region Upper Menu
 
-        // This method will change the square button to a circular button by 
-        // creating a new circle-shaped GraphicsPath object and setting it 
-        // to the RoundButton objects region.
-        private void NextElement_Paint(object sender, PaintEventArgs e)
-        {
-            System.Drawing.Drawing2D.GraphicsPath buttonPath =
-                new System.Drawing.Drawing2D.GraphicsPath();
-
-            // Set a new rectangle to the same size as the button's 
-            // ClientRectangle property.
-            System.Drawing.Rectangle newRectangle = NextElement.ClientRectangle;
-
-            // Decrease the size of the rectangle.
-            newRectangle.Inflate(-3, -3);
-
-            // Increase the size of the rectangle to include the border.
-            newRectangle.Inflate(1, 1);
-
-            // Create a circle within the new rectangle.
-            buttonPath.AddEllipse(newRectangle);
-
-            // Set the button's Region property to the newly created 
-            // circle region.
-            NextElement.Region = new System.Drawing.Region(buttonPath);
-        }
-
-        private void PreviousElement_Paint(object sender, PaintEventArgs e)
-        {
-            System.Drawing.Drawing2D.GraphicsPath buttonPath =
-                new System.Drawing.Drawing2D.GraphicsPath();
-            System.Drawing.Rectangle newRectangle = PreviousElement.ClientRectangle;
-            newRectangle.Inflate(-3, -3);
-            newRectangle.Inflate(1, 1);
-            buttonPath.AddEllipse(newRectangle);
-            PreviousElement.Region = new System.Drawing.Region(buttonPath);
-        }
-
-        private void button1_Paint(object sender, PaintEventArgs e)
-        {
-            System.Drawing.Drawing2D.GraphicsPath buttonPath =
-                new System.Drawing.Drawing2D.GraphicsPath();
-            System.Drawing.Rectangle newRectangle = button1.ClientRectangle;
-            newRectangle.Inflate(-3, -3);
-            newRectangle.Inflate(1, 1);
-            buttonPath.AddEllipse(newRectangle);
-            button1.Region = new System.Drawing.Region(buttonPath);
-        }
-
-        #endregion change the square button to a circular button
+        #region TapeFile
 
         private void OpenTapeFile_Click(object sender, EventArgs e)
         {
@@ -269,23 +282,15 @@ namespace AlgorithmTuringInterface
             editTape.Show();
         }
 
-        private void EditQuantitiesFile_Click(object sender, EventArgs e)
-        {
-            EditQuantities editQuantities = new EditQuantities(this, table);
-            editQuantities.Show();
-        }
-
         private void CreateTapeFile_Click(object sender, EventArgs e)
         {
             EditTape editTape = new EditTape(this, new Dictionary<long, string>());
             editTape.Show();
         }
 
-        private void CreateQuantitiesFile_Click(object sender, EventArgs e)
-        {
-            EditQuantities editQuantities = new EditQuantities(this, table);
-            editQuantities.Show();
-        }
+        #endregion TapeFile
+
+        #region QuantitiesFile
 
         private void OpenQuantitiesFile_Click(object sender, EventArgs e)
         {
@@ -309,10 +314,38 @@ namespace AlgorithmTuringInterface
             }
         }
 
-        private void MachineTuring_Shown(object sender, EventArgs e)
+        private void EditQuantitiesFile_Click(object sender, EventArgs e)
         {
-            PaintQuantitiesStatesForm();
-            InitializeTape();
+            EditQuantities editQuantities = new EditQuantities(this, table);
+            editQuantities.Show();
+        }
+
+        private void CreateQuantitiesFile_Click(object sender, EventArgs e)
+        {
+            EditQuantities editQuantities = new EditQuantities(this, table);
+            editQuantities.Show();
+        }
+
+        #endregion QuantitiesFile
+
+        private void InitChosenIndexBtn_Click(object sender, EventArgs e)
+        {
+            string result = Microsoft.VisualBasic.Interaction.InputBox("Введите целое число - индекс элемента, с которого будет произведен запуск алогритма:");
+            bool isSuccess = result == "" || Int64.TryParse(result, out chosenIndex);
+            if (!isSuccess)
+            {
+                MessageBox.Show("Введенный индекс не является целым числом", "Ошибка ввода", MessageBoxButtons.OK);
+                InitChosenIndexBtn_Click(sender, e);
+                return;
+            }
+            if (result != "")
+                InitializeTape();
+        }
+
+        private void OpenQuantitiesTableBtn_Click(object sender, EventArgs e)
+        {
+            QuantityStatesForm frm = new QuantityStatesForm(Data.quantities, Data.Actions) { FormBorderStyle = FormBorderStyle.Sizable };
+            frm.Show();
         }
 
         private void ChangeSpeedBtn_Click(object sender, EventArgs e)
@@ -329,33 +362,14 @@ namespace AlgorithmTuringInterface
                 SpeedTxtBx.Text = speed.ToString() + " мс";
         }
 
-        private void OpenQuantitiesTableBtn_Click(object sender, EventArgs e)
+        private void UserGuideMenuItem_Click(object sender, EventArgs e)
         {
-            QuantityStatesForm frm = new QuantityStatesForm(Data.quantities, Data.Actions) { FormBorderStyle = FormBorderStyle.Sizable };
-            frm.Show();
+            System.Windows.Forms.Help.ShowHelp(this, "UserGuide.chm");
         }
 
-        private void InitChosenIndexBtn_Click(object sender, EventArgs e)
-        {
-            string result = Microsoft.VisualBasic.Interaction.InputBox("Введите целое число - индекс элемента, с которого будет произведен запуск алогритма:");
-            bool isSuccess = result == "" || Int64.TryParse(result, out chosenIndex);
-            if (!isSuccess)
-            {
-                MessageBox.Show("Введенный индекс не является целым числом", "Ошибка ввода", MessageBoxButtons.OK);
-                InitChosenIndexBtn_Click(sender, e);
-                return;
-            }
-            if (result != "")
-                InitializeTape();
-        }
+        #endregion Upper menu
 
-        private void MachineTuring_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            var res = MessageBox.Show("Вы действительно хотите выйти?", "Выход из программы",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            e.Cancel = !(res == DialogResult.Yes);
-        }
+        #region TableEdited
 
         public void Table_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
@@ -423,6 +437,8 @@ namespace AlgorithmTuringInterface
                 Data.InitializeKeysIndexes();
             }
         }
+
+        #endregion TableEdited
 
     }
 }

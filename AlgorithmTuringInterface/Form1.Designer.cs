@@ -93,12 +93,13 @@ namespace AlgorithmTuringInterface
             this.StartNFinishBtn = new System.Windows.Forms.Button();
             this.FinishBtn = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.table = new System.Windows.Forms.DataGridView();
+            this.UserGuideMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditTapeFileBtn = new System.Windows.Forms.Button();
             this.EditQuantitiesFileBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.PreviousElement = new System.Windows.Forms.Button();
             this.NextElement = new System.Windows.Forms.Button();
-            this.EditTapeFileBtn = new System.Windows.Forms.Button();
-            this.table = new System.Windows.Forms.DataGridView();
             this.Tape.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -456,6 +457,8 @@ namespace AlgorithmTuringInterface
             // 
             // помощьToolStripMenuItem
             // 
+            this.помощьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UserGuideMenuItem});
             this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
             resources.ApplyResources(this.помощьToolStripMenuItem, "помощьToolStripMenuItem");
             // 
@@ -500,6 +503,34 @@ namespace AlgorithmTuringInterface
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // table
+            // 
+            this.table.AllowUserToAddRows = false;
+            this.table.AllowUserToDeleteRows = false;
+            this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.table, "table");
+            this.table.Name = "table";
+            this.table.StandardTab = true;
+            this.table.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_CellEndEdit);
+            this.table.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.table_ColumnAdded);
+            this.table.ColumnRemoved += new System.Windows.Forms.DataGridViewColumnEventHandler(this.table_ColumnRemoved);
+            this.table.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.table_RowAdded);
+            this.table.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.table_RowRemoved);
+            // 
+            // UserGuideMenuItem
+            // 
+            this.UserGuideMenuItem.Name = "UserGuideMenuItem";
+            resources.ApplyResources(this.UserGuideMenuItem, "UserGuideMenuItem");
+            this.UserGuideMenuItem.Click += new System.EventHandler(this.UserGuideMenuItem_Click);
+            // 
+            // EditTapeFileBtn
+            // 
+            this.EditTapeFileBtn.BackgroundImage = global::AlgorithmTuringInterface.Properties.Resources._1159633;
+            resources.ApplyResources(this.EditTapeFileBtn, "EditTapeFileBtn");
+            this.EditTapeFileBtn.Name = "EditTapeFileBtn";
+            this.EditTapeFileBtn.UseVisualStyleBackColor = true;
+            this.EditTapeFileBtn.Click += new System.EventHandler(this.EditTapeFile_Click);
+            // 
             // EditQuantitiesFileBtn
             // 
             this.EditQuantitiesFileBtn.BackgroundImage = global::AlgorithmTuringInterface.Properties.Resources._1159633;
@@ -534,28 +565,6 @@ namespace AlgorithmTuringInterface
             this.NextElement.UseVisualStyleBackColor = true;
             this.NextElement.Click += new System.EventHandler(this.NextElement_Click);
             this.NextElement.Paint += new System.Windows.Forms.PaintEventHandler(this.NextElement_Paint);
-            // 
-            // EditTapeFileBtn
-            // 
-            this.EditTapeFileBtn.BackgroundImage = global::AlgorithmTuringInterface.Properties.Resources._1159633;
-            resources.ApplyResources(this.EditTapeFileBtn, "EditTapeFileBtn");
-            this.EditTapeFileBtn.Name = "EditTapeFileBtn";
-            this.EditTapeFileBtn.UseVisualStyleBackColor = true;
-            this.EditTapeFileBtn.Click += new System.EventHandler(this.EditTapeFile_Click);
-            // 
-            // table
-            // 
-            this.table.AllowUserToAddRows = false;
-            this.table.AllowUserToDeleteRows = false;
-            this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.table, "table");
-            this.table.Name = "table";
-            this.table.StandardTab = true;
-            this.table.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_CellEndEdit);
-            this.table.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.table_ColumnAdded);
-            this.table.ColumnRemoved += new System.Windows.Forms.DataGridViewColumnEventHandler(this.table_ColumnRemoved);
-            this.table.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.table_RowAdded);
-            this.table.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.table_RowRemoved);
             // 
             // MachineTuring
             // 
@@ -662,6 +671,7 @@ namespace AlgorithmTuringInterface
         private ToolStripMenuItem оПрограммеToolStripMenuItem;
         private ToolStripMenuItem CurrentSpeedTxtBx;
         private ToolStripMenuItem SpeedTxtBx;
+        private ToolStripMenuItem UserGuideMenuItem;
     }
 }
 

@@ -7,67 +7,28 @@ namespace AlgorithmTuringInterface
 {
     public partial class EditQuantities : Form
     {
-        //string[] quantities;
-        //Dictionary<string, List<string>> actions;
         MachineTuring owner;
         DataGridView table;
 
         public EditQuantities(MachineTuring owner, DataGridView table)
         {
-            this.owner = owner;
             InitializeComponent();
-            this.table = table;
-            Controls.Add(table);
+            this.owner = owner; // Добавление формы-владельца, которая инициировала запуск данной формы
+            this.table = table; // Передача таблицы DataGridView
+            Controls.Add(table); // Добавление таблицы в форму
+        }
+        
+        private void EditQuantities_Shown(object sender, EventArgs e)
+        {
+            owner.Enabled = false; // Выключение формы-владельца
         }
 
-        //private void InitializeQuantitiesTableEdit()
-        //{
-        //    // Adding first row (quantities)
-        //    for (int i = 0; i < quantities.Length; i++)
-        //    {
-        //        table.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = quantities[i] });
-        //    }
-        //    // Adding Rows (actions)
-        //    foreach (string key in actions.Keys)
-        //    {
-        //        DataGridViewCell[] array = new DataGridViewCell[actions[key].Count];
-        //        for (int i = 0; i < actions[key].Count; i++)
-        //        {
-        //            array[i] = new DataGridViewTextBoxCell() { Value = actions[key][i] };
-        //        }
-        //        DataGridViewRow row = new DataGridViewRow() { HeaderCell = new DataGridViewRowHeaderCell() { Value = key } };
-        //        row.Cells.AddRange(array);
-        //        table.Rows.Add(row);
-        //    }
-        //}
-
-        //public void Table_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    actions[table.Rows[e.RowIndex].HeaderCell.Value.ToString()][e.ColumnIndex] = table[e.ColumnIndex, e.RowIndex].Value.ToString();
-        //}
-
-        // Сохранение 
-        private void EditQuantities_Deactivate(object sender, EventArgs e)
+        private void EditQuantities_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //quantities = new string[table.Columns.Count];
-            //foreach(DataGridViewTextBoxColumn column in table.Columns)
-            //{
-            //    quantities[column.Index] = column.HeaderText;
-            //}
-            //actions = new Dictionary<string, List<string>>();
-            //foreach (DataGridViewRow row in table.Rows)
-            //{
-            //    List<string> list = new List<string>();
-            //    foreach(DataGridViewTextBoxCell item in row.Cells)
-            //    {
-            //        list.Add(item.Value?.ToString());
-            //    }
-            //    if (row.HeaderCell.Value != null)
-            //        actions[row.HeaderCell.Value?.ToString()] = list;
-            //}
-            //Data.actions = actions;
-            //Data.quantities = quantities;
-            //Controls.Remove(table);
+            Controls.Clear(); // Для избежания удаления таблицы в качестве мусора
+            QuantityStatesForm tablePanel = owner.QuantityStates.Controls[0] as QuantityStatesForm;
+            tablePanel.ChangeTable(Data.quantities, Data.Actions); // Перерисовка таблицы в форме-владельце
+            owner.Enabled = true; // Включение формы-владельца
         }
 
         #region RowFuncs
@@ -94,34 +55,33 @@ namespace AlgorithmTuringInterface
 
         private void DelRowBtn_Click(object sender, EventArgs e)
         {
+            // Если в текстовом боксе ничего не написано
             if (RowNameTxtBx.Text.Trim() == "")
                 return;
-            // Initializes the variables to pass to the MessageBox.Show method.
+
+            // Вывод MessageBox
             string message = $"Вы действительно хотите удалить строку символа {RowNameTxtBx.Text.Trim()}?";
-            string caption = "Подтверждение";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result;
+            DialogResult result = MessageBox.Show(message, "Подтверждение", MessageBoxButtons.YesNo); 
 
-            // Displays the MessageBox.
-            result = MessageBox.Show(message, caption, buttons);
-
-            // Deleting
-            if (result == System.Windows.Forms.DialogResult.Yes)
+            // Удаление строки
+            if (result == DialogResult.Yes)
             {
-                foreach(DataGridViewRow row in table.Rows)
+                foreach(DataGridViewRow row in table.Rows) // Перебор строк таблицы состояний
                 {
+                    // Если нашлась строка с введенным символом в названии
                     if (row.HeaderCell.Value?.ToString() == RowNameTxtBx.Text.Trim())
                     {
                         table.Rows.RemoveAt(row.Index);
                         return;
                     }
                 }
+                MessageBox.Show("Строка не найдена.", "Ошибка удаления", MessageBoxButtons.OK);
             }
-            MessageBox.Show("Строка не найдена.", "Ошибка удаления", MessageBoxButtons.OK);
         }
 
         private void RowNameTxtBx_TextChanged(object sender, EventArgs e)
         {
+            // Включение кнопок удаления и добавления строк
             AddRowBtn.Enabled = true;
             DelRowBtn.Enabled = true;
         }
@@ -153,41 +113,43 @@ namespace AlgorithmTuringInterface
 
         private void DelColumnBtn_Click(object sender, EventArgs e)
         {
+            // Если в текстовом боксе ничего не написано
             if (ColumnNameTxtBx.Text.Trim() == "")
                 return;
-            // Initializes the variables to pass to the MessageBox.Show method.
-            string message = $"Вы действительно хотите удалить столбец состояния {"Q" + ColumnNameTxtBx.Text.Trim()}?";
-            string caption = "Подтверждение";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result;
 
-            // Displays the MessageBox.
-            result = MessageBox.Show(message, caption, buttons);
-            // Deleting
+            // Вывод Message Box
+            string message = $"Вы действительно хотите удалить столбец состояния {"Q" + ColumnNameTxtBx.Text.Trim()}?";
+            DialogResult result = MessageBox.Show(message, "Подтверждение", MessageBoxButtons.YesNo);
+
+            // Удаление столбца таблицы состояний
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
-                foreach (DataGridViewColumn column in table.Columns)
+                foreach (DataGridViewColumn column in table.Columns) // Перебор столбцов таблицы состояний
                 {
+                    // Если нашелся столбец с введенным номером в названии
                     if (column.HeaderCell.Value?.ToString() == "Q" + ColumnNameTxtBx.Text.Trim())
                     {
                         table.Columns.RemoveAt(column.Index);
                         return;
                     }
                 }
+                MessageBox.Show("Столбец не найден.", "Ошибка удаления", MessageBoxButtons.OK);
             }
-            MessageBox.Show("Столбец не найден.", "Ошибка удаления", MessageBoxButtons.OK);
         }
 
         private void ColumnNameTxtBx_TextChanged(object sender, EventArgs e)
         {
+            // Включение кнопок удаления и добавление столбцов
             AddColumnBtn.Enabled = true;
             DelColumnBtn.Enabled = true;
         }
 
         private void ColumnNameTxtBx_Validating(object sender, CancelEventArgs e)
         {
+            // Если в текстовом боксе ничего не написано
             if (ColumnNameTxtBx.Text.Trim() == "")
                 return;
+
             int number;
             // если введенный номер состояния не натуральное число
             if (!Int32.TryParse(ColumnNameTxtBx.Text, out number) || number < 1)
@@ -205,18 +167,5 @@ namespace AlgorithmTuringInterface
         }
 
         #endregion ColumnFuncs
-
-        private void EditQuantities_Shown(object sender, EventArgs e)
-        {
-            owner.Enabled = false;
-        }
-
-        private void EditQuantities_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Controls.Clear();
-            QuantityStatesForm tablePanel = owner.QuantityStates.Controls[0] as QuantityStatesForm;
-            tablePanel.ChangeTable(Data.quantities, Data.Actions);
-            owner.Enabled = true;
-        }
     }
 }

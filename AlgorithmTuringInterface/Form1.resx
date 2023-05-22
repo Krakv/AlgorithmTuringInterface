@@ -1147,25 +1147,25 @@
     <value>Лента</value>
   </data>
   <data name="CreateQuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="CreateQuantitiesFile.Text" xml:space="preserve">
     <value>Создать</value>
   </data>
   <data name="SaveQuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="SaveQuantitiesFile.Text" xml:space="preserve">
     <value>Сохранить</value>
   </data>
   <data name="OpenQuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="OpenQuantitiesFile.Text" xml:space="preserve">
     <value>Открыть</value>
   </data>
   <data name="EditQuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="EditQuantitiesFile.Text" xml:space="preserve">
     <value>Редактировать</value>
@@ -1229,6 +1229,12 @@
   </data>
   <data name="задачиToolStripMenuItem.Text" xml:space="preserve">
     <value>Задачи</value>
+  </data>
+  <data name="UserGuideMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="UserGuideMenuItem.Text" xml:space="preserve">
+    <value>Руководство пользователя</value>
   </data>
   <data name="помощьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 20</value>
@@ -1775,6 +1781,12 @@
   </data>
   <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UserGuideMenuItem.Name" xml:space="preserve">
+    <value>UserGuideMenuItem</value>
+  </data>
+  <data name="&gt;&gt;UserGuideMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MachineTuring</value>

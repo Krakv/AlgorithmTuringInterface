@@ -10,8 +10,12 @@ namespace AlgorithmTuringInterface
 {
     public class Data
     {
-        public static string[] quantities = { "Q1", "Q2", "Q3", "Q4", "Q5" };
         private static Dictionary<string, List<string>> actions = new Dictionary<string, List<string>>();
+        public static string[] quantities = { "Q1", "Q2" };
+        public static Dictionary<int, string> keysIndexes = new Dictionary<int, string>();
+        public static Dictionary<long, string> tape = new Dictionary<long, string>();
+        public static System.Windows.Forms.DataGridView table = new System.Windows.Forms.DataGridView();
+
         public static Dictionary<string, List<string>> Actions
         {
             get { return actions; }
@@ -21,10 +25,8 @@ namespace AlgorithmTuringInterface
                 InitializeKeysIndexes();
             }
         }
-        public static Dictionary<int, string> keysIndexes = new Dictionary<int, string>();
+        
         public static Dictionary<int, string> KeysIndexes {  get => keysIndexes; private set => keysIndexes = value; }
-        public static Dictionary<long, string> tape = new Dictionary<long, string>();
-        public static System.Windows.Forms.DataGridView table = new System.Windows.Forms.DataGridView();
 
         public static void InitializeKeysIndexes()
         {
