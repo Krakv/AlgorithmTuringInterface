@@ -31,7 +31,6 @@ namespace AlgorithmTuringInterface
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.table = new System.Windows.Forms.DataGridView();
             this.AddRowBtn = new System.Windows.Forms.Button();
             this.RowNameLbl = new System.Windows.Forms.Label();
             this.RowNameTxtBx = new System.Windows.Forms.TextBox();
@@ -41,27 +40,8 @@ namespace AlgorithmTuringInterface
             this.ColumnNameTxtBx = new System.Windows.Forms.TextBox();
             this.ColumnNameLbl = new System.Windows.Forms.Label();
             this.AddColumnBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // table
-            // 
-            this.table.AllowUserToAddRows = false;
-            this.table.AllowUserToDeleteRows = false;
-            this.table.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.table.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.table.Location = new System.Drawing.Point(12, 12);
-            this.table.Name = "table";
-            this.table.RowHeadersWidth = 51;
-            this.table.Size = new System.Drawing.Size(1097, 515);
-            this.table.StandardTab = true;
-            this.table.TabIndex = 0;
-            this.table.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_CellEndEdit);
-            
             // 
             // AddRowBtn
             // 
@@ -169,12 +149,11 @@ namespace AlgorithmTuringInterface
             this.Controls.Add(this.RowNameTxtBx);
             this.Controls.Add(this.RowNameLbl);
             this.Controls.Add(this.AddRowBtn);
-            this.Controls.Add(this.table);
             this.Name = "EditQuantities";
             this.Text = "EditQuantities";
             this.Deactivate += new System.EventHandler(this.EditQuantities_Deactivate);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditQuantities_FormClosing);
             this.Shown += new System.EventHandler(this.EditQuantities_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -191,6 +170,5 @@ namespace AlgorithmTuringInterface
         private System.Windows.Forms.TextBox ColumnNameTxtBx;
         private System.Windows.Forms.Label ColumnNameLbl;
         private System.Windows.Forms.Button AddColumnBtn;
-        private System.Windows.Forms.DataGridView table;
     }
 }

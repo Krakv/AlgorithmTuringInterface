@@ -22,10 +22,10 @@ namespace AlgorithmTuringInterface
         }
 
         // Двойная буферизация DataGrid (ускорение работы)
-        public class DoubleBufferedDataGridView : DataGridView
-        {
-            protected override bool DoubleBuffered { get => true; }
-        }
+        //public class DoubleBufferedDataGridView : DataGridView
+        //{
+        //    protected override bool DoubleBuffered { get => true; }
+        //}
 
         public static string FindPathManually()
         {

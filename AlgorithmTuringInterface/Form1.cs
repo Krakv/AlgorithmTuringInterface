@@ -29,11 +29,11 @@ namespace AlgorithmTuringInterface
         {
             InitializeActions();
             InitializeComponent();
-            InitializeTable(Data.quantities, Data.actions);
+            InitializeTable(Data.quantities, Data.Actions);
             Data.table = table;
             speed = Int64.Parse(Regex.Replace(SpeedTxtBx.Text, @"[^\d]+", ""));
             isCreated = true;
-            
+            Data.InitializeKeysIndexes(); 
         }
 
         public void InitializeTable(string[] quantities, Dictionary<string, List<string>> actions)
@@ -55,27 +55,75 @@ namespace AlgorithmTuringInterface
                 row.Cells.AddRange(array);
                 table.Rows.Add(row);
             }
+            table.Size = new Size(1097, 515);
+            table.Location = new Point(12, 12);
+            table.Dock = DockStyle.None;
+            table.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
         }
 
         private void InitializeActions()
         {
             try
             {
-                Data.actions.Add("0", new List<string> { "0>Q5", "0>Q5", "0>Q5", "0>Q5", "0>Q5" });
-                Data.actions.Add("1", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
-                Data.actions.Add("2", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
-                Data.actions.Add("3", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
-                Data.actions.Add("4", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
-                Data.actions.Add("5", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
-                Data.actions.Add("6", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
-                Data.actions.Add("7", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
-                Data.actions.Add("8", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
-                Data.actions.Add("9", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.Actions.Add("0", new List<string> { "0>Q5", "0>Q5", "0>Q5", "0>Q5", "0>Q5" });
+                Data.Actions.Add("1", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.Actions.Add("2", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.Actions.Add("3", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.Actions.Add("4", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.Actions.Add("5", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.Actions.Add("6", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.Actions.Add("7", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.Actions.Add("8", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
+                Data.Actions.Add("9", new List<string> { "1>Q5", "1>Q5", "1>Q5", "1>Q5", "1>Q5" });
             }
             catch
             {
                 //nothing
             }
+        }
+
+        public void InitializeTape()
+        {
+            tape = Data.tape;
+            foreach(TextBox textbox in Tape.Controls)
+            {
+                if (textbox.TabIndex <= 11)
+                    PrintIndex(textbox, shift);
+                else
+                    PrintTapeElement(textbox, shift);
+            }
+        }
+
+        private void PrintIndex(TextBox box, long shift)
+        {
+            box.Text = (box.TabIndex - 6 + shift).ToString();
+        }
+
+        private void PrintTapeElement(TextBox box, long shift, string gap = "")
+        {
+            Color defaultColor = Color.FromArgb(255, 240, 240, 240);
+            long index = box.TabIndex - 17 + shift;
+            try
+            {
+                box.Text = tape[index];
+            }
+            catch
+            {
+                box.Text = gap;
+            }
+            if (chosenIndex == index)
+                box.BackColor = Color.LightYellow;
+            else
+                box.BackColor = defaultColor;
+
+        }
+
+        public void PaintQuantitiesStatesForm()
+        {
+            this.QuantityStates.Controls.Clear();
+            QuantityStatesForm frm = new QuantityStatesForm(Data.quantities, Data.Actions) { BackColor = Color.White, TopLevel = false, Dock = DockStyle.Fill, TopMost = true };
+            this.QuantityStates.Controls.Add(frm);
+            frm.Show();
         }
 
         #region Buttons
@@ -143,71 +191,11 @@ namespace AlgorithmTuringInterface
 
         #endregion Buttons
 
-        public void InitializeTape()
-        {
-            tape = Data.tape;
-            foreach(TextBox textbox in Tape.Controls)
-            {
-                if (textbox.TabIndex <= 11)
-                    PrintIndex(textbox, shift);
-                else
-                    PrintTapeElement(textbox, shift);
-            }
-        }
+        #region change the square button to a circular button
 
-        private void PrintIndex(TextBox box, long shift)
-        {
-            box.Text = (box.TabIndex - 6 + shift).ToString();
-        }
-
-        private void PrintTapeElement(TextBox box, long shift, string gap = "")
-        {
-            Color defaultColor = Color.FromArgb(255, 240, 240, 240);
-            long index = box.TabIndex - 17 + shift;
-            try
-            {
-                box.Text = tape[index];
-            }
-            catch
-            {
-                box.Text = gap;
-            }
-            if (chosenIndex == index)
-                box.BackColor = Color.LightYellow;
-            else
-                box.BackColor = defaultColor;
-
-        }
-
-        public void PaintQuantitiesStatesForm()
-        {
-            this.QuantityStates.Controls.Clear();
-            QuantityStatesForm frm = new QuantityStatesForm(Data.quantities, Data.actions) { BackColor = Color.White, TopLevel = false, Dock = DockStyle.Fill, TopMost = true };
-            this.QuantityStates.Controls.Add(frm);
-            frm.Show();
-        }
-
-        private void OpenTapeFile_Click(object sender, EventArgs e)
-        {
-            string tapePath = string.Empty;
-            try
-            {
-                tapePath = Program.FindPathManually();
-                tape = Program.ReadTape(tapePath);
-            }
-            catch
-            {
-                // Initializes the variables to pass to the MessageBox.Show method.
-                string message = "Не удалось считать файл из выбранного пути.";
-                string caption = "Ошибка ввода";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-
-                // Displays the MessageBox.
-                MessageBox.Show(message, caption, buttons);
-            }
-        }
-
-
+        // This method will change the square button to a circular button by 
+        // creating a new circle-shaped GraphicsPath object and setting it 
+        // to the RoundButton objects region.
         private void NextElement_Paint(object sender, PaintEventArgs e)
         {
             System.Drawing.Drawing2D.GraphicsPath buttonPath =
@@ -235,49 +223,44 @@ namespace AlgorithmTuringInterface
         {
             System.Drawing.Drawing2D.GraphicsPath buttonPath =
                 new System.Drawing.Drawing2D.GraphicsPath();
-
-            // Set a new rectangle to the same size as the button's 
-            // ClientRectangle property.
             System.Drawing.Rectangle newRectangle = PreviousElement.ClientRectangle;
-
-            // Decrease the size of the rectangle.
             newRectangle.Inflate(-3, -3);
-
-            // Increase the size of the rectangle to include the border.
             newRectangle.Inflate(1, 1);
-
-            // Create a circle within the new rectangle.
             buttonPath.AddEllipse(newRectangle);
-
-            // Set the button's Region property to the newly created 
-            // circle region.
             PreviousElement.Region = new System.Drawing.Region(buttonPath);
         }
 
-        // This method will change the square button to a circular button by 
-        // creating a new circle-shaped GraphicsPath object and setting it 
-        // to the RoundButton objects region.
         private void button1_Paint(object sender, PaintEventArgs e)
         {
             System.Drawing.Drawing2D.GraphicsPath buttonPath =
                 new System.Drawing.Drawing2D.GraphicsPath();
-
-            // Set a new rectangle to the same size as the button's 
-            // ClientRectangle property.
             System.Drawing.Rectangle newRectangle = button1.ClientRectangle;
-
-            // Decrease the size of the rectangle.
             newRectangle.Inflate(-3, -3);
-
-            // Increase the size of the rectangle to include the border.
             newRectangle.Inflate(1, 1);
-
-            // Create a circle within the new rectangle.
             buttonPath.AddEllipse(newRectangle);
-
-            // Set the button's Region property to the newly created 
-            // circle region.
             button1.Region = new System.Drawing.Region(buttonPath);
+        }
+
+        #endregion change the square button to a circular button
+
+        private void OpenTapeFile_Click(object sender, EventArgs e)
+        {
+            string tapePath = string.Empty;
+            try
+            {
+                tapePath = Program.FindPathManually();
+                tape = Program.ReadTape(tapePath);
+            }
+            catch
+            {
+                // Initializes the variables to pass to the MessageBox.Show method.
+                string message = "Не удалось считать файл из выбранного пути.";
+                string caption = "Ошибка ввода";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+
+                // Displays the MessageBox.
+                MessageBox.Show(message, caption, buttons);
+            }
         }
 
         private void EditTapeFile_Click(object sender, EventArgs e)
@@ -290,11 +273,6 @@ namespace AlgorithmTuringInterface
         {
             EditQuantities editQuantities = new EditQuantities(this, table);
             editQuantities.Show();
-        }
-
-        private void MachineTuring_Activated(object sender, EventArgs e)
-        {
-            
         }
 
         private void CreateTapeFile_Click(object sender, EventArgs e)
@@ -316,7 +294,7 @@ namespace AlgorithmTuringInterface
             {
                 actionsPath = Program.FindPathManually();
                 object[] obj = Program.ReadActionsFile(actionsPath);
-                Data.actions = obj[0] as Dictionary<string, List<string>>;
+                Data.Actions = obj[0] as Dictionary<string, List<string>>;
                 Data.quantities = obj[1] as string[];
             }
             catch
@@ -353,7 +331,7 @@ namespace AlgorithmTuringInterface
 
         private void OpenQuantitiesTableBtn_Click(object sender, EventArgs e)
         {
-            QuantityStatesForm frm = new QuantityStatesForm(Data.quantities, Data.actions) { FormBorderStyle = FormBorderStyle.Sizable };
+            QuantityStatesForm frm = new QuantityStatesForm(Data.quantities, Data.Actions) { FormBorderStyle = FormBorderStyle.Sizable };
             frm.Show();
         }
 
@@ -381,7 +359,7 @@ namespace AlgorithmTuringInterface
 
         public void Table_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            Data.actions[table.Rows[e.RowIndex].HeaderCell.Value.ToString()][e.ColumnIndex] = table[e.ColumnIndex, e.RowIndex].Value.ToString();
+            Data.Actions[table.Rows[e.RowIndex].HeaderCell.Value.ToString()][e.ColumnIndex] = table[e.ColumnIndex, e.RowIndex].Value.ToString();
             QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
             tablePanel.ChangeTableElement(table[e.ColumnIndex, e.RowIndex].Value.ToString(), (e.RowIndex + 1) * (table.ColumnCount + 1)  + e.ColumnIndex + 1);
         }
@@ -395,11 +373,56 @@ namespace AlgorithmTuringInterface
                 foreach (DataGridViewColumn dataGridViewColumn in table.Columns)
                     states[counter++] = dataGridViewColumn.HeaderText;
                 Data.quantities = states;
-                foreach (List<string> list in Data.actions.Values)
+                foreach (List<string> list in Data.Actions.Values)
                     list.Add("");
                 QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
-                tablePanel.AddColumn(Data.quantities, Data.actions);
+                tablePanel.ChangeTable(Data.quantities, Data.Actions);
+                Data.InitializeKeysIndexes();
             }
         }
+
+        private void table_ColumnRemoved(object sender, DataGridViewColumnEventArgs e)
+        {
+            if (isCreated)
+            {
+                string[] states = new string[table.Columns.Count];
+                int counter = 0;
+                foreach (DataGridViewColumn dataGridViewColumn in table.Columns)
+                    states[counter++] = dataGridViewColumn.HeaderText;
+                Data.quantities = states;
+                foreach (List<string> list in Data.Actions.Values)
+                    list.RemoveAt(e.Column.DisplayIndex);
+                QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
+                tablePanel.ChangeTable(Data.quantities, Data.Actions);
+                Data.InitializeKeysIndexes();
+            }
+        }
+        
+        private void table_RowAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (isCreated)
+            {
+                List<string> elems = new List<string>();
+                for (int i = 0; i < table.Columns.Count; i++)
+                    elems.Add("");
+                Data.Actions.Add(table.Rows[e.RowIndex].HeaderCell.Value.ToString(), elems);
+                QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
+                tablePanel.ChangeTable(Data.quantities, Data.Actions);
+                Data.InitializeKeysIndexes();
+            }
+        }
+        
+        private void table_RowRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (isCreated)
+            {
+                Data.Actions.Remove(Data.KeysIndexes[e.RowIndex]);
+                QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
+                tablePanel.AutoScrollPosition = new Point(0, 0);
+                tablePanel.ChangeTable(Data.quantities, Data.Actions);
+                Data.InitializeKeysIndexes();
+            }
+        }
+
     }
 }

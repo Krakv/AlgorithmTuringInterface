@@ -30,7 +30,7 @@ namespace AlgorithmTuringInterface
             QuantitiesTable.Controls[index].Text = value;
         }
 
-        public void AddColumn(string[] quantities, Dictionary<string, List<string>> actions)
+        public void ChangeTable(string[] quantities, Dictionary<string, List<string>> actions)
         {
             this.quantities = quantities;
             this.actions = actions;

@@ -100,7 +100,7 @@ namespace AlgorithmTuringInterface
         private void textBoxes_Validating(object sender, CancelEventArgs e)
         {
             TextBox txtbx = sender as TextBox;
-            foreach(string index in Data.actions.Keys)
+            foreach(string index in Data.Actions.Keys)
             {
                 if (index == txtbx.Text)
                 {

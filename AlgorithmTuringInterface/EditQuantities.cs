@@ -7,44 +7,44 @@ namespace AlgorithmTuringInterface
 {
     public partial class EditQuantities : Form
     {
-        string[] quantities;
-        Dictionary<string, List<string>> actions;
+        //string[] quantities;
+        //Dictionary<string, List<string>> actions;
         MachineTuring owner;
+        DataGridView table;
 
         public EditQuantities(MachineTuring owner, DataGridView table)
         {
             this.owner = owner;
             InitializeComponent();
-            this.table.Visible = false;
             this.table = table;
             Controls.Add(table);
         }
 
-        private void InitializeQuantitiesTableEdit()
-        {
-            // Adding first row (quantities)
-            for (int i = 0; i < quantities.Length; i++)
-            {
-                table.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = quantities[i] });
-            }
-            // Adding Rows (actions)
-            foreach (string key in actions.Keys)
-            {
-                DataGridViewCell[] array = new DataGridViewCell[actions[key].Count];
-                for (int i = 0; i < actions[key].Count; i++)
-                {
-                    array[i] = new DataGridViewTextBoxCell() { Value = actions[key][i] };
-                }
-                DataGridViewRow row = new DataGridViewRow() { HeaderCell = new DataGridViewRowHeaderCell() { Value = key } };
-                row.Cells.AddRange(array);
-                table.Rows.Add(row);
-            }
-        }
+        //private void InitializeQuantitiesTableEdit()
+        //{
+        //    // Adding first row (quantities)
+        //    for (int i = 0; i < quantities.Length; i++)
+        //    {
+        //        table.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = quantities[i] });
+        //    }
+        //    // Adding Rows (actions)
+        //    foreach (string key in actions.Keys)
+        //    {
+        //        DataGridViewCell[] array = new DataGridViewCell[actions[key].Count];
+        //        for (int i = 0; i < actions[key].Count; i++)
+        //        {
+        //            array[i] = new DataGridViewTextBoxCell() { Value = actions[key][i] };
+        //        }
+        //        DataGridViewRow row = new DataGridViewRow() { HeaderCell = new DataGridViewRowHeaderCell() { Value = key } };
+        //        row.Cells.AddRange(array);
+        //        table.Rows.Add(row);
+        //    }
+        //}
 
-        public void Table_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            actions[table.Rows[e.RowIndex].HeaderCell.Value.ToString()][e.ColumnIndex] = table[e.ColumnIndex, e.RowIndex].Value.ToString();
-        }
+        //public void Table_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    actions[table.Rows[e.RowIndex].HeaderCell.Value.ToString()][e.ColumnIndex] = table[e.ColumnIndex, e.RowIndex].Value.ToString();
+        //}
 
         // Сохранение 
         private void EditQuantities_Deactivate(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace AlgorithmTuringInterface
             //}
             //Data.actions = actions;
             //Data.quantities = quantities;
-            Controls.Clear();
+            //Controls.Remove(table);
         }
 
         #region RowFuncs
@@ -210,6 +210,9 @@ namespace AlgorithmTuringInterface
         {
         }
 
-        
+        private void EditQuantities_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Controls.Clear();
+        }
     }
 }

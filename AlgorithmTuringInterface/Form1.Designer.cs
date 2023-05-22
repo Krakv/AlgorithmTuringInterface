@@ -553,6 +553,9 @@ namespace AlgorithmTuringInterface
             this.table.StandardTab = true;
             this.table.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_CellEndEdit);
             this.table.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.table_ColumnAdded);
+            this.table.ColumnRemoved += new System.Windows.Forms.DataGridViewColumnEventHandler(this.table_ColumnRemoved);
+            this.table.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.table_RowAdded);
+            this.table.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.table_RowRemoved);
             // 
             // MachineTuring
             // 
@@ -579,7 +582,6 @@ namespace AlgorithmTuringInterface
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "MachineTuring";
-            this.Activated += new System.EventHandler(this.MachineTuring_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MachineTuring_FormClosing);
             this.Shown += new System.EventHandler(this.MachineTuring_Shown);
             this.Tape.ResumeLayout(false);
