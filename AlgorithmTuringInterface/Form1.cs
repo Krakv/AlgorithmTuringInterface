@@ -1,8 +1,10 @@
 ﻿using AlgorithmTuringInterface.Properties;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.IO.Pipes;
 using System.Linq;
 using System.Runtime.Remoting.Channels;
 using System.Text;
@@ -212,6 +214,7 @@ namespace AlgorithmTuringInterface
             shift--;
             InitializeTape();
         }
+
         private void NextElement_Click(object sender, EventArgs e)
         {
             shift++;
@@ -224,9 +227,7 @@ namespace AlgorithmTuringInterface
             PreviousStepBtn.Enabled = true;
             FinishBtn.Enabled = true;
             StartBtn.Enabled = false;
-            //ChooseElementIndexTextBox.Enabled = false;
-            //ChooseElementIndexTextBox.Text = chosenIndex.ToString();
-            //BtnComplete.Enabled = false;
+            InitChosenIndexBtn.Enabled = false;
         }
 
         private void FinishBtn_Click(object sender, EventArgs e)
@@ -235,32 +236,8 @@ namespace AlgorithmTuringInterface
             PreviousStepBtn.Enabled = false;
             FinishBtn.Enabled = false;
             StartBtn.Enabled = true;
-            //ChooseElementIndexTextBox.Enabled = true;
-            //BtnComplete.Enabled = true;
+            InitChosenIndexBtn.Enabled = true;
         }
-
-        //private void BtnComplete_Click(object sender, EventArgs e)
-        //{
-        //    bool isSuccess = Int32.TryParse(ChooseElementIndexTextBox.Text, out int index);
-        //    if (isSuccess)
-        //    {
-        //        chosenIndex = index;
-        //        InitializeTape();
-        //        StartBtn.Enabled = true;
-        //    }
-        //    else
-        //    {
-        //        StartBtn.Enabled = false;
-        //        // Initializes the variables to pass to the MessageBox.Show method.
-        //        string message = "Введенный индекс не является целым числом.";
-        //        string caption = "Ошибка ввода";
-        //        MessageBoxButtons buttons = MessageBoxButtons.OK;
-
-        //        // Displays the MessageBox.
-        //        MessageBox.Show(message, caption, buttons);
-        //    }
-        //    ChooseElementIndexTextBox.Focus();
-        //}
 
         #endregion Buttons
 
@@ -298,6 +275,53 @@ namespace AlgorithmTuringInterface
         {
             EditTape editTape = new EditTape(this, new Dictionary<long, string>());
             editTape.Show();
+        }
+
+        private void SaveTapeFile_Click(object sender, EventArgs e)
+        {
+            Stream myStream;
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "csv files (*.csv)|*.csv";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if ((myStream = saveFileDialog1.OpenFile()) != null)
+                {
+                    using (StreamWriter writer = new StreamWriter(myStream))
+                    {
+                        long[] keys = new long[Data.tape.Count];
+                        long counter = 0;
+                        foreach(long index in Data.tape.Keys)
+                        {
+                            keys[counter++] = index;
+                        }
+                        Array.Sort(keys);
+                        for (long i = keys[0]; i <= keys[keys.Length - 1]; i++)
+                        {
+                            writer.Write(i);
+                            writer.Write(';');
+                        }
+                        writer.WriteLine();
+                        for (long i = keys[0]; i <= keys[keys.Length - 1]; i++)
+                        {
+                            try
+                            {
+                                writer.Write(Data.tape[i]);
+                            }
+                            catch
+                            {
+                            }
+                            writer.Write(';');
+                        }
+                        writer.Close();
+                    }
+                    
+                    myStream.Close();
+                }
+            }
         }
 
         #endregion TapeFile
@@ -338,7 +362,47 @@ namespace AlgorithmTuringInterface
             editQuantities.Show();
         }
 
+        private void SaveQuantitiesFile_Click(object sender, EventArgs e)
+        {
+            Stream myStream;
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "csv files (*.csv)|*.csv";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if ((myStream = saveFileDialog1.OpenFile()) != null)
+                {
+                    using (StreamWriter writer = new StreamWriter(myStream))
+                    {
+                        writer.Write(' ');
+                        foreach (string str in Data.quantities)
+                        {
+                            writer.Write(';');
+                            writer.Write(str);
+                        }
+                        writer.WriteLine();
+                        foreach (string str in Data.Actions.Keys)
+                        {
+                            writer.Write(str);
+                            foreach (string action in Data.Actions[str])
+                            {
+                                writer.Write(';');
+                                writer.Write(action);
+                            }
+                            writer.WriteLine();
+                        }
+                    }
+                    myStream.Close();
+                }
+            }
+        }
+
         #endregion QuantitiesFile
+
+        #region other
 
         private void InitChosenIndexBtn_Click(object sender, EventArgs e)
         {
@@ -378,6 +442,8 @@ namespace AlgorithmTuringInterface
         {
             System.Windows.Forms.Help.ShowHelp(this, "UserGuide.chm");
         }
+
+        #endregion other
 
         #endregion Upper menu
 

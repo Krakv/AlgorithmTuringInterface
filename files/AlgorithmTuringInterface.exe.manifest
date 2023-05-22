@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AlgorithmTuringInterface.exe" size="176640">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AlgorithmTuringInterface.exe" size="178176">
       <assemblyIdentity name="AlgorithmTuringInterface" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7aAyPVGjYgHPOuCpg3ti3QnOCCC2xSomVKiNeGhX+no=</dsig:DigestValue>
+        <dsig:DigestValue>kk700cKrHZe6UEuhfoBvaQmB6X3XJWz53KAsj8WoyI0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>r/QILD2E8N8PAOu/hp3HMq9W1pSBXKvnl3uYiBKeMFc=</dsig:DigestValue>
+        <dsig:DigestValue>o8tr4PoV82khPPShzbnSql3U7/BqfZ2mgTpSOuSIMlA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FdXfpJtALQHncQlZhymyOSsz2EG27vnK/jlXCBVJA+k=</dsig:DigestValue>
+        <dsig:DigestValue>zcrk2qXA4mQNaD65kSBFTeRDi8DJ4DYdBQcC0uuNh1A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -342,6 +342,7 @@ namespace AlgorithmTuringInterface
             // 
             this.SaveTapeFile.Name = "SaveTapeFile";
             resources.ApplyResources(this.SaveTapeFile, "SaveTapeFile");
+            this.SaveTapeFile.Click += new System.EventHandler(this.SaveTapeFile_Click);
             // 
             // OpenTapeFile
             // 
@@ -395,6 +396,7 @@ namespace AlgorithmTuringInterface
             // 
             this.SaveQuantitiesFile.Name = "SaveQuantitiesFile";
             resources.ApplyResources(this.SaveQuantitiesFile, "SaveQuantitiesFile");
+            this.SaveQuantitiesFile.Click += new System.EventHandler(this.SaveQuantitiesFile_Click);
             // 
             // OpenQuantitiesFile
             // 
