@@ -25,26 +25,38 @@ namespace AlgorithmTuringInterface
 
         public MachineTuring()
         {
-            InitializeActions();
             InitializeComponent();
+
+            // Заполнение значений таблицы состояний по умолчанию
+            InitializeActions();
+
+            // Создание таблицы состояний
             InitializeTable(Data.quantities, Data.Actions);
+
+            // Сохранение таблицы в общем классе Data
             Data.table = table;
+
+            // Считывание скорости из текстового бокса
             speed = Int64.Parse(Regex.Replace(SpeedTxtBx.Text, @"[^\d]+", ""));
-            isCreated = true;
-            Data.InitializeKeysIndexes(); 
+
+            // Инициализация индексов названий строк (Для удаления строк)
+            Data.InitializeKeysIndexes();
+
+            // флажок, указывающий, что объект не находится в процессе инициализации
+            isCreated = true; 
         }
 
         private void MachineTuring_Shown(object sender, EventArgs e)
         {
-            PaintQuantitiesStatesForm();
-            InitializeTape();
+            PaintQuantitiesStatesForm(); // Прорисовка таблицы состояний
+            InitializeTape(); // Прорисовка значений на ленте
         }
 
         private void MachineTuring_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Подтверждение выхода из программы
             var res = MessageBox.Show("Вы действительно хотите выйти?", "Выход из программы",
             MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
             e.Cancel = !(res == DialogResult.Yes);
         }
 
