@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.IO.Pipes;
 using System.Linq;
+using System.Resources;
 using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -33,7 +34,7 @@ namespace AlgorithmTuringInterface
             InitializeActions();
 
             // Создание таблицы состояний
-            InitializeTable(Data.quantities, Data.Actions);
+            table = InitializeTable(Data.quantities, Data.Actions, table);
 
             // Сохранение таблицы в общем классе Data
             Data.table = table;
@@ -64,8 +65,22 @@ namespace AlgorithmTuringInterface
 
         #region Initializing
 
-        public void InitializeTable(string[] quantities, Dictionary<string, List<string>> actions)
+        public DataGridView InitializeTable(string[] quantities, Dictionary<string, List<string>> actions, DataGridView table = null)
         {
+            if (table == null)
+            {
+                table = new System.Windows.Forms.DataGridView();
+                table.AllowUserToAddRows = false;
+                table.AllowUserToDeleteRows = false;
+                table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+                table.Name = "table";
+                table.StandardTab = true;
+                table.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_CellEndEdit);
+                table.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.table_ColumnAdded);
+                table.ColumnRemoved += new System.Windows.Forms.DataGridViewColumnEventHandler(this.table_ColumnRemoved);
+                table.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.table_RowAdded);
+                table.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.table_RowRemoved);
+            }
             // Adding first row (quantities)
             for (int i = 0; i < quantities.Length; i++)
             {
@@ -87,6 +102,7 @@ namespace AlgorithmTuringInterface
             table.Location = new Point(12, 12);
             table.Dock = DockStyle.None;
             table.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
+            return table;
         }
 
         private void InitializeActions()
@@ -279,6 +295,9 @@ namespace AlgorithmTuringInterface
 
         private void SaveTapeFile_Click(object sender, EventArgs e)
         {
+            if (Data.tape.Keys.Count == 0)
+                return;
+
             Stream myStream;
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
@@ -358,7 +377,11 @@ namespace AlgorithmTuringInterface
 
         private void CreateQuantitiesFile_Click(object sender, EventArgs e)
         {
-            EditQuantities editQuantities = new EditQuantities(this, table);
+            Dictionary<string, List<string>> actions = new Dictionary<string, List<string>>();
+            actions.Add("", new List<string>() { " " });
+            isCreated = false;
+            EditQuantities editQuantities = new EditQuantities(this, InitializeTable(new string[1] { "Q1" }, actions));
+            isCreated = true;
             editQuantities.Show();
         }
 
