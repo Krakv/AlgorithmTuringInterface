@@ -625,7 +625,7 @@ namespace AlgorithmTuringInterface
         private TextBox textBox12;
         private Label TapeLabel;
         private Label QuantityLabel;
-        private Panel QuantityStates;
+        public Panel QuantityStates;
         private MenuStrip menuStrip1;
         private Button StartBtn;
         private Button NextStepBtn;

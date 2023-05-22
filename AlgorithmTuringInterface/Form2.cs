@@ -38,7 +38,7 @@ namespace AlgorithmTuringInterface
             MakeQuantitiesTable();
         }
 
-        private void MakeQuantitiesTable()
+        public void MakeQuantitiesTable()
         {
             QuantitiesTable.Controls.Clear();
             QuantitiesTable.ColumnCount = quantities.Length + 1;

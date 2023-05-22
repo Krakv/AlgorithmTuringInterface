@@ -208,11 +208,15 @@ namespace AlgorithmTuringInterface
 
         private void EditQuantities_Shown(object sender, EventArgs e)
         {
+            owner.Enabled = false;
         }
 
         private void EditQuantities_FormClosing(object sender, FormClosingEventArgs e)
         {
             Controls.Clear();
+            QuantityStatesForm tablePanel = owner.QuantityStates.Controls[0] as QuantityStatesForm;
+            tablePanel.ChangeTable(Data.quantities, Data.Actions);
+            owner.Enabled = true;
         }
     }
 }

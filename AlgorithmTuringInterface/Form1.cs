@@ -360,8 +360,8 @@ namespace AlgorithmTuringInterface
         public void Table_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             Data.Actions[table.Rows[e.RowIndex].HeaderCell.Value.ToString()][e.ColumnIndex] = table[e.ColumnIndex, e.RowIndex].Value.ToString();
-            QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
-            tablePanel.ChangeTableElement(table[e.ColumnIndex, e.RowIndex].Value.ToString(), (e.RowIndex + 1) * (table.ColumnCount + 1)  + e.ColumnIndex + 1);
+        //    QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
+        //    tablePanel.ChangeTableElement(table[e.ColumnIndex, e.RowIndex].Value.ToString(), (e.RowIndex + 1) * (table.ColumnCount + 1)  + e.ColumnIndex + 1);
         }
 
         private void table_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
@@ -375,8 +375,8 @@ namespace AlgorithmTuringInterface
                 Data.quantities = states;
                 foreach (List<string> list in Data.Actions.Values)
                     list.Add("");
-                QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
-                tablePanel.ChangeTable(Data.quantities, Data.Actions);
+                //QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
+                //tablePanel.ChangeTable(Data.quantities, Data.Actions);
                 Data.InitializeKeysIndexes();
             }
         }
@@ -392,8 +392,8 @@ namespace AlgorithmTuringInterface
                 Data.quantities = states;
                 foreach (List<string> list in Data.Actions.Values)
                     list.RemoveAt(e.Column.DisplayIndex);
-                QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
-                tablePanel.ChangeTable(Data.quantities, Data.Actions);
+                //QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
+                //tablePanel.ChangeTable(Data.quantities, Data.Actions);
                 Data.InitializeKeysIndexes();
             }
         }
@@ -406,8 +406,8 @@ namespace AlgorithmTuringInterface
                 for (int i = 0; i < table.Columns.Count; i++)
                     elems.Add("");
                 Data.Actions.Add(table.Rows[e.RowIndex].HeaderCell.Value.ToString(), elems);
-                QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
-                tablePanel.ChangeTable(Data.quantities, Data.Actions);
+                //QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
+                //tablePanel.ChangeTable(Data.quantities, Data.Actions);
                 Data.InitializeKeysIndexes();
             }
         }
@@ -417,9 +417,9 @@ namespace AlgorithmTuringInterface
             if (isCreated)
             {
                 Data.Actions.Remove(Data.KeysIndexes[e.RowIndex]);
-                QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
-                tablePanel.AutoScrollPosition = new Point(0, 0);
-                tablePanel.ChangeTable(Data.quantities, Data.Actions);
+                //QuantityStatesForm tablePanel = QuantityStates.Controls[0] as QuantityStatesForm;
+                //tablePanel.AutoScrollPosition = new Point(0, 0);
+                //tablePanel.ChangeTable(Data.quantities, Data.Actions);
                 Data.InitializeKeysIndexes();
             }
         }
