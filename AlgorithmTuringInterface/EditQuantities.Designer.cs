@@ -40,6 +40,7 @@ namespace AlgorithmTuringInterface
             this.ColumnNameTxtBx = new System.Windows.Forms.TextBox();
             this.ColumnNameLbl = new System.Windows.Forms.Label();
             this.AddColumnBtn = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,6 +137,10 @@ namespace AlgorithmTuringInterface
             this.AddColumnBtn.UseVisualStyleBackColor = true;
             this.AddColumnBtn.Click += new System.EventHandler(this.AddColumnBtn_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "UserGuide.chm";
+            // 
             // EditQuantities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,7 +155,10 @@ namespace AlgorithmTuringInterface
             this.Controls.Add(this.RowNameTxtBx);
             this.Controls.Add(this.RowNameLbl);
             this.Controls.Add(this.AddRowBtn);
+            this.helpProvider1.SetHelpKeyword(this, "24");
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.TopicId);
             this.Name = "EditQuantities";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "EditQuantities";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditQuantities_FormClosing);
             this.Shown += new System.EventHandler(this.EditQuantities_Shown);
@@ -170,5 +178,6 @@ namespace AlgorithmTuringInterface
         private System.Windows.Forms.TextBox ColumnNameTxtBx;
         private System.Windows.Forms.Label ColumnNameLbl;
         private System.Windows.Forms.Button AddColumnBtn;
+        private HelpProvider helpProvider1;
     }
 }

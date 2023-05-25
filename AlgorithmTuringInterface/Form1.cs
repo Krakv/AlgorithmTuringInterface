@@ -463,7 +463,7 @@ namespace AlgorithmTuringInterface
 
         private void UserGuideMenuItem_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Help.ShowHelp(this, "UserGuide.chm");
+            System.Windows.Forms.Help.ShowHelp(this, Environment.CurrentDirectory + "\\UserGuide.chm");
         }
 
         #endregion other
@@ -541,5 +541,204 @@ namespace AlgorithmTuringInterface
 
         #endregion TableEdited
 
+        private void TapeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tape_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox16_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox17_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox14_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox21_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox22_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox20_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox18_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox19_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuantityLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void сохранитьФайлToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TapeFile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TapeSeparator_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuantitiesFile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripSeparator2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CurrentSpeedTxtBx_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SpeedTxtBx_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripSeparator3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NextStepBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PreviousStepBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StartNFinishBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void table_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void QuantityStates_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

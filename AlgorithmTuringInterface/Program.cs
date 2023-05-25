@@ -21,46 +21,6 @@ namespace AlgorithmTuringInterface
             Application.Run(new MachineTuring());
         }
 
-        // Двойная буферизация DataGrid (ускорение работы)
-        //public class DoubleBufferedDataGridView : DataGridView
-        //{
-        //    protected override bool DoubleBuffered { get => true; }
-        //}
-
-        public static string FindPathManually()
-        {
-            string path = "";
-            var fileContent = string.Empty;
-            var filePath = string.Empty;
-
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "csv files (*.csv)|*.csv";
-                openFileDialog.FilterIndex = 2;
-                openFileDialog.RestoreDirectory = true;
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    //Get the path of specified file
-                    filePath = openFileDialog.FileName;
-
-                    //Read the contents of the file into a stream
-                    var fileStream = openFileDialog.OpenFile();
-
-                    using (StreamReader reader = new StreamReader(fileStream))
-                    {
-                        fileContent = reader.ReadToEnd();
-                    }
-                }
-                if (filePath != string.Empty)
-                {
-                    path = filePath;
-                }
-            }
-            return path;
-        }
-
         static Encoding code = Encoding.UTF8;
         static string[] quantity = new string[0];
         static Dictionary<string, List<string>> actions = new Dictionary<string, List<string>>();
@@ -96,6 +56,45 @@ namespace AlgorithmTuringInterface
                 }
             }
             return new object[2] { actions, quantity };
+        }
+
+        public static string FindPathManually()
+        {
+            string path = "";
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "csv files (*.csv)|*.csv";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+
+                    //Read the contents of the file into a stream
+                    var fileStream = openFileDialog.OpenFile();
+
+                    using (StreamReader reader = new StreamReader(fileStream))
+                    {
+                        fileContent = reader.ReadToEnd();
+                    }
+                }
+                if (filePath != string.Empty)
+                {
+                    path = filePath;
+                }
+            }
+            return path;
+        }
+
+        public static void OpenHelpFile(Form form, string path, HelpNavigator navigator = HelpNavigator.TableOfContents)
+        {
+            System.Windows.Forms.Help.ShowHelp(form, path, navigator);
         }
     }
 }

@@ -138,6 +138,15 @@
   <data name="textBox12.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 37</value>
   </data>
+  <metadata name="helpProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>282, 17</value>
+  </metadata>
+  <data name="helpProvider1.HelpNamespace" xml:space="preserve">
+    <value>UserGuide.chm</value>
+  </data>
+  <data name="textBox12.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textBox12.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 46</value>
   </data>
@@ -170,6 +179,9 @@
   </data>
   <data name="textBox16.Location" type="System.Drawing.Point, System.Drawing">
     <value>255, 37</value>
+  </data>
+  <data name="textBox16.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textBox16.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 46</value>
@@ -204,6 +216,9 @@
   <data name="textBox17.Location" type="System.Drawing.Point, System.Drawing">
     <value>318, 37</value>
   </data>
+  <data name="textBox17.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textBox17.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 46</value>
   </data>
@@ -236,6 +251,9 @@
   </data>
   <data name="textBox15.Location" type="System.Drawing.Point, System.Drawing">
     <value>192, 37</value>
+  </data>
+  <data name="textBox15.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textBox15.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 46</value>
@@ -274,6 +292,9 @@
   <data name="textBox13.Location" type="System.Drawing.Point, System.Drawing">
     <value>66, 37</value>
   </data>
+  <data name="textBox13.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textBox13.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 46</value>
   </data>
@@ -311,6 +332,9 @@
   <data name="textBox14.Location" type="System.Drawing.Point, System.Drawing">
     <value>129, 37</value>
   </data>
+  <data name="textBox14.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textBox14.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 46</value>
   </data>
@@ -347,6 +371,9 @@
   </data>
   <data name="textBox21.Location" type="System.Drawing.Point, System.Drawing">
     <value>570, 37</value>
+  </data>
+  <data name="textBox21.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textBox21.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 46</value>
@@ -388,6 +415,9 @@
   <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>66, 3</value>
   </data>
+  <data name="textBox2.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 29</value>
   </data>
@@ -424,6 +454,9 @@
   </data>
   <data name="textBox22.Location" type="System.Drawing.Point, System.Drawing">
     <value>633, 37</value>
+  </data>
+  <data name="textBox22.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textBox22.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 46</value>
@@ -462,6 +495,9 @@
   <data name="textBox20.Location" type="System.Drawing.Point, System.Drawing">
     <value>507, 37</value>
   </data>
+  <data name="textBox20.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textBox20.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 46</value>
   </data>
@@ -499,6 +535,9 @@
   <data name="textBox18.Location" type="System.Drawing.Point, System.Drawing">
     <value>381, 37</value>
   </data>
+  <data name="textBox18.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textBox18.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 46</value>
   </data>
@@ -535,6 +574,9 @@
   </data>
   <data name="textBox19.Location" type="System.Drawing.Point, System.Drawing">
     <value>444, 37</value>
+  </data>
+  <data name="textBox19.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textBox19.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 46</value>
@@ -576,6 +618,9 @@
   <data name="textBox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>192, 3</value>
   </data>
+  <data name="textBox4.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textBox4.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 29</value>
   </data>
@@ -614,6 +659,9 @@
   </data>
   <data name="textBox5.Location" type="System.Drawing.Point, System.Drawing">
     <value>255, 3</value>
+  </data>
+  <data name="textBox5.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textBox5.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 29</value>
@@ -654,6 +702,9 @@
   <data name="textBox6.Location" type="System.Drawing.Point, System.Drawing">
     <value>318, 3</value>
   </data>
+  <data name="textBox6.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textBox6.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 29</value>
   </data>
@@ -692,6 +743,9 @@
   </data>
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
+  </data>
+  <data name="textBox1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 29</value>
@@ -732,6 +786,9 @@
   <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>129, 3</value>
   </data>
+  <data name="textBox3.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 29</value>
   </data>
@@ -770,6 +827,9 @@
   </data>
   <data name="textBox10.Location" type="System.Drawing.Point, System.Drawing">
     <value>570, 3</value>
+  </data>
+  <data name="textBox10.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textBox10.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 29</value>
@@ -810,6 +870,9 @@
   <data name="textBox11.Location" type="System.Drawing.Point, System.Drawing">
     <value>633, 3</value>
   </data>
+  <data name="textBox11.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textBox11.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 29</value>
   </data>
@@ -848,6 +911,9 @@
   </data>
   <data name="textBox9.Location" type="System.Drawing.Point, System.Drawing">
     <value>507, 3</value>
+  </data>
+  <data name="textBox9.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textBox9.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 29</value>
@@ -888,6 +954,9 @@
   <data name="textBox7.Location" type="System.Drawing.Point, System.Drawing">
     <value>381, 3</value>
   </data>
+  <data name="textBox7.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textBox7.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 29</value>
   </data>
@@ -927,6 +996,9 @@
   <data name="textBox8.Location" type="System.Drawing.Point, System.Drawing">
     <value>444, 3</value>
   </data>
+  <data name="textBox8.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textBox8.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 29</value>
   </data>
@@ -951,11 +1023,20 @@
   <data name="&gt;&gt;textBox8.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
+  <data name="Tape.HelpKeyword" xml:space="preserve">
+    <value>91</value>
+  </data>
+  <data name="Tape.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>TopicId</value>
+  </data>
   <data name="Tape.Location" type="System.Drawing.Point, System.Drawing">
     <value>49, 61</value>
   </data>
   <data name="Tape.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="Tape.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="Tape.Size" type="System.Drawing.Size, System.Drawing">
     <value>703, 83</value>
@@ -984,6 +1065,12 @@
   <data name="TapeLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 16pt</value>
   </data>
+  <data name="TapeLabel.HelpKeyword" xml:space="preserve">
+    <value>91</value>
+  </data>
+  <data name="TapeLabel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>TopicId</value>
+  </data>
   <data name="TapeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -992,6 +1079,9 @@
   </data>
   <data name="TapeLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
+  </data>
+  <data name="TapeLabel.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="TapeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 26</value>
@@ -1023,6 +1113,12 @@
   <data name="QuantityLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 16pt</value>
   </data>
+  <data name="QuantityLabel.HelpKeyword" xml:space="preserve">
+    <value>91</value>
+  </data>
+  <data name="QuantityLabel.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>TopicId</value>
+  </data>
   <data name="QuantityLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1031,6 +1127,9 @@
   </data>
   <data name="QuantityLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
+  </data>
+  <data name="QuantityLabel.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="QuantityLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>237, 26</value>
@@ -1056,11 +1155,20 @@
   <data name="&gt;&gt;QuantityLabel.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="QuantityStates.HelpKeyword" xml:space="preserve">
+    <value>91</value>
+  </data>
+  <data name="QuantityStates.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>TopicId</value>
+  </data>
   <data name="QuantityStates.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 270</value>
   </data>
   <data name="QuantityStates.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
+  </data>
+  <data name="QuantityStates.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="QuantityStates.Size" type="System.Drawing.Size, System.Drawing">
     <value>772, 280</value>
@@ -1083,11 +1191,68 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="menuStrip1.HelpKeyword" xml:space="preserve">
+    <value>156</value>
+  </data>
+  <data name="menuStrip1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>TopicId</value>
+  </data>
+  <data name="сохранитьФайлToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="сохранитьФайлToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="загрузитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="загрузитьToolStripMenuItem.Text" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
   <data name="файлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
   </data>
   <data name="файлToolStripMenuItem.Text" xml:space="preserve">
     <value>Файл</value>
+  </data>
+  <data name="CreateTapeFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="CreateTapeFile.Text" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="SaveTapeFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="SaveTapeFile.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="OpenTapeFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="OpenTapeFile.Text" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="EditTapeFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="EditTapeFile.Text" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="TapeFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 22</value>
+  </data>
+  <data name="TapeFile.Text" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="TapeSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>271, 6</value>
+  </data>
+  <data name="InitChosenIndexBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 22</value>
+  </data>
+  <data name="InitChosenIndexBtn.Text" xml:space="preserve">
+    <value>Задать индекс начального элемента</value>
   </data>
   <data name="TapeMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 20</value>
@@ -1096,25 +1261,25 @@
     <value>Лента</value>
   </data>
   <data name="CreateQuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>154, 22</value>
   </data>
   <data name="CreateQuantitiesFile.Text" xml:space="preserve">
     <value>Создать</value>
   </data>
   <data name="SaveQuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>154, 22</value>
   </data>
   <data name="SaveQuantitiesFile.Text" xml:space="preserve">
     <value>Сохранить</value>
   </data>
   <data name="OpenQuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>154, 22</value>
   </data>
   <data name="OpenQuantitiesFile.Text" xml:space="preserve">
     <value>Открыть</value>
   </data>
   <data name="EditQuantitiesFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>154, 22</value>
   </data>
   <data name="EditQuantitiesFile.Text" xml:space="preserve">
     <value>Редактировать</value>
@@ -1139,108 +1304,6 @@
   </data>
   <data name="QuantitiesMenuItem.Text" xml:space="preserve">
     <value>Множество состояний</value>
-  </data>
-  <data name="скоростьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
-  <data name="скоростьToolStripMenuItem.Text" xml:space="preserve">
-    <value>Скорость</value>
-  </data>
-  <data name="задачиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 20</value>
-  </data>
-  <data name="задачиToolStripMenuItem.Text" xml:space="preserve">
-    <value>Задачи</value>
-  </data>
-  <data name="помощьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 20</value>
-  </data>
-  <data name="помощьToolStripMenuItem.Text" xml:space="preserve">
-    <value>Помощь</value>
-  </data>
-  <data name="оПрограммеToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 20</value>
-  </data>
-  <data name="оПрограммеToolStripMenuItem.Text" xml:space="preserve">
-    <value>О программе</value>
-  </data>
-  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="menuStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 2, 0, 2</value>
-  </data>
-  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 24</value>
-  </data>
-  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="menuStrip1.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="сохранитьФайлToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 22</value>
-  </data>
-  <data name="сохранитьФайлToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
-  <data name="загрузитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 22</value>
-  </data>
-  <data name="загрузитьToolStripMenuItem.Text" xml:space="preserve">
-    <value>Загрузить</value>
-  </data>
-  <data name="TapeFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 22</value>
-  </data>
-  <data name="TapeFile.Text" xml:space="preserve">
-    <value>Файл</value>
-  </data>
-  <data name="CreateTapeFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="CreateTapeFile.Text" xml:space="preserve">
-    <value>Создать</value>
-  </data>
-  <data name="SaveTapeFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="SaveTapeFile.Text" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
-  <data name="OpenTapeFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="OpenTapeFile.Text" xml:space="preserve">
-    <value>Открыть</value>
-  </data>
-  <data name="EditTapeFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="EditTapeFile.Text" xml:space="preserve">
-    <value>Редактировать</value>
-  </data>
-  <data name="TapeSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 6</value>
-  </data>
-  <data name="InitChosenIndexBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 22</value>
-  </data>
-  <data name="InitChosenIndexBtn.Text" xml:space="preserve">
-    <value>Задать индекс начального элемента</value>
   </data>
   <data name="CurrentSpeedTxtBx.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1269,8 +1332,74 @@
   <data name="ChangeSpeedBtn.Text" xml:space="preserve">
     <value>Изменить скорость</value>
   </data>
+  <data name="скоростьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 20</value>
+  </data>
+  <data name="скоростьToolStripMenuItem.Text" xml:space="preserve">
+    <value>Скорость</value>
+  </data>
+  <data name="задачиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="задачиToolStripMenuItem.Text" xml:space="preserve">
+    <value>Задачи</value>
+  </data>
+  <data name="UserGuideMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="UserGuideMenuItem.Text" xml:space="preserve">
+    <value>Руководство пользователя</value>
+  </data>
+  <data name="помощьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 20</value>
+  </data>
+  <data name="помощьToolStripMenuItem.Text" xml:space="preserve">
+    <value>Помощь</value>
+  </data>
+  <data name="оПрограммеToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 20</value>
+  </data>
+  <data name="оПрограммеToolStripMenuItem.Text" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 0, 2</value>
+  </data>
+  <data name="menuStrip1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 24</value>
+  </data>
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
   <data name="StartBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="StartBtn.HelpKeyword" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="StartBtn.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>TopicId</value>
   </data>
   <data name="StartBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1280,6 +1409,9 @@
   </data>
   <data name="StartBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
+  </data>
+  <data name="StartBtn.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="StartBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 33</value>
@@ -1308,6 +1440,12 @@
   <data name="NextStepBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
+  <data name="NextStepBtn.HelpKeyword" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="NextStepBtn.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>TopicId</value>
+  </data>
   <data name="NextStepBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1316,6 +1454,9 @@
   </data>
   <data name="NextStepBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
+  </data>
+  <data name="NextStepBtn.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="NextStepBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>385, 24</value>
@@ -1344,6 +1485,12 @@
   <data name="PreviousStepBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
+  <data name="PreviousStepBtn.HelpKeyword" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="PreviousStepBtn.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>TopicId</value>
+  </data>
   <data name="PreviousStepBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1352,6 +1499,9 @@
   </data>
   <data name="PreviousStepBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
+  </data>
+  <data name="PreviousStepBtn.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="PreviousStepBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>385, 24</value>
@@ -1377,6 +1527,12 @@
   <data name="StartNFinishBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
+  <data name="StartNFinishBtn.HelpKeyword" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="StartNFinishBtn.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>TopicId</value>
+  </data>
   <data name="StartNFinishBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1385,6 +1541,9 @@
   </data>
   <data name="StartNFinishBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
+  </data>
+  <data name="StartNFinishBtn.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="StartNFinishBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>774, 24</value>
@@ -1413,6 +1572,12 @@
   <data name="FinishBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
+  <data name="FinishBtn.HelpKeyword" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="FinishBtn.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>TopicId</value>
+  </data>
   <data name="FinishBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1421,6 +1586,9 @@
   </data>
   <data name="FinishBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
+  </data>
+  <data name="FinishBtn.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="FinishBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>364, 33</value>
@@ -1464,11 +1632,20 @@
   <data name="EditTapeFileBtn.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
+  <data name="EditTapeFileBtn.HelpKeyword" xml:space="preserve">
+    <value>91</value>
+  </data>
+  <data name="EditTapeFileBtn.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>TopicId</value>
+  </data>
   <data name="EditTapeFileBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="EditTapeFileBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>273, 32</value>
+  </data>
+  <data name="EditTapeFileBtn.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="EditTapeFileBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -1491,11 +1668,20 @@
   <data name="EditQuantitiesFileBtn.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
+  <data name="EditQuantitiesFileBtn.HelpKeyword" xml:space="preserve">
+    <value>91</value>
+  </data>
+  <data name="EditQuantitiesFileBtn.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>TopicId</value>
+  </data>
   <data name="EditQuantitiesFileBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="EditQuantitiesFileBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>241, 242</value>
+  </data>
+  <data name="EditQuantitiesFileBtn.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="EditQuantitiesFileBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -1521,11 +1707,20 @@
   <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
   </data>
+  <data name="button1.HelpKeyword" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button1.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>TopicId</value>
+  </data>
   <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>375, 146</value>
+  </data>
+  <data name="button1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 40</value>
@@ -1551,11 +1746,20 @@
   <data name="PreviousElement.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
   </data>
+  <data name="PreviousElement.HelpKeyword" xml:space="preserve">
+    <value>91</value>
+  </data>
+  <data name="PreviousElement.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>TopicId</value>
+  </data>
   <data name="PreviousElement.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="PreviousElement.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 76</value>
+  </data>
+  <data name="PreviousElement.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="PreviousElement.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 50</value>
@@ -1581,11 +1785,20 @@
   <data name="NextElement.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
   </data>
+  <data name="NextElement.HelpKeyword" xml:space="preserve">
+    <value>91</value>
+  </data>
+  <data name="NextElement.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>TopicId</value>
+  </data>
   <data name="NextElement.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="NextElement.Location" type="System.Drawing.Point, System.Drawing">
     <value>750, 76</value>
+  </data>
+  <data name="NextElement.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="NextElement.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 50</value>
@@ -1604,6 +1817,15 @@
   </data>
   <data name="&gt;&gt;NextElement.ZOrder" xml:space="preserve">
     <value>12</value>
+  </data>
+  <data name="$this.HelpKeyword" xml:space="preserve">
+    <value>91</value>
+  </data>
+  <data name="$this.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
+    <value>TopicId</value>
+  </data>
+  <data name="$this.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>MachineTuring</value>
@@ -1764,6 +1986,12 @@
   <data name="&gt;&gt;помощьToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;UserGuideMenuItem.Name" xml:space="preserve">
+    <value>UserGuideMenuItem</value>
+  </data>
+  <data name="&gt;&gt;UserGuideMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;оПрограммеToolStripMenuItem.Name" xml:space="preserve">
     <value>оПрограммеToolStripMenuItem</value>
   </data>
@@ -1776,11 +2004,11 @@
   <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;UserGuideMenuItem.Name" xml:space="preserve">
-    <value>UserGuideMenuItem</value>
+  <data name="&gt;&gt;helpProvider1.Name" xml:space="preserve">
+    <value>helpProvider1</value>
   </data>
-  <data name="&gt;&gt;UserGuideMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;helpProvider1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.HelpProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MachineTuring</value>
@@ -1814,11 +2042,5 @@
   </data>
   <data name="&gt;&gt;table.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="UserGuideMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
-  </data>
-  <data name="UserGuideMenuItem.Text" xml:space="preserve">
-    <value>Руководство пользователя</value>
   </data>
 </root>

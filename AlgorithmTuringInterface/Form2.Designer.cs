@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.QuantitiesTable = new System.Windows.Forms.TableLayoutPanel();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // QuantitiesTable
@@ -45,6 +46,10 @@
             this.QuantitiesTable.Size = new System.Drawing.Size(200, 100);
             this.QuantitiesTable.TabIndex = 0;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "UserGuide.chm";
+            // 
             // QuantityStatesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -53,8 +58,11 @@
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.QuantitiesTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.helpProvider1.SetHelpKeyword(this, "24");
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.TopicId);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "QuantityStatesForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -64,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel QuantitiesTable;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

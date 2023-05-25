@@ -7,7 +7,7 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="AlgorithmTuringInterface.exe.manifest" size="5047">
+    <dependentAssembly dependencyType="install" codebase="Application Files\AlgorithmTuringInterface_1_0_0_1\AlgorithmTuringInterface.exe.manifest" size="5047">
       <assemblyIdentity name="AlgorithmTuringInterface.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
